@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:armadillo_scute"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " S ",
+    "A A",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mirage:armadillo_basket"
+  }
+}

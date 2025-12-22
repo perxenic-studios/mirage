@@ -1,0 +1,10 @@
+{
+  "item.mirage.armadillo_basket": "Armadillo Basket",
+  "item.mirage.armadillo_chestplate": "Armadillo Chestplate",
+
+  "mirage.configuration.title": "Mirage Configs",
+  "mirage.configuration.section.mirage.common.toml": "Mirage Configs",
+  "mirage.configuration.section.mirage.common.toml.title": "Mirage Configs",
+  "mirage.configuration.armadilloUnafraidArmor": "Armadillos unafraid with armor",
+  "mirage.configuration.armadilloUnafraidArmor.tooltip": "Whether armadillos are no longer afraid of mobs wearing armadillo chestplates"
+}
