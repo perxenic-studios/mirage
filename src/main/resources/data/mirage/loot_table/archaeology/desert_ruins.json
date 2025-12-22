@@ -8,7 +8,7 @@
           "type": "minecraft:item",
           "name": "minecraft:armadillo_scute",
           "weight": 8,
-          "conditions": []
+          "quality": 1
         },
         {
           "type": "minecraft:item",
@@ -33,12 +33,15 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_nugget",
-          "weight": 7
+          "weight": 7,
+          "quality": 1
         },
         {
-          "type": "minecraft:item",
-          "name": "minecraft:skull_pottery_sherd",
-          "weight": 1
+          "type": "minecraft:tag",
+          "name": "mirage:desert_ruins_sherds",
+          "expand": true,
+          "weight": 2,
+          "quality": 2
         }
       ]
     }
