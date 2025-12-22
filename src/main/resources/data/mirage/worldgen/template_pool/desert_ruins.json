@@ -1,0 +1,15 @@
+{
+  "name": "mirage:desert_ruins",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "terrain_matching",
+        "processors": "mirage:desert_ruins_decay",
+        "location": "mirage:desert_ruins_1"
+      },
+      "weight": 1
+    }
+  ]
+}
