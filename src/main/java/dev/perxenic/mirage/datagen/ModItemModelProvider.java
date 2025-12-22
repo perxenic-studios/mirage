@@ -61,17 +61,13 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation trimResLoc = ResourceLocation.parse(trimPath); // minecraft namespace
                 ResourceLocation trimNameResLoc = ResourceLocation.parse(currentTrimName);
 
-                // This is used for making the ExistingFileHelper acknowledge that this texture exist, so this will
-                // avoid an IllegalArgumentException
                 existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
 
-                // Trimmed armorItem files
                 getBuilder(currentTrimName)
                         .parent(new ModelFile.UncheckedModelFile("item/generated"))
                         .texture("layer0", armorItemResLoc.getNamespace() + ":item/" + armorItemResLoc.getPath())
                         .texture("layer1", trimResLoc);
 
-                // Non-trimmed armorItem file (normal variant)
                 this.withExistingParent(itemDeferredItem.getId().getPath(),
                                 mcLoc("item/generated"))
                         .override()
