@@ -31,7 +31,7 @@ public class Mirage {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    public static ResourceLocation mirageLoc(String name) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, name);
+    public static ResourceLocation mirageLoc(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 }

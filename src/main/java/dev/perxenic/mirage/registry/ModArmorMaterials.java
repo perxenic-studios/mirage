@@ -2,7 +2,6 @@ package dev.perxenic.mirage.registry;
 
 import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -16,6 +15,7 @@ import java.util.EnumMap;
 import java.util.List;
 
 import static dev.perxenic.mirage.Mirage.MODID;
+import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class ModArmorMaterials {
     public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(BuiltInRegistries.ARMOR_MATERIAL, MODID);
@@ -31,7 +31,7 @@ public class ModArmorMaterials {
             9,
             SoundEvents.ARMOR_EQUIP_WOLF,
             () -> Ingredient.of(Items.ARMADILLO_SCUTE),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "armadillo"))),
+            List.of(new ArmorMaterial.Layer(mirageLoc("armadillo"))),
             0f,
             0.0f
     ));
