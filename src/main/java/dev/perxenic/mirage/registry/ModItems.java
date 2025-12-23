@@ -24,6 +24,8 @@ public class ModItems {
             new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(5))
     ));
 
+    public static final DeferredItem<BlockItem> SUSPICIOUS_RED_SAND = ITEMS.registerSimpleBlockItem(ModBlocks.SUSPICIOUS_RED_SAND);
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

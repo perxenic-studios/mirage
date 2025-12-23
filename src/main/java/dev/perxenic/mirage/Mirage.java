@@ -1,8 +1,10 @@
 package dev.perxenic.mirage;
 
 import dev.perxenic.mirage.registry.ModArmorMaterials;
+import dev.perxenic.mirage.registry.ModBlocks;
 import dev.perxenic.mirage.registry.ModItems;
 import dev.perxenic.mirage.registry.ModStructureTypes;
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -19,11 +21,17 @@ public class Mirage {
 
     public Mirage(IEventBus modEventBus, ModContainer modContainer) {
         ModArmorMaterials.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModStructureTypes.register(modEventBus);
 
+        modEventBus.addListener(ModBlocks::onBlockEntityTypeAddBlocksEvent);
         modEventBus.addListener(ModItems::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    public static ResourceLocation mirageLoc(String name) {
+        return ResourceLocation.fromNamespaceAndPath(MODID, name);
     }
 }
