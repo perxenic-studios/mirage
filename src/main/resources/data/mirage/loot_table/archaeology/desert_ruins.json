@@ -6,9 +6,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:armadillo_scute",
-          "weight": 8,
-          "quality": 1
+          "name": "minecraft:rabbit_hide",
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -28,20 +27,18 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:stick",
-          "weight": 10
+          "weight": 7
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_nugget",
-          "weight": 7,
-          "quality": 1
+          "weight": 7
         },
         {
           "type": "minecraft:tag",
           "name": "mirage:desert_ruins_sherds",
           "expand": true,
-          "weight": 2,
-          "quality": 2
+          "weight": 3
         }
       ]
     }
