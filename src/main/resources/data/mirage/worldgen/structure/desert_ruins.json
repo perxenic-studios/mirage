@@ -4,5 +4,6 @@
   "template_pool": "mirage:desert_ruins",
   "step": "surface_structures",
   "spawn_overrides": {},
-  "terrain_adaptation": "beard_thin"
+  "terrain_adaptation": "beard_thin",
+  "max_height": 256
 }
