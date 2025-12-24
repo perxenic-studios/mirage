@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:armadillo_scute",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dead_bush",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spider_eye",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:string",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:tag",
+          "name": "mirage:badlands_ruins_sherds",
+          "expand": true,
+          "weight": 3
+        }
+      ]
+    }
+  ],
+  "functions": []
+}

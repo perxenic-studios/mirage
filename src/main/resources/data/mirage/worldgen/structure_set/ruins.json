@@ -3,6 +3,10 @@
     {
       "structure": "mirage:desert_ruins",
       "weight": 1
+    },
+    {
+      "structure": "mirage:badlands_ruins",
+      "weight": 1
     }
   ],
   "placement": {

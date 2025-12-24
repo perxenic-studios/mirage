@@ -1,0 +1,9 @@
+{
+  "type": "mirage:random_land",
+  "biomes": "#mirage:badlands_ruins",
+  "template_pool": "mirage:badlands_ruins",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "terrain_adaptation": "beard_thin",
+  "max_height": 75
+}
