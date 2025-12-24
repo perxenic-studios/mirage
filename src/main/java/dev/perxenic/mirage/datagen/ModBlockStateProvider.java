@@ -3,6 +3,7 @@ package dev.perxenic.mirage.datagen;
 import dev.perxenic.mirage.registry.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BrushableBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -19,16 +20,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        getVariantBuilder(ModBlocks.SUSPICIOUS_RED_SAND.get()).forAllStates(state -> {
+        brushableBlock(ModBlocks.SUSPICIOUS_RED_SAND.get(), "suspicious_red_sand");
+    }
+
+    public void brushableBlock(Block block, String name) {
+        getVariantBuilder(block).forAllStates(state -> {
             int dusted = state.getValue(BlockStateProperties.DUSTED);
 
-            String stateName = "suspicious_red_sand_" + dusted;
-
             return ConfiguredModel.builder().modelFile(models().cubeAll(
-                    stateName,
-                    mirageLoc("block/" + stateName)
+                    name + "_" + dusted,
+                    mirageLoc("block/" + name + "_" + dusted)
             )).build();
         });
-        simpleBlockItem(ModBlocks.SUSPICIOUS_RED_SAND.get(), models().getExistingFile(mirageLoc("suspicious_red_sand_0")));
+        simpleBlockItem(block, models().getExistingFile(mirageLoc(name + "_0")));
     }
 }
