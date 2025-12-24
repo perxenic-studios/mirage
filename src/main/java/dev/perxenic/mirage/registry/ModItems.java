@@ -37,5 +37,8 @@ public class ModItems {
         else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES && event.getFlags().contains(FeatureFlags.BUNDLE)) {
             event.insertAfter(new ItemStack(Items.BUNDLE), ARMADILLO_BASKET.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
+        else if (event.getTabKey() == CreativeModeTabs.SEARCH) {
+            event.accept(SUSPICIOUS_RED_SAND);
+        }
     }
 }
