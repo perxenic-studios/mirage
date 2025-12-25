@@ -28,16 +28,19 @@ public class RandomLandStructure extends Structure {
             instance.group(
                     StructureSettings.CODEC.forGetter(s -> s.modifiableStructureInfo().getOriginalStructureInfo().structureSettings()),
                     StructureTemplatePool.CODEC.fieldOf("template_pool").forGetter(s -> s.templatePool),
+                    Codec.intRange(Integer.MIN_VALUE, Integer.MAX_VALUE).fieldOf("min_height").forGetter(s -> s.minHeight),
                     Codec.intRange(Integer.MIN_VALUE, Integer.MAX_VALUE).fieldOf("max_height").forGetter(s -> s.maxHeight)
             ).apply(instance, RandomLandStructure::new)
     );
 
     private final Holder<StructureTemplatePool> templatePool;
+    private final int minHeight;
     private final int maxHeight;
 
-    public RandomLandStructure(StructureSettings settings, Holder<StructureTemplatePool> templatePool, int maxHeight){
+    public RandomLandStructure(StructureSettings settings, Holder<StructureTemplatePool> templatePool, int minHeight, int maxHeight){
         super(settings);
         this.templatePool = templatePool;
+        this.minHeight = minHeight;
         this.maxHeight = maxHeight;
     }
 
@@ -54,6 +57,7 @@ public class RandomLandStructure extends Structure {
         // Don't generate if at minimum build height in case of floating islands
         if (y <= context.heightAccessor().getMinBuildHeight()) return Optional.empty();
 
+        if (y < minHeight) return Optional.empty();
         if (y > maxHeight) return Optional.empty();
 
         // If height is above ocean floor, must be in water so do not generate
