@@ -1,0 +1,7 @@
+[
+  {
+    "processor_type": "minecraft:block_rot",
+    "integrity": 0.67,
+    "rottable_blocks": ["mirage:suspicious_red_sand"]
+  }
+]

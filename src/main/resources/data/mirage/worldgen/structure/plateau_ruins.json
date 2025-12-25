@@ -1,0 +1,10 @@
+{
+  "type": "mirage:random_land",
+  "biomes": "#mirage:plateau_ruins",
+  "template_pool": "mirage:plateau_ruins",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "terrain_adaptation": "beard_thin",
+  "min_height": 76,
+  "max_height": 256
+}

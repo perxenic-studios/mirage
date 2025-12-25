@@ -7,6 +7,10 @@
     {
       "structure": "mirage:badlands_ruins",
       "weight": 1
+    },
+    {
+      "structure": "mirage:plateau_ruins",
+      "weight": 1
     }
   ],
   "placement": {
