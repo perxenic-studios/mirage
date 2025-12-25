@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "mirage:desert_ruins",
+    "mirage:badlands_ruins",
+    "mirage:plateau_ruins"
+  ]
+}
