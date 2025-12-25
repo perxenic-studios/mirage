@@ -55,9 +55,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block).forAllStates(state -> {
             Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
 
-            //TODO: The rotation of the side textures seems to be wrong at the moment
-            return ConfiguredModel.builder().modelFile(models().cubeAll(
+            return ConfiguredModel.builder().modelFile(models().singleTexture(
                     name,
+                    mcLoc("block/template_glazed_terracotta"),
+                    "pattern",
                     mirageLoc("block/" + name)
             )).rotationY((int) facing.toYRot()).build();
         });
