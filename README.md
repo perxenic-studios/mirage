@@ -1,25 +1,27 @@
 
-Installation information
-=======
+## Mirage Mod Repo
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+The official repository for the mod Mirage by Perxenic Studios.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+Contributions and suggestions are welcome, simply open a pull request or an issue!
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## Mod Description
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+![Banner Image for Mirage](https://cdn.modrinth.com/data/cached_images/438d84924b5eccf01f809803794570d0eb6e08bb.png)
+
+> Desert features expanded to incentivise exploration and utilisation
+
+**Mirage** expands underutilised features within hotter biomes such as armadillos to make these underappreciated biomes stand out!
+
+### ✨ Features
+
+* **Become friends with the armadillos:** Make a chestplate out of their scutes that you can wear to prevent scaring them!
+
+* **Bundle Alternatives:** Craft a basket from their scutes so you can organise your inventory without having to kill any animals (Make sure to turn on the bundle experimental feature)
+
+* **More coming soon:** This mod is in very early stages and more vanilla feeling features are on their way!
+
+#### Credits
+
+[Iris](https://modrinth.com/mod/iris) and [Rethinking Voxels](https://modrinth.com/shader/rethinking-voxels) were used in the creation of some screenshots/promotional material.
