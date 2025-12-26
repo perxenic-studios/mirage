@@ -20,6 +20,10 @@ Contributions and suggestions are welcome, simply open a pull request or an issu
 
 * **Bundle Alternatives:** Craft a basket from their scutes so you can organise your inventory without having to kill any animals (Make sure to turn on the bundle experimental feature)
 
+* **Archaeology:** Ruins scattered amongst deserts and badlands with hidden treasure
+
+* **Decoration:** Faded versions of glazed terracotta that can be crafted or found in ruins!
+
 * **More coming soon:** This mod is in very early stages and more vanilla feeling features are on their way!
 
 #### Credits
