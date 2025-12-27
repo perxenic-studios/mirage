@@ -4,9 +4,9 @@
   "package": "dev.perxenic.mirage.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ArmadilloScaredMixin"
   ],
   "client": [
-    "ArmadilloScaredMixin"
   ],
   "injectors": {
     "defaultRequire": 1
