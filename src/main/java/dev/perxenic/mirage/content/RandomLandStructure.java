@@ -1,6 +1,5 @@
 package dev.perxenic.mirage.content;
 
-import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -9,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.PoolElementStructurePiece;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
@@ -20,7 +18,6 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSetting
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
-import java.util.function.Function;
 
 public class RandomLandStructure extends Structure {
 
@@ -37,7 +34,7 @@ public class RandomLandStructure extends Structure {
     private final int minHeight;
     private final int maxHeight;
 
-    public RandomLandStructure(StructureSettings settings, Holder<StructureTemplatePool> templatePool, int minHeight, int maxHeight){
+    public RandomLandStructure(StructureSettings settings, Holder<StructureTemplatePool> templatePool, int minHeight, int maxHeight) {
         super(settings);
         this.templatePool = templatePool;
         this.minHeight = minHeight;
@@ -45,7 +42,7 @@ public class RandomLandStructure extends Structure {
     }
 
     @Override
-    protected @NotNull Optional<GenerationStub> findGenerationPoint(@NotNull GenerationContext context){
+    protected @NotNull Optional<GenerationStub> findGenerationPoint(@NotNull GenerationContext context) {
         StructurePoolElement poolElement = templatePool.value().getRandomTemplate(context.random());
         if(poolElement == EmptyPoolElement.INSTANCE) return Optional.empty();
 
@@ -81,7 +78,7 @@ public class RandomLandStructure extends Structure {
     }
 
     @Override
-    public @NotNull StructureType<?> type(){
+    public @NotNull StructureType<?> type() {
         return ModStructureTypes.RANDOM_LAND_STRUCTURE.get();
     }
 }
