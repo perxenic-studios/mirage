@@ -41,6 +41,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.ARMADILLO_CHESTPLATE);
         basicItem(ModItems.ARMADILLO_BASKET.get());
         basicItem(ModItems.ARMADILLO_POTTERY_SHERD.get());
+        basicItem(ModItems.SHATTERED_POTTERY_SHERD.get());
     }
 
     private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) { if(itemDeferredItem.get() instanceof ArmorItem armorItem) {

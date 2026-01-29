@@ -23,10 +23,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
-        tag(ItemTags.DECORATED_POT_INGREDIENTS)
-                .add(ModItems.ARMADILLO_POTTERY_SHERD.get());
-        tag(ItemTags.DECORATED_POT_SHERDS)
-                .add(ModItems.ARMADILLO_POTTERY_SHERD.get());
+        tag(ItemTags.DECORATED_POT_INGREDIENTS).add(
+                ModItems.ARMADILLO_POTTERY_SHERD.get(),
+                ModItems.SHATTERED_POTTERY_SHERD.get()
+        );
+        tag(ItemTags.DECORATED_POT_SHERDS).add(
+                ModItems.ARMADILLO_POTTERY_SHERD.get(),
+                ModItems.SHATTERED_POTTERY_SHERD.get()
+        );
 
         tag(MirageItemTags.BADLANDS_RUINS_SHERDS).add(
                 Items.SKULL_POTTERY_SHERD,

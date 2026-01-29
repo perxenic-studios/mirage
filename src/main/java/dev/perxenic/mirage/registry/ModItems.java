@@ -29,6 +29,9 @@ public class ModItems {
     public static final DeferredItem<Item> ARMADILLO_POTTERY_SHERD = ITEMS.register("armadillo_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
+    public static final DeferredItem<Item> SHATTERED_POTTERY_SHERD = ITEMS.register("shattered_pottery_sherd",
+            () -> new Item(new Item.Properties())
+    );
 
     public static final DeferredItem<BlockItem> WHITE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(ModBlocks.WHITE_FADED_TERRACOTTA);
     public static final DeferredItem<BlockItem> LIGHT_GRAY_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(ModBlocks.LIGHT_GRAY_FADED_TERRACOTTA);
@@ -82,8 +85,13 @@ public class ModItems {
             simpleInsertAfter(event, Blocks.SUSPICIOUS_GRAVEL, SUSPICIOUS_RED_SAND);
         }
         else if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            simpleInsertBefore(event, Items.ANGLER_POTTERY_SHERD, SHATTERED_POTTERY_SHERD);
             simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, ARMADILLO_POTTERY_SHERD);
         }
+    }
+
+    public static void simpleInsertBefore(BuildCreativeModeTabContentsEvent event, ItemLike existing, ItemLike after) {
+        event.insertBefore(new ItemStack(existing), new ItemStack(after), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
     }
 
     public static void simpleInsertAfter(BuildCreativeModeTabContentsEvent event, ItemLike existing, ItemLike after) {

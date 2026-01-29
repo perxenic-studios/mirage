@@ -23,6 +23,7 @@ public class MirageDecoratedPotPatterns {
             DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MODID);
 
     public static final Holder<DecoratedPotPattern> ARMADILLO = addPotPattern(ModItems.ARMADILLO_POTTERY_SHERD.getId(), "armadillo");
+    public static final Holder<DecoratedPotPattern> SHATTERED = addPotPattern(ModItems.SHATTERED_POTTERY_SHERD.getId(), "shattered");
 
     public static void register(IEventBus eventBus) {
         PATTERNS.register(eventBus);
