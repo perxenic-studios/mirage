@@ -81,6 +81,9 @@ public class ModItems {
         else if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             simpleInsertAfter(event, Blocks.SUSPICIOUS_GRAVEL, SUSPICIOUS_RED_SAND);
         }
+        else if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, ARMADILLO_POTTERY_SHERD);
+        }
     }
 
     public static void simpleInsertAfter(BuildCreativeModeTabContentsEvent event, ItemLike existing, ItemLike after) {
