@@ -22,16 +22,17 @@ public class MirageDecoratedPotPatterns {
     private static final DeferredRegister<DecoratedPotPattern> PATTERNS =
             DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MODID);
 
-    public static final Holder<DecoratedPotPattern> ARMADILLO = PATTERNS.register("armadillo",
-            () -> new DecoratedPotPattern(mirageLoc("armadillo_pottery_pattern"))
-    );
+    public static final Holder<DecoratedPotPattern> ARMADILLO = addPotPattern(ModItems.ARMADILLO_POTTERY_SHERD.getId(), "armadillo");
 
     public static void register(IEventBus eventBus) {
         PATTERNS.register(eventBus);
-        addPotPattern(ModItems.ARMADILLO_POTTERY_SHERD.getId(), ARMADILLO);
     }
 
-    private static void addPotPattern(ResourceLocation item, Holder<DecoratedPotPattern> pattern) {
+    private static Holder<DecoratedPotPattern> addPotPattern(ResourceLocation item, String name) {
+        Holder<DecoratedPotPattern> pattern = PATTERNS.register(name,
+                () -> new DecoratedPotPattern(mirageLoc(name+"_pottery_pattern"))
+        );
         EDITABLE_ITEM_TO_POT_TEXTURE.put(item, pattern.getKey());
+        return pattern;
     }
 }
