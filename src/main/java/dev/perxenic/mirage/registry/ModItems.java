@@ -5,6 +5,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -77,8 +78,8 @@ public class ModItems {
         else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES && event.getFlags().contains(FeatureFlags.BUNDLE)) {
             simpleInsertAfter(event, Items.BUNDLE, ARMADILLO_BASKET);
         }
-        else if (event.getTabKey() == CreativeModeTabs.SEARCH) {
-            event.accept(SUSPICIOUS_RED_SAND);
+        else if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            simpleInsertAfter(event, Blocks.SUSPICIOUS_GRAVEL, SUSPICIOUS_RED_SAND);
         }
     }
 
