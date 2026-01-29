@@ -25,6 +25,10 @@ public class ModItems {
             new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(5))
     ));
 
+    public static final DeferredItem<Item> ARMADILLO_POTTERY_SHERD = ITEMS.register("armadillo_pottery_sherd",
+            () -> new Item(new Item.Properties())
+    );
+
     public static final DeferredItem<BlockItem> WHITE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(ModBlocks.WHITE_FADED_TERRACOTTA);
     public static final DeferredItem<BlockItem> LIGHT_GRAY_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(ModBlocks.LIGHT_GRAY_FADED_TERRACOTTA);
     public static final DeferredItem<BlockItem> GRAY_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(ModBlocks.GRAY_FADED_TERRACOTTA);

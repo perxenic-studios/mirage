@@ -1,5 +1,6 @@
 package dev.perxenic.mirage;
 
+import dev.perxenic.mirage.registry.MirageDecoratedPotPatterns;
 import dev.perxenic.mirage.registry.ModArmorMaterials;
 import dev.perxenic.mirage.registry.ModBlocks;
 import dev.perxenic.mirage.registry.ModItems;
@@ -24,6 +25,7 @@ public class Mirage {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModStructureTypes.register(modEventBus);
+        MirageDecoratedPotPatterns.register(modEventBus);
 
         modEventBus.addListener(ModBlocks::onBlockEntityTypeAddBlocksEvent);
         modEventBus.addListener(ModItems::addCreative);
