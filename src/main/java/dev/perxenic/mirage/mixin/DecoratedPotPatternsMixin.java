@@ -25,10 +25,10 @@ public class DecoratedPotPatternsMixin {
             method = "bootstrap(Lnet/minecraft/core/Registry;)Lnet/minecraft/world/level/block/entity/DecoratedPotPattern;",
             at = @At("HEAD")
     )
-    private static void initialiseMap(CallbackInfoReturnable<DecoratedPotPattern> cir) {
-        ITEM_TO_POT_TEXTURE.forEach((item, key) -> {
-            MirageDecoratedPotPatterns.EDITABLE_ITEM_TO_POT_TEXTURE.put(BuiltInRegistries.ITEM.getKey(item), key);
-        });
+    private static void initialiseMap() {
+        ITEM_TO_POT_TEXTURE.forEach((item, key) ->
+                MirageDecoratedPotPatterns.EDITABLE_ITEM_TO_POT_TEXTURE.put(BuiltInRegistries.ITEM.getKey(item), key)
+        );
     }
 
     @Inject(
