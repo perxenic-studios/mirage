@@ -1,6 +1,7 @@
 {
   "values": [
-    "mirage:armadillo_pottery_sherd",
-    "mirage:shattered_pottery_sherd"
+    "mirage:shattered_pottery_sherd",
+    "mirage:blank_pottery_sherd",
+    "mirage:armadillo_pottery_sherd"
   ]
 }

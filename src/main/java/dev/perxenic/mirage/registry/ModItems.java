@@ -26,10 +26,13 @@ public class ModItems {
             new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(5))
     ));
 
-    public static final DeferredItem<Item> ARMADILLO_POTTERY_SHERD = ITEMS.register("armadillo_pottery_sherd",
+    public static final DeferredItem<Item> SHATTERED_POTTERY_SHERD = ITEMS.register("shattered_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
-    public static final DeferredItem<Item> SHATTERED_POTTERY_SHERD = ITEMS.register("shattered_pottery_sherd",
+    public static final DeferredItem<Item> BLANK_POTTERY_SHERD = ITEMS.register("blank_pottery_sherd",
+            () -> new Item(new Item.Properties())
+    );
+    public static final DeferredItem<Item> ARMADILLO_POTTERY_SHERD = ITEMS.register("armadillo_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
 
@@ -85,7 +88,8 @@ public class ModItems {
             simpleInsertAfter(event, Blocks.SUSPICIOUS_GRAVEL, SUSPICIOUS_RED_SAND);
         }
         else if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            simpleInsertBefore(event, Items.ANGLER_POTTERY_SHERD, SHATTERED_POTTERY_SHERD);
+            simpleInsertBefore(event, Items.ANGLER_POTTERY_SHERD, BLANK_POTTERY_SHERD);
+            simpleInsertBefore(event, BLANK_POTTERY_SHERD, SHATTERED_POTTERY_SHERD);
             simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, ARMADILLO_POTTERY_SHERD);
         }
     }
