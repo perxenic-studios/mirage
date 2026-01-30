@@ -46,41 +46,41 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BARREN_POTTERY_SHERD.get());
     }
 
-    private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) { if(itemDeferredItem.get() instanceof ArmorItem armorItem) {
-            trimMaterials.forEach((trimMaterial, value) -> {
-                float trimValue = value;
+    private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) {
+        ArmorItem armorItem = itemDeferredItem.get();
+        trimMaterials.forEach((trimMaterial, value) -> {
+            float trimValue = value;
 
-                String armorType = switch (armorItem.getEquipmentSlot()) {
-                    case HEAD -> "helmet";
-                    case CHEST -> "chestplate";
-                    case LEGS -> "leggings";
-                    case FEET -> "boots";
-                    default -> "";
-                };
+            String armorType = switch (armorItem.getEquipmentSlot()) {
+                case HEAD -> "helmet";
+                case CHEST -> "chestplate";
+                case LEGS -> "leggings";
+                case FEET -> "boots";
+                default -> "";
+            };
 
-                String armorItemPath = armorItem.toString();
-                String trimPath = "trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath();
-                String currentTrimName = armorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
-                ResourceLocation armorItemResLoc = ResourceLocation.parse(armorItemPath);
-                ResourceLocation trimResLoc = ResourceLocation.parse(trimPath); // minecraft namespace
-                ResourceLocation trimNameResLoc = ResourceLocation.parse(currentTrimName);
+            String armorItemPath = armorItem.toString();
+            String trimPath = "trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath();
+            String currentTrimName = armorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
+            ResourceLocation armorItemResLoc = ResourceLocation.parse(armorItemPath);
+            ResourceLocation trimResLoc = ResourceLocation.parse(trimPath); // minecraft namespace
+            ResourceLocation trimNameResLoc = ResourceLocation.parse(currentTrimName);
 
-                existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
+            existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
 
-                getBuilder(currentTrimName)
-                        .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                        .texture("layer0", armorItemResLoc.getNamespace() + ":item/" + armorItemResLoc.getPath())
-                        .texture("layer1", trimResLoc);
+            getBuilder(currentTrimName)
+                    .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                    .texture("layer0", armorItemResLoc.getNamespace() + ":item/" + armorItemResLoc.getPath())
+                    .texture("layer1", trimResLoc);
 
-                this.withExistingParent(itemDeferredItem.getId().getPath(),
-                                mcLoc("item/generated"))
-                        .override()
-                        .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace()  + ":item/" + trimNameResLoc.getPath()))
-                        .predicate(mcLoc("trim_type"), trimValue).end()
-                        .texture("layer0",
-                                ResourceLocation.fromNamespaceAndPath(MODID,
-                                        "item/" + itemDeferredItem.getId().getPath()));
-            });
-        }
+            this.withExistingParent(itemDeferredItem.getId().getPath(),
+                            mcLoc("item/generated"))
+                    .override()
+                    .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace() + ":item/" + trimNameResLoc.getPath()))
+                    .predicate(mcLoc("trim_type"), trimValue).end()
+                    .texture("layer0",
+                            ResourceLocation.fromNamespaceAndPath(MODID,
+                                    "item/" + itemDeferredItem.getId().getPath()));
+        });
     }
 }
