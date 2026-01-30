@@ -20,10 +20,10 @@
 
   "item.mirage.armadillo_basket": "Armadillo Basket",
   "item.mirage.armadillo_chestplate": "Armadillo Chestplate",
-  "item.mirage.armadillo_pottery_sherd": "Armadillo Pottery Sherd",
+  "item.mirage.barren_pottery_sherd": "Barren Pottery Sherd",
   "item.mirage.blank_pottery_sherd": "Blank Pottery Sherd",
-  "item.mirage.cactus_pottery_sherd": "Cactus Pottery Sherd",
-  "item.mirage.shattered_pottery_sherd": "Shattered Pottery Sherd",
+  "item.mirage.cracked_pottery_sherd": "Cracked Pottery Sherd",
+  "item.mirage.hide_pottery_sherd": "Hide Pottery Sherd",
 
   "mirage.configuration.title": "Mirage Configs",
   "mirage.configuration.section.mirage.common.toml": "Mirage Configs",

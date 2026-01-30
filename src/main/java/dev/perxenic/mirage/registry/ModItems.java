@@ -26,16 +26,16 @@ public class ModItems {
             new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(5))
     ));
 
-    public static final DeferredItem<Item> SHATTERED_POTTERY_SHERD = ITEMS.register("shattered_pottery_sherd",
+    public static final DeferredItem<Item> CRACKED_POTTERY_SHERD = ITEMS.register("cracked_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
     public static final DeferredItem<Item> BLANK_POTTERY_SHERD = ITEMS.register("blank_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
-    public static final DeferredItem<Item> ARMADILLO_POTTERY_SHERD = ITEMS.register("armadillo_pottery_sherd",
+    public static final DeferredItem<Item> HIDE_POTTERY_SHERD = ITEMS.register("hide_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
-    public static final DeferredItem<Item> CACTUS_POTTERY_SHERD = ITEMS.register("cactus_pottery_sherd",
+    public static final DeferredItem<Item> BARREN_POTTERY_SHERD = ITEMS.register("barren_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
 
@@ -92,9 +92,9 @@ public class ModItems {
         }
         else if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             simpleInsertBefore(event, Items.ANGLER_POTTERY_SHERD, BLANK_POTTERY_SHERD);
-            simpleInsertBefore(event, BLANK_POTTERY_SHERD, SHATTERED_POTTERY_SHERD);
-            simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, ARMADILLO_POTTERY_SHERD);
-            simpleInsertAfter(event, ARMADILLO_POTTERY_SHERD, CACTUS_POTTERY_SHERD);
+            simpleInsertBefore(event, BLANK_POTTERY_SHERD, CRACKED_POTTERY_SHERD);
+            simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, HIDE_POTTERY_SHERD);
+            simpleInsertAfter(event, HIDE_POTTERY_SHERD, BARREN_POTTERY_SHERD);
         }
     }
 

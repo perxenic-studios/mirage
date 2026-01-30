@@ -24,33 +24,33 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
         tag(ItemTags.DECORATED_POT_INGREDIENTS).add(
-                ModItems.SHATTERED_POTTERY_SHERD.get(),
+                ModItems.CRACKED_POTTERY_SHERD.get(),
                 ModItems.BLANK_POTTERY_SHERD.get(),
-                ModItems.ARMADILLO_POTTERY_SHERD.get(),
-                ModItems.CACTUS_POTTERY_SHERD.get()
+                ModItems.HIDE_POTTERY_SHERD.get(),
+                ModItems.BARREN_POTTERY_SHERD.get()
         );
         tag(ItemTags.DECORATED_POT_SHERDS).add(
-                ModItems.SHATTERED_POTTERY_SHERD.get(),
+                ModItems.CRACKED_POTTERY_SHERD.get(),
                 ModItems.BLANK_POTTERY_SHERD.get(),
-                ModItems.ARMADILLO_POTTERY_SHERD.get(),
-                ModItems.CACTUS_POTTERY_SHERD.get()
+                ModItems.HIDE_POTTERY_SHERD.get(),
+                ModItems.BARREN_POTTERY_SHERD.get()
         );
 
         tag(MirageItemTags.BADLANDS_RUINS_SHERDS).add(
                 Items.SKULL_POTTERY_SHERD,
                 Items.PLENTY_POTTERY_SHERD,
-                ModItems.ARMADILLO_POTTERY_SHERD.get()
+                ModItems.HIDE_POTTERY_SHERD.get()
         );
         tag(MirageItemTags.DESERT_RUINS_SHERDS).add(
                 Items.SKULL_POTTERY_SHERD,
                 Items.DANGER_POTTERY_SHERD,
-                ModItems.CACTUS_POTTERY_SHERD.get()
+                ModItems.BARREN_POTTERY_SHERD.get()
         );
         tag(MirageItemTags.PLATEAU_RUINS_SHERDS).add(
                 Items.PRIZE_POTTERY_SHERD,
                 Items.PLENTY_POTTERY_SHERD,
                 Items.MINER_POTTERY_SHERD,
-                ModItems.ARMADILLO_POTTERY_SHERD.get()
+                ModItems.HIDE_POTTERY_SHERD.get()
         );
     }
 }

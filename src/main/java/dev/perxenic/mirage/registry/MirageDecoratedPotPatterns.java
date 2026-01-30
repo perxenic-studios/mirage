@@ -4,8 +4,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.entity.DecoratedPotPattern;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -22,10 +20,10 @@ public class MirageDecoratedPotPatterns {
     private static final DeferredRegister<DecoratedPotPattern> PATTERNS =
             DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MODID);
 
-    public static final Holder<DecoratedPotPattern> SHATTERED = addPotPattern(ModItems.SHATTERED_POTTERY_SHERD.getId(), "shattered");
+    public static final Holder<DecoratedPotPattern> CRACKED = addPotPattern(ModItems.CRACKED_POTTERY_SHERD.getId(), "cracked");
     public static final Holder<DecoratedPotPattern> BLANK = addPotPattern(ModItems.BLANK_POTTERY_SHERD.getId(), "blank");
-    public static final Holder<DecoratedPotPattern> ARMADILLO = addPotPattern(ModItems.ARMADILLO_POTTERY_SHERD.getId(), "armadillo");
-    public static final Holder<DecoratedPotPattern> CACTUS = addPotPattern(ModItems.CACTUS_POTTERY_SHERD.getId(), "cactus");
+    public static final Holder<DecoratedPotPattern> HIDE = addPotPattern(ModItems.HIDE_POTTERY_SHERD.getId(), "hide");
+    public static final Holder<DecoratedPotPattern> BARREN = addPotPattern(ModItems.BARREN_POTTERY_SHERD.getId(), "barren");
 
     public static void register(IEventBus eventBus) {
         PATTERNS.register(eventBus);

@@ -40,10 +40,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         trimmedArmorItem(ModItems.ARMADILLO_CHESTPLATE);
         basicItem(ModItems.ARMADILLO_BASKET.get());
-        basicItem(ModItems.SHATTERED_POTTERY_SHERD.get());
+        basicItem(ModItems.CRACKED_POTTERY_SHERD.get());
         basicItem(ModItems.BLANK_POTTERY_SHERD.get());
-        basicItem(ModItems.ARMADILLO_POTTERY_SHERD.get());
-        basicItem(ModItems.CACTUS_POTTERY_SHERD.get());
+        basicItem(ModItems.HIDE_POTTERY_SHERD.get());
+        basicItem(ModItems.BARREN_POTTERY_SHERD.get());
     }
 
     private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) { if(itemDeferredItem.get() instanceof ArmorItem armorItem) {

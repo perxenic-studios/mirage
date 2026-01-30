@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mirage:item/armadillo_pottery_sherd"
+    "layer0": "mirage:item/hide_pottery_sherd"
   }
 }

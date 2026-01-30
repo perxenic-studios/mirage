@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mirage:item/shattered_pottery_sherd"
+    "layer0": "mirage:item/barren_pottery_sherd"
   }
 }
