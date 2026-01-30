@@ -35,6 +35,9 @@ public class ModItems {
     public static final DeferredItem<Item> ARMADILLO_POTTERY_SHERD = ITEMS.register("armadillo_pottery_sherd",
             () -> new Item(new Item.Properties())
     );
+    public static final DeferredItem<Item> CACTUS_POTTERY_SHERD = ITEMS.register("cactus_pottery_sherd",
+            () -> new Item(new Item.Properties())
+    );
 
     public static final DeferredItem<BlockItem> WHITE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(ModBlocks.WHITE_FADED_TERRACOTTA);
     public static final DeferredItem<BlockItem> LIGHT_GRAY_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(ModBlocks.LIGHT_GRAY_FADED_TERRACOTTA);
@@ -91,6 +94,7 @@ public class ModItems {
             simpleInsertBefore(event, Items.ANGLER_POTTERY_SHERD, BLANK_POTTERY_SHERD);
             simpleInsertBefore(event, BLANK_POTTERY_SHERD, SHATTERED_POTTERY_SHERD);
             simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, ARMADILLO_POTTERY_SHERD);
+            simpleInsertAfter(event, ARMADILLO_POTTERY_SHERD, CACTUS_POTTERY_SHERD);
         }
     }
 

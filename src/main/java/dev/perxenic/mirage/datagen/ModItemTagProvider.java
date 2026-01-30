@@ -26,12 +26,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.DECORATED_POT_INGREDIENTS).add(
                 ModItems.SHATTERED_POTTERY_SHERD.get(),
                 ModItems.BLANK_POTTERY_SHERD.get(),
-                ModItems.ARMADILLO_POTTERY_SHERD.get()
+                ModItems.ARMADILLO_POTTERY_SHERD.get(),
+                ModItems.CACTUS_POTTERY_SHERD.get()
         );
         tag(ItemTags.DECORATED_POT_SHERDS).add(
                 ModItems.SHATTERED_POTTERY_SHERD.get(),
                 ModItems.BLANK_POTTERY_SHERD.get(),
-                ModItems.ARMADILLO_POTTERY_SHERD.get()
+                ModItems.ARMADILLO_POTTERY_SHERD.get(),
+                ModItems.CACTUS_POTTERY_SHERD.get()
         );
 
         tag(MirageItemTags.BADLANDS_RUINS_SHERDS).add(

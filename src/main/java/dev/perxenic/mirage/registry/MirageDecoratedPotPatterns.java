@@ -25,6 +25,7 @@ public class MirageDecoratedPotPatterns {
     public static final Holder<DecoratedPotPattern> SHATTERED = addPotPattern(ModItems.SHATTERED_POTTERY_SHERD.getId(), "shattered");
     public static final Holder<DecoratedPotPattern> BLANK = addPotPattern(ModItems.BLANK_POTTERY_SHERD.getId(), "blank");
     public static final Holder<DecoratedPotPattern> ARMADILLO = addPotPattern(ModItems.ARMADILLO_POTTERY_SHERD.getId(), "armadillo");
+    public static final Holder<DecoratedPotPattern> CACTUS = addPotPattern(ModItems.CACTUS_POTTERY_SHERD.getId(), "cactus");
 
     public static void register(IEventBus eventBus) {
         PATTERNS.register(eventBus);
