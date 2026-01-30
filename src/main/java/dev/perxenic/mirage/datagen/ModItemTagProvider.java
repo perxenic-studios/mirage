@@ -44,7 +44,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(MirageItemTags.DESERT_RUINS_SHERDS).add(
                 Items.SKULL_POTTERY_SHERD,
                 Items.DANGER_POTTERY_SHERD,
-                ModItems.ARMADILLO_POTTERY_SHERD.get()
+                ModItems.CACTUS_POTTERY_SHERD.get()
         );
         tag(MirageItemTags.PLATEAU_RUINS_SHERDS).add(
                 Items.PRIZE_POTTERY_SHERD,
