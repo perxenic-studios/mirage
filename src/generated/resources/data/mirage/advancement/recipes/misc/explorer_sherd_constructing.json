@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "sherdConstructing"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:brick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mirage:explorer_sherd_constructing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mirage:explorer_sherd_constructing"
+    ]
+  }
+}

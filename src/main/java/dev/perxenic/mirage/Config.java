@@ -33,6 +33,10 @@ public class Config {
 
     public static final ModConfigSpec.BooleanValue BLANK_SHERD_CONSTRUCTING = BUILDER
             .comment("Whether blank sherds should be able to be crafted from basic materials (Reload Required)")
+            .define("blankSherdConstructing", false);
+
+    public static final ModConfigSpec.BooleanValue SHERD_CONSTRUCTING = BUILDER
+            .comment("Whether any sherd should be able to be crafted from basic materials (Reload Required)")
             .define("sherdConstructing", false);
 
     static final ModConfigSpec SPEC = BUILDER.build();
@@ -43,6 +47,7 @@ public class Config {
     public static boolean sherdRepairing;
     public static boolean sherdCrafting;
     public static boolean blankSherdConstructing;
+    public static boolean sherdConstructing;
 
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
@@ -65,5 +70,8 @@ public class Config {
 
         blankSherdConstructing = BLANK_SHERD_CONSTRUCTING.get();
         configDict.put("blankSherdConstructing", blankSherdConstructing);
+
+        sherdConstructing = SHERD_CONSTRUCTING.get();
+        configDict.put("sherdConstructing", sherdConstructing);
     }
 }

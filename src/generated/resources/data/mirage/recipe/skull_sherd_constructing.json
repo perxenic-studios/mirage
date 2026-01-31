@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "sherdConstructing"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "pottery_sherd",
+  "key": {
+    "#": {
+      "item": "minecraft:brick"
+    },
+    ".": {
+      "item": "minecraft:wither_skeleton_skull"
+    }
+  },
+  "pattern": [
+    "#",
+    ".",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:skull_pottery_sherd"
+  }
+}

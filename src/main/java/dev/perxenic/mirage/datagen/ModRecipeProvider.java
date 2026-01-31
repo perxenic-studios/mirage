@@ -25,6 +25,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     public static final MirageConfigCondition sherdCraftingCondition =
             new MirageConfigCondition("sherdCrafting");
 
+    public static final MirageConfigCondition sherdConstructingCondition =
+            new MirageConfigCondition("sherdConstructing");
+
     public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
     }
@@ -211,6 +214,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(
                         recipeOutput.withConditions(sherdCraftingCondition),
                         mirageLoc(name+"_sherd_crafting")
+                );
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output)
+                .pattern("#")
+                .pattern(".")
+                .pattern("#")
+                .define('#', Items.BRICK)
+                .define('.', input)
+                .group("pottery_sherd")
+                .unlockedBy("has_brick", has(Items.BRICK))
+                .save(
+                        recipeOutput.withConditions(sherdConstructingCondition),
+                        mirageLoc(name+"_sherd_constructing")
                 );
     }
 }
