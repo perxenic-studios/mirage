@@ -1,10 +1,6 @@
 package dev.perxenic.mirage;
 
-import dev.perxenic.mirage.registry.MirageDecoratedPotPatterns;
-import dev.perxenic.mirage.registry.ModArmorMaterials;
-import dev.perxenic.mirage.registry.ModBlocks;
-import dev.perxenic.mirage.registry.ModItems;
-import dev.perxenic.mirage.registry.ModStructureTypes;
+import dev.perxenic.mirage.registry.*;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 
@@ -23,6 +19,7 @@ public class Mirage {
     public Mirage(IEventBus modEventBus, ModContainer modContainer) {
         ModArmorMaterials.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModConditionCodecs.register(modEventBus);
         ModItems.register(modEventBus);
         ModStructureTypes.register(modEventBus);
         MirageDecoratedPotPatterns.register(modEventBus);
