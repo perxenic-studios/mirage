@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "sherdCracking"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glazed_terracotta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:decorated_pot_sherds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mirage:sherd_cracking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glazed_terracotta"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mirage:sherd_cracking"
+    ]
+  }
+}

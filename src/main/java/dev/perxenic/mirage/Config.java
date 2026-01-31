@@ -19,10 +19,15 @@ public class Config {
             .comment("Whether glazed terracotta should be able to be smelted/blasted into faded terracotta")
             .define("fadedTerracottaSmelting", true);
 
+    public static final ModConfigSpec.BooleanValue SHERD_CRACKING = BUILDER
+            .comment("Whether sherds should be able to be smelted into cracked sherds")
+            .define("sherdCracking", true);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean armadilloUnafraidArmor;
     public static boolean fadedTerracottaSmelting;
+    public static boolean sherdCracking;
 
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
@@ -33,5 +38,8 @@ public class Config {
 
         fadedTerracottaSmelting = FADED_TERRACOTTA_SMELTING.get();
         configDict.put("fadedTerracottaSmelting", fadedTerracottaSmelting);
+
+        sherdCracking = SHERD_CRACKING.get();
+        configDict.put("sherdCracking", sherdCracking);
     }
 }

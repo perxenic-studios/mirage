@@ -6,6 +6,7 @@ import dev.perxenic.mirage.registry.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -124,6 +125,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.PINK_FADED_TERRACOTTA,
                 "pink_faded_terracotta"
         );
+
+        SimpleCookingRecipeBuilder.smelting(
+                        Ingredient.of(ItemTags.DECORATED_POT_SHERDS),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        ModItems.CRACKED_POTTERY_SHERD,
+                        0f,
+                        200)
+                .unlockedBy("has_glazed_terracotta", has(ItemTags.DECORATED_POT_SHERDS))
+                .save(
+                        recipeOutput.withConditions(new MirageConfigCondition("sherdCracking")),
+                        mirageLoc("sherd_cracking")
+                );
     }
 
     public void fadedTerracottaSmelting(RecipeOutput recipeOutput, ItemLike input, ItemLike output, String name) {

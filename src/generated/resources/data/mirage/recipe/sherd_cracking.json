@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "sherdCracking"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "tag": "minecraft:decorated_pot_sherds"
+  },
+  "result": {
+    "count": 1,
+    "id": "mirage:cracked_pottery_sherd"
+  }
+}
