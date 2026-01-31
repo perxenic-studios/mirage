@@ -14,7 +14,7 @@ public class ModConditionCodecs {
     public static final DeferredRegister<MapCodec<? extends ICondition>> CONDITION_CODECS =
             DeferredRegister.create(NeoForgeRegistries.Keys.CONDITION_CODECS, Mirage.MODID);
 
-    public static final Supplier<MapCodec<MirageConfigCondition>> DBV_CONFIG =
+    public static final Supplier<MapCodec<MirageConfigCondition>> CONFIG =
             CONDITION_CODECS.register("config", () -> MirageConfigCondition.CODEC);
 
     public static void register(IEventBus eventBus) {
