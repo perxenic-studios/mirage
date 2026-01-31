@@ -28,7 +28,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ARMADILLO_BASKET)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ARMADILLO_BASKET)
                 .pattern(" S ")
                 .pattern("A A")
                 .pattern("AAA")
@@ -37,7 +37,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_armadillo_scute", has(Items.ARMADILLO_SCUTE))
                 .save(recipeOutput, mirageLoc("armadillo_basket"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ARMADILLO_CHESTPLATE)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ARMADILLO_CHESTPLATE)
                 .pattern("A A")
                 .pattern("AAA")
                 .pattern("AAA")
@@ -128,7 +128,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         SimpleCookingRecipeBuilder.smelting(
                         Ingredient.of(ItemTags.DECORATED_POT_SHERDS),
-                        RecipeCategory.BUILDING_BLOCKS,
+                        RecipeCategory.MISC,
                         ModItems.CRACKED_POTTERY_SHERD,
                         0f,
                         200)
