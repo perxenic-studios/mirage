@@ -15,9 +15,14 @@ public class Config {
             .comment("Whether armadillos are no longer afraid of mobs wearing armadillo chestplates")
             .define("armadilloUnafraidArmor", true);
 
+    public static final ModConfigSpec.BooleanValue FADED_TERRACOTTA_SMELTING = BUILDER
+            .comment("Whether glazed terracotta should be able to be smelted/blasted into faded terracotta")
+            .define("fadedTerracottaSmelting", true);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean armadilloUnafraidArmor;
+    public static boolean fadedTerracottaSmelting;
 
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
@@ -25,5 +30,8 @@ public class Config {
     static void onLoad(final ModConfigEvent event) {
         armadilloUnafraidArmor = ARMADILLO_UNAFRAID_ARMOR.get();
         configDict.put("armadilloUnafraidArmor", armadilloUnafraidArmor);
+
+        fadedTerracottaSmelting = FADED_TERRACOTTA_SMELTING.get();
+        configDict.put("fadedTerracottaSmelting", fadedTerracottaSmelting);
     }
 }

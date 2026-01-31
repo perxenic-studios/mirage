@@ -1,5 +1,6 @@
 package dev.perxenic.mirage.datagen;
 
+import dev.perxenic.mirage.content.conditions.MirageConfigCondition;
 import dev.perxenic.mirage.registry.ModBlocks;
 import dev.perxenic.mirage.registry.ModItems;
 import net.minecraft.core.HolderLookup;
@@ -16,6 +17,9 @@ import java.util.concurrent.CompletableFuture;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+
+    public static final MirageConfigCondition fadedTerracottaSmeltingCondition =
+            new MirageConfigCondition("fadedTerracottaSmelting");
 
     public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
@@ -130,6 +134,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         0.1f,
                         200)
                 .unlockedBy("has_glazed_terracotta", has(input))
-                .save(recipeOutput, mirageLoc(name));
+                .save(recipeOutput.withConditions(fadedTerracottaSmeltingCondition), mirageLoc(name));
     }
 }

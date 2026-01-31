@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "fadedTerracottaSmelting"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_glazed_terracotta": {
