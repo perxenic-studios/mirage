@@ -16,11 +16,11 @@ public class Config {
             .define("armadilloUnafraidArmor", true);
 
     public static final ModConfigSpec.BooleanValue FADED_TERRACOTTA_SMELTING = BUILDER
-            .comment("Whether glazed terracotta should be able to be smelted/blasted into faded terracotta")
+            .comment("Whether glazed terracotta should be able to be smelted/blasted into faded terracotta (Reload Required)")
             .define("fadedTerracottaSmelting", true);
 
     public static final ModConfigSpec.BooleanValue SHERD_CRACKING = BUILDER
-            .comment("Whether sherds should be able to be smelted into cracked sherds")
+            .comment("Whether sherds should be able to be smelted into cracked sherds (Reload Required)")
             .define("sherdCracking", true);
 
     static final ModConfigSpec SPEC = BUILDER.build();
