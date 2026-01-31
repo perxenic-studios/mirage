@@ -2,16 +2,16 @@
   "neoforge:conditions": [
     {
       "type": "mirage:config",
-      "config_key": "sherdCracking"
+      "config_key": "sherdRepairing"
     }
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sherd": {
+    "has_cracked_sherd": {
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:decorated_pot_sherds"
+            "items": "mirage:cracked_pottery_sherd"
           }
         ]
       },
@@ -19,7 +19,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mirage:sherd_cracking"
+        "recipe": "mirage:sherd_repairing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -27,12 +27,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_sherd"
+      "has_cracked_sherd"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mirage:sherd_cracking"
+      "mirage:sherd_repairing"
     ]
   }
 }

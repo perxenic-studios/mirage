@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "sherdRepairing"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pottery_sherd",
+  "ingredients": [
+    {
+      "item": "mirage:cracked_pottery_sherd"
+    },
+    {
+      "item": "minecraft:brick"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mirage:blank_pottery_sherd"
+  }
+}

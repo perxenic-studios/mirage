@@ -8,7 +8,7 @@
   "type": "minecraft:smelting",
   "category": "misc",
   "cookingtime": 200,
-  "experience": 0.1,
+  "experience": 0.0,
   "ingredient": {
     "tag": "minecraft:decorated_pot_sherds"
   },

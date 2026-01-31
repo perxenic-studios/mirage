@@ -132,10 +132,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         ModItems.CRACKED_POTTERY_SHERD,
                         0f,
                         200)
-                .unlockedBy("has_glazed_terracotta", has(ItemTags.DECORATED_POT_SHERDS))
+                .unlockedBy("has_sherd", has(ItemTags.DECORATED_POT_SHERDS))
                 .save(
                         recipeOutput.withConditions(new MirageConfigCondition("sherdCracking")),
                         mirageLoc("sherd_cracking")
+                );
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLANK_POTTERY_SHERD)
+                .requires(ModItems.CRACKED_POTTERY_SHERD)
+                .requires(Items.BRICK)
+                .group("pottery_sherd")
+                .unlockedBy("has_cracked_sherd", has(ModItems.CRACKED_POTTERY_SHERD))
+                .save(
+                        recipeOutput.withConditions(new MirageConfigCondition("sherdRepairing")),
+                        mirageLoc("sherd_repairing")
                 );
     }
 
