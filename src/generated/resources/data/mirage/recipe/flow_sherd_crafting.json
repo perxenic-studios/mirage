@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "sherdCrafting"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pottery_sherd",
+  "ingredients": [
+    {
+      "item": "mirage:blank_pottery_sherd"
+    },
+    {
+      "item": "minecraft:chiseled_tuff"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:flow_pottery_sherd"
+  }
+}

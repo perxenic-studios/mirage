@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "sherdCrafting"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blank_sherd": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mirage:blank_pottery_sherd"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mirage:snort_sherd_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blank_sherd"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mirage:snort_sherd_crafting"
+    ]
+  }
+}

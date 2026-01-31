@@ -34,6 +34,8 @@
   "mirage.configuration.fadedTerracottaSmelting.tooltip": "Whether glazed terracotta should be able to be smelted/blasted into faded terracotta (Reload Required)",
   "mirage.configuration.sherdCracking": "Sherd Cracking",
   "mirage.configuration.sherdCracking.tooltip": "Whether sherds should be able to be smelted into cracked sherds (Reload Required)",
+  "mirage.configuration.sherdCrafting": "Sherd Crafting",
+  "mirage.configuration.sherdCrafting.tooltip": "Whether sherds should be able to be crafted from blank sherds (Reload Required)",
   "mirage.configuration.sherdRepairing": "Sherd Repairing",
   "mirage.configuration.sherdRepairing.tooltip": "Whether blank sherds should be able to be crafted from cracked sherds (Reload Required)"
 }
