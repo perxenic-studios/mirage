@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "blankSherdConstructing"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "pottery_sherd",
+  "key": {
+    "#": {
+      "item": "minecraft:brick"
+    },
+    ".": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "#",
+    ".",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mirage:blank_pottery_sherd"
+  }
+}

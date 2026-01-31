@@ -176,6 +176,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         sherdCrafting(recipeOutput, Items.PITCHER_POD, Items.SNORT_POTTERY_SHERD, "snort");
         sherdCrafting(recipeOutput, Items.ARMADILLO_SCUTE, ModItems.HIDE_POTTERY_SHERD, "hide");
         sherdCrafting(recipeOutput, Items.CACTUS, ModItems.BARREN_POTTERY_SHERD, "barren");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLANK_POTTERY_SHERD)
+                .pattern("#")
+                .pattern(".")
+                .pattern("#")
+                .define('#', Items.BRICK)
+                .define('.', Items.GOLD_NUGGET)
+                .group("pottery_sherd")
+                .unlockedBy("has_brick", has(Items.BRICK))
+                .save(
+                        recipeOutput.withConditions(new MirageConfigCondition("blankSherdConstructing")),
+                        mirageLoc("blank_sherd_constructing")
+                );
     }
 
     public void fadedTerracottaSmelting(RecipeOutput recipeOutput, ItemLike input, ItemLike output, String name) {

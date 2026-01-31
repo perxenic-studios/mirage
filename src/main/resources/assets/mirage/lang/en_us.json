@@ -37,5 +37,7 @@
   "mirage.configuration.sherdCrafting": "Sherd Crafting",
   "mirage.configuration.sherdCrafting.tooltip": "Whether sherds should be able to be crafted from blank sherds (Reload Required)",
   "mirage.configuration.sherdRepairing": "Sherd Repairing",
-  "mirage.configuration.sherdRepairing.tooltip": "Whether blank sherds should be able to be crafted from cracked sherds (Reload Required)"
+  "mirage.configuration.sherdRepairing.tooltip": "Whether blank sherds should be able to be crafted from cracked sherds (Reload Required)",
+  "mirage.configuration.blankSherdConstructing": "Blank Sherd Constructing",
+  "mirage.configuration.blankSherdConstructing.tooltip": "Whether blank sherds should be able to be crafted from basic materials (Reload Required)"
 }

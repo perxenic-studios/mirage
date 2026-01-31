@@ -23,21 +23,26 @@ public class Config {
             .comment("Whether sherds should be able to be smelted into cracked sherds (Reload Required)")
             .define("sherdCracking", true);
 
+    public static final ModConfigSpec.BooleanValue SHERD_REPAIRING = BUILDER
+            .comment("Whether blank sherds should be able to be crafted from cracked sherds (Reload Required)")
+            .define("sherdRepairing", true);
+
     public static final ModConfigSpec.BooleanValue SHERD_CRAFTING = BUILDER
             .comment("Whether sherds should be able to be crafted from blank sherds (Reload Required)")
             .define("sherdCrafting", false);
 
-    public static final ModConfigSpec.BooleanValue SHERD_REPAIRING = BUILDER
-            .comment("Whether blank sherds should be able to be crafted from cracked sherds (Reload Required)")
-            .define("sherdRepairing", true);
+    public static final ModConfigSpec.BooleanValue BLANK_SHERD_CONSTRUCTING = BUILDER
+            .comment("Whether blank sherds should be able to be crafted from basic materials (Reload Required)")
+            .define("sherdConstructing", false);
 
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean armadilloUnafraidArmor;
     public static boolean fadedTerracottaSmelting;
     public static boolean sherdCracking;
-    public static boolean sherdCrafting;
     public static boolean sherdRepairing;
+    public static boolean sherdCrafting;
+    public static boolean blankSherdConstructing;
 
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
@@ -52,10 +57,13 @@ public class Config {
         sherdCracking = SHERD_CRACKING.get();
         configDict.put("sherdCracking", sherdCracking);
 
+        sherdRepairing = SHERD_REPAIRING.get();
+        configDict.put("sherdRepairing", sherdRepairing);
+
         sherdCrafting = SHERD_CRAFTING.get();
         configDict.put("sherdCrafting", sherdCrafting);
 
-        sherdRepairing = SHERD_REPAIRING.get();
-        configDict.put("sherdRepairing", sherdRepairing);
+        blankSherdConstructing = BLANK_SHERD_CONSTRUCTING.get();
+        configDict.put("blankSherdConstructing", blankSherdConstructing);
     }
 }
