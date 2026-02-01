@@ -1,5 +1,6 @@
 package dev.perxenic.mirage.registry;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BrushableBlock;
@@ -14,6 +15,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.List;
 
 import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 
@@ -43,6 +46,25 @@ public class MirageBlocks {
     public static final DeferredBlock<GlazedTerracottaBlock> FADED_BLADE_TERRACOTTA = fadedTerracottaBlock("faded_blade_terracotta");
     public static final DeferredBlock<GlazedTerracottaBlock> FADED_ARROW_TERRACOTTA = fadedTerracottaBlock("faded_arrow_terracotta");
     public static final DeferredBlock<GlazedTerracottaBlock> FADED_LEAF_TERRACOTTA = fadedTerracottaBlock("faded_leaf_terracotta");
+
+    public static final List<DeferredBlock<GlazedTerracottaBlock>> FADED_TERRACOTTA = ImmutableList.of(
+            FADED_SUN_TERRACOTTA,
+            FADED_MODERN_TERRACOTTA,
+            FADED_CROSS_TERRACOTTA,
+            FADED_CRAWL_TERRACOTTA,
+            FADED_TARGET_TERRACOTTA,
+            FADED_POTION_TERRACOTTA,
+            FADED_FISH_TERRACOTTA,
+            FADED_FLOWER_TERRACOTTA,
+            FADED_SPOKE_TERRACOTTA,
+            FADED_PLANT_TERRACOTTA,
+            FADED_CREEP_TERRACOTTA,
+            FADED_GEO_TERRACOTTA,
+            FADED_FAN_TERRACOTTA,
+            FADED_BLADE_TERRACOTTA,
+            FADED_ARROW_TERRACOTTA,
+            FADED_LEAF_TERRACOTTA
+    );
 
     public static final DeferredBlock<BrushableBlock> SUSPICIOUS_RED_SAND = BLOCKS.register("suspicious_red_sand", () -> new BrushableBlock(
             Blocks.RED_SAND,
