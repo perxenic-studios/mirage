@@ -30,6 +30,10 @@ public class Mirage {
         modContainer.registerConfig(ModConfig.Type.COMMON, MirageConfig.SPEC);
     }
 
+    public static ResourceLocation mcLoc(String path) {
+        return ResourceLocation.withDefaultNamespace(path);
+    }
+
     public static ResourceLocation mirageLoc(String path) {
         return ResourceLocation.fromNamespaceAndPath(MIRAGE_ID, path);
     }
