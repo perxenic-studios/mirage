@@ -8,6 +8,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -20,7 +21,7 @@ public class MirageBlockTagProvider extends BlockTagsProvider {
 
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void addTags(@NotNull HolderLookup.Provider provider) {
         Block[] terracottaBlocks = new Block[MirageBlocks.FADED_TERRACOTTA.size()];
         for (int i = 0; i < MirageBlocks.FADED_TERRACOTTA.size(); i++) {
             terracottaBlocks[i] = MirageBlocks.FADED_TERRACOTTA.get(i).get();
