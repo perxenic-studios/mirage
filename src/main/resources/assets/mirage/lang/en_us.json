@@ -32,6 +32,8 @@
   "mirage.configuration.armadilloUnafraidArmor.tooltip": "Whether armadillos are no longer afraid of mobs wearing armadillo chestplates",
   "mirage.configuration.fadedTerracottaSmelting": "Faded Terracotta Smelting",
   "mirage.configuration.fadedTerracottaSmelting.tooltip": "Whether glazed terracotta should be able to be smelted/blasted into faded terracotta (Reload Required)",
+  "mirage.configuration.fadedTerracottaCreative": "Faded Terracotta in Creative",
+  "mirage.configuration.fadedTerracottaCreative.tooltip": "Whether faded terracotta should be available in the creative inventory (Reload Required)",
   "mirage.configuration.sherdCracking": "Sherd Cracking",
   "mirage.configuration.sherdCracking.tooltip": "Whether sherds should be able to be smelted into cracked sherds (Reload Required)",
   "mirage.configuration.sherdCrafting": "Sherd Crafting",

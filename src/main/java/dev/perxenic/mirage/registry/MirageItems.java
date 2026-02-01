@@ -1,5 +1,6 @@
 package dev.perxenic.mirage.registry;
 
+import dev.perxenic.mirage.MirageConfig;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.*;
@@ -67,22 +68,24 @@ public class MirageItems {
             simpleInsertAfter(event, Items.TURTLE_HELMET, ARMADILLO_CHESTPLATE);
         }
         else if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
-            simpleInsertAfter(event, Items.TERRACOTTA, WHITE_FADED_TERRACOTTA);
-            simpleInsertAfter(event, WHITE_FADED_TERRACOTTA, LIGHT_GRAY_FADED_TERRACOTTA);
-            simpleInsertAfter(event, LIGHT_GRAY_FADED_TERRACOTTA, GRAY_FADED_TERRACOTTA);
-            simpleInsertAfter(event, GRAY_FADED_TERRACOTTA, BLACK_FADED_TERRACOTTA);
-            simpleInsertAfter(event, BLACK_FADED_TERRACOTTA, BROWN_FADED_TERRACOTTA);
-            simpleInsertAfter(event, BROWN_FADED_TERRACOTTA, RED_FADED_TERRACOTTA);
-            simpleInsertAfter(event, RED_FADED_TERRACOTTA, ORANGE_FADED_TERRACOTTA);
-            simpleInsertAfter(event, ORANGE_FADED_TERRACOTTA, YELLOW_FADED_TERRACOTTA);
-            simpleInsertAfter(event, YELLOW_FADED_TERRACOTTA, LIME_FADED_TERRACOTTA);
-            simpleInsertAfter(event, LIME_FADED_TERRACOTTA, GREEN_FADED_TERRACOTTA);
-            simpleInsertAfter(event, GREEN_FADED_TERRACOTTA, CYAN_FADED_TERRACOTTA);
-            simpleInsertAfter(event, CYAN_FADED_TERRACOTTA, LIGHT_BLUE_FADED_TERRACOTTA);
-            simpleInsertAfter(event, LIGHT_BLUE_FADED_TERRACOTTA, BLUE_FADED_TERRACOTTA);
-            simpleInsertAfter(event, BLUE_FADED_TERRACOTTA, PURPLE_FADED_TERRACOTTA);
-            simpleInsertAfter(event, PURPLE_FADED_TERRACOTTA, MAGENTA_FADED_TERRACOTTA);
-            simpleInsertAfter(event, MAGENTA_FADED_TERRACOTTA, PINK_FADED_TERRACOTTA);
+            if (MirageConfig.fadedTerracottaCreative) {
+                simpleInsertAfter(event, Items.TERRACOTTA, WHITE_FADED_TERRACOTTA);
+                simpleInsertAfter(event, WHITE_FADED_TERRACOTTA, LIGHT_GRAY_FADED_TERRACOTTA);
+                simpleInsertAfter(event, LIGHT_GRAY_FADED_TERRACOTTA, GRAY_FADED_TERRACOTTA);
+                simpleInsertAfter(event, GRAY_FADED_TERRACOTTA, BLACK_FADED_TERRACOTTA);
+                simpleInsertAfter(event, BLACK_FADED_TERRACOTTA, BROWN_FADED_TERRACOTTA);
+                simpleInsertAfter(event, BROWN_FADED_TERRACOTTA, RED_FADED_TERRACOTTA);
+                simpleInsertAfter(event, RED_FADED_TERRACOTTA, ORANGE_FADED_TERRACOTTA);
+                simpleInsertAfter(event, ORANGE_FADED_TERRACOTTA, YELLOW_FADED_TERRACOTTA);
+                simpleInsertAfter(event, YELLOW_FADED_TERRACOTTA, LIME_FADED_TERRACOTTA);
+                simpleInsertAfter(event, LIME_FADED_TERRACOTTA, GREEN_FADED_TERRACOTTA);
+                simpleInsertAfter(event, GREEN_FADED_TERRACOTTA, CYAN_FADED_TERRACOTTA);
+                simpleInsertAfter(event, CYAN_FADED_TERRACOTTA, LIGHT_BLUE_FADED_TERRACOTTA);
+                simpleInsertAfter(event, LIGHT_BLUE_FADED_TERRACOTTA, BLUE_FADED_TERRACOTTA);
+                simpleInsertAfter(event, BLUE_FADED_TERRACOTTA, PURPLE_FADED_TERRACOTTA);
+                simpleInsertAfter(event, PURPLE_FADED_TERRACOTTA, MAGENTA_FADED_TERRACOTTA);
+                simpleInsertAfter(event, MAGENTA_FADED_TERRACOTTA, PINK_FADED_TERRACOTTA);
+            }
         }
         else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES && event.getFlags().contains(FeatureFlags.BUNDLE)) {
             simpleInsertAfter(event, Items.BUNDLE, ARMADILLO_BASKET);

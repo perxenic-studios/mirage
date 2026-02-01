@@ -19,6 +19,10 @@ public class MirageConfig {
             .comment("Whether glazed terracotta should be able to be smelted/blasted into faded terracotta (Reload Required)")
             .define("fadedTerracottaSmelting", true);
 
+    public static final ModConfigSpec.BooleanValue FADED_TERRACOTTA_CREATIVE = BUILDER
+            .comment("Whether faded terracotta should be available in the creative inventory (Reload Required)")
+            .define("fadedTerracottaCreative", true);
+
     public static final ModConfigSpec.BooleanValue SHERD_CRACKING = BUILDER
             .comment("Whether sherds should be able to be smelted into cracked sherds (Reload Required)")
             .define("sherdCracking", true);
@@ -43,6 +47,7 @@ public class MirageConfig {
 
     public static boolean armadilloUnafraidArmor;
     public static boolean fadedTerracottaSmelting;
+    public static boolean fadedTerracottaCreative;
     public static boolean sherdCracking;
     public static boolean sherdRepairing;
     public static boolean sherdCrafting;
@@ -58,6 +63,9 @@ public class MirageConfig {
 
         fadedTerracottaSmelting = FADED_TERRACOTTA_SMELTING.get();
         configDict.put("fadedTerracottaSmelting", fadedTerracottaSmelting);
+
+        fadedTerracottaCreative = FADED_TERRACOTTA_CREATIVE.get();
+        configDict.put("fadedTerracottaCreative", fadedTerracottaCreative);
 
         sherdCracking = SHERD_CRACKING.get();
         configDict.put("sherdCracking", sherdCracking);
