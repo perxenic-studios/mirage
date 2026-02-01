@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
-public class ModConditionCodecs {
+public class MirageConditionCodecs {
     public static final DeferredRegister<MapCodec<? extends ICondition>> CONDITION_CODECS =
             DeferredRegister.create(NeoForgeRegistries.Keys.CONDITION_CODECS, Mirage.MODID);
 

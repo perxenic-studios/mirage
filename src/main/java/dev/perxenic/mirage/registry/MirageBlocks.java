@@ -17,7 +17,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static dev.perxenic.mirage.Mirage.MODID;
 
-public class ModBlocks {
+public class MirageBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
 
     public static final BlockBehaviour.Properties FADED_TERRACOTTA_PROPERTIES = BlockBehaviour.Properties.of()

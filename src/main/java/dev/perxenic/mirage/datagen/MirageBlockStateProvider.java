@@ -1,6 +1,6 @@
 package dev.perxenic.mirage.datagen;
 
-import dev.perxenic.mirage.registry.ModBlocks;
+import dev.perxenic.mirage.registry.MirageBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
@@ -14,31 +14,31 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import static dev.perxenic.mirage.Mirage.MODID;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
-public class ModBlockStateProvider extends BlockStateProvider {
-    public ModBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+public class MirageBlockStateProvider extends BlockStateProvider {
+    public MirageBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, MODID, existingFileHelper);
     }
 
     @Override
     protected void registerStatesAndModels() {
-        fadedTerracotta(ModBlocks.FADED_SUN_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_MODERN_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_CROSS_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_CRAWL_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_TARGET_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_POTION_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_FISH_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_FLOWER_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_SPOKE_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_PLANT_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_CREEP_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_GEO_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_FAN_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_BLADE_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_ARROW_TERRACOTTA);
-        fadedTerracotta(ModBlocks.FADED_LEAF_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_SUN_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_MODERN_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_CROSS_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_CRAWL_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_TARGET_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_POTION_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_FISH_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_FLOWER_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_SPOKE_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_PLANT_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_CREEP_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_GEO_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_FAN_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_BLADE_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_ARROW_TERRACOTTA);
+        fadedTerracotta(MirageBlocks.FADED_LEAF_TERRACOTTA);
 
-        brushableBlock(ModBlocks.SUSPICIOUS_RED_SAND.get(), "suspicious_red_sand");
+        brushableBlock(MirageBlocks.SUSPICIOUS_RED_SAND.get(), "suspicious_red_sand");
     }
 
     public void brushableBlock(Block block, String name) {

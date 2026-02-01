@@ -1,6 +1,6 @@
 package dev.perxenic.mirage.datagen;
 
-import dev.perxenic.mirage.registry.ModItems;
+import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 
 import static dev.perxenic.mirage.Mirage.MODID;
 
-public class ModItemModelProvider extends ItemModelProvider {
+public class MirageItemModelProvider extends ItemModelProvider {
     private static final LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
@@ -32,18 +32,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimMaterials.put(TrimMaterials.AMETHYST, 1.0F);
     }
 
-    public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+    public MirageItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, MODID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-        trimmedArmorItem(ModItems.ARMADILLO_CHESTPLATE);
-        basicItem(ModItems.ARMADILLO_BASKET.get());
-        basicItem(ModItems.CRACKED_POTTERY_SHERD.get());
-        basicItem(ModItems.BLANK_POTTERY_SHERD.get());
-        basicItem(ModItems.HIDE_POTTERY_SHERD.get());
-        basicItem(ModItems.BARREN_POTTERY_SHERD.get());
+        trimmedArmorItem(MirageItems.ARMADILLO_CHESTPLATE);
+        basicItem(MirageItems.ARMADILLO_BASKET.get());
+        basicItem(MirageItems.CRACKED_POTTERY_SHERD.get());
+        basicItem(MirageItems.BLANK_POTTERY_SHERD.get());
+        basicItem(MirageItems.HIDE_POTTERY_SHERD.get());
+        basicItem(MirageItems.BARREN_POTTERY_SHERD.get());
     }
 
     private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) {

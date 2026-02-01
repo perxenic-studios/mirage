@@ -1,8 +1,8 @@
 package dev.perxenic.mirage.datagen;
 
 import dev.perxenic.mirage.content.conditions.MirageConfigCondition;
-import dev.perxenic.mirage.registry.ModBlocks;
-import dev.perxenic.mirage.registry.ModItems;
+import dev.perxenic.mirage.registry.MirageBlocks;
+import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
-public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+public class MirageRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     public static final MirageConfigCondition fadedTerracottaSmeltingCondition =
             new MirageConfigCondition("fadedTerracottaSmelting");
@@ -28,13 +28,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     public static final MirageConfigCondition sherdConstructingCondition =
             new MirageConfigCondition("sherdConstructing");
 
-    public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+    public MirageRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
     }
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ARMADILLO_BASKET)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MirageItems.ARMADILLO_BASKET)
                 .pattern(" S ")
                 .pattern("A A")
                 .pattern("AAA")
@@ -43,7 +43,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_armadillo_scute", has(Items.ARMADILLO_SCUTE))
                 .save(recipeOutput, mirageLoc("armadillo_basket"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ARMADILLO_CHESTPLATE)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MirageItems.ARMADILLO_CHESTPLATE)
                 .pattern("A A")
                 .pattern("AAA")
                 .pattern("AAA")
@@ -53,89 +53,89 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         fadedTerracottaSmelting(recipeOutput,
                 Items.WHITE_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_SUN_TERRACOTTA,
+                MirageBlocks.FADED_SUN_TERRACOTTA,
                 "faded_sun_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.LIGHT_GRAY_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_MODERN_TERRACOTTA,
+                MirageBlocks.FADED_MODERN_TERRACOTTA,
                 "faded_modern_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.GRAY_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_CROSS_TERRACOTTA,
+                MirageBlocks.FADED_CROSS_TERRACOTTA,
                 "faded_cross_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.BLACK_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_CRAWL_TERRACOTTA,
+                MirageBlocks.FADED_CRAWL_TERRACOTTA,
                 "faded_crawl_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.BROWN_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_TARGET_TERRACOTTA,
+                MirageBlocks.FADED_TARGET_TERRACOTTA,
                 "faded_target_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.RED_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_POTION_TERRACOTTA,
+                MirageBlocks.FADED_POTION_TERRACOTTA,
                 "faded_potion_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.ORANGE_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_FISH_TERRACOTTA,
+                MirageBlocks.FADED_FISH_TERRACOTTA,
                 "faded_fish_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.YELLOW_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_FLOWER_TERRACOTTA,
+                MirageBlocks.FADED_FLOWER_TERRACOTTA,
                 "faded_flower_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.LIME_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_SPOKE_TERRACOTTA,
+                MirageBlocks.FADED_SPOKE_TERRACOTTA,
                 "faded_spoke_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.GREEN_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_PLANT_TERRACOTTA,
+                MirageBlocks.FADED_PLANT_TERRACOTTA,
                 "faded_plant_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.CYAN_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_CREEP_TERRACOTTA,
+                MirageBlocks.FADED_CREEP_TERRACOTTA,
                 "faded_creep_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.LIGHT_BLUE_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_GEO_TERRACOTTA,
+                MirageBlocks.FADED_GEO_TERRACOTTA,
                 "faded_geo_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.BLUE_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_FAN_TERRACOTTA,
+                MirageBlocks.FADED_FAN_TERRACOTTA,
                 "faded_fan_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.PURPLE_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_BLADE_TERRACOTTA,
+                MirageBlocks.FADED_BLADE_TERRACOTTA,
                 "faded_blade_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.MAGENTA_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_ARROW_TERRACOTTA,
+                MirageBlocks.FADED_ARROW_TERRACOTTA,
                 "faded_arrow_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.PINK_GLAZED_TERRACOTTA,
-                ModBlocks.FADED_LEAF_TERRACOTTA,
+                MirageBlocks.FADED_LEAF_TERRACOTTA,
                 "faded_leaf_terracotta"
         );
 
         SimpleCookingRecipeBuilder.smelting(
                         Ingredient.of(ItemTags.DECORATED_POT_SHERDS),
                         RecipeCategory.MISC,
-                        ModItems.CRACKED_POTTERY_SHERD,
+                        MirageItems.CRACKED_POTTERY_SHERD,
                         0f,
                         200)
                 .unlockedBy("has_sherd", has(ItemTags.DECORATED_POT_SHERDS))
@@ -144,11 +144,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         mirageLoc("sherd_cracking")
                 );
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BLANK_POTTERY_SHERD)
-                .requires(ModItems.CRACKED_POTTERY_SHERD)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MirageItems.BLANK_POTTERY_SHERD)
+                .requires(MirageItems.CRACKED_POTTERY_SHERD)
                 .requires(Items.BRICK)
                 .group("pottery_sherd")
-                .unlockedBy("has_cracked_sherd", has(ModItems.CRACKED_POTTERY_SHERD))
+                .unlockedBy("has_cracked_sherd", has(MirageItems.CRACKED_POTTERY_SHERD))
                 .save(
                         recipeOutput.withConditions(new MirageConfigCondition("sherdRepairing")),
                         mirageLoc("sherd_repairing")
@@ -177,10 +177,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         sherdCrafting(recipeOutput, Items.ACACIA_SAPLING, Items.SHELTER_POTTERY_SHERD, "shelter");
         sherdCrafting(recipeOutput, Items.WITHER_SKELETON_SKULL, Items.SKULL_POTTERY_SHERD, "skull");
         sherdCrafting(recipeOutput, Items.PITCHER_POD, Items.SNORT_POTTERY_SHERD, "snort");
-        sherdCrafting(recipeOutput, Items.ARMADILLO_SCUTE, ModItems.HIDE_POTTERY_SHERD, "hide");
-        sherdCrafting(recipeOutput, Items.CACTUS, ModItems.BARREN_POTTERY_SHERD, "barren");
+        sherdCrafting(recipeOutput, Items.ARMADILLO_SCUTE, MirageItems.HIDE_POTTERY_SHERD, "hide");
+        sherdCrafting(recipeOutput, Items.CACTUS, MirageItems.BARREN_POTTERY_SHERD, "barren");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLANK_POTTERY_SHERD)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MirageItems.BLANK_POTTERY_SHERD)
                 .pattern("#")
                 .pattern(".")
                 .pattern("#")
@@ -207,10 +207,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     public void sherdCrafting(RecipeOutput recipeOutput, ItemLike input, ItemLike output, String name) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, output)
-                .requires(ModItems.BLANK_POTTERY_SHERD)
+                .requires(MirageItems.BLANK_POTTERY_SHERD)
                 .requires(input)
                 .group("pottery_sherd")
-                .unlockedBy("has_blank_sherd", has(ModItems.BLANK_POTTERY_SHERD))
+                .unlockedBy("has_blank_sherd", has(MirageItems.BLANK_POTTERY_SHERD))
                 .save(
                         recipeOutput.withConditions(sherdCraftingCondition),
                         mirageLoc(name+"_sherd_crafting")

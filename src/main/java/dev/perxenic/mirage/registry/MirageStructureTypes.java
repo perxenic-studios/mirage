@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static dev.perxenic.mirage.Mirage.MODID;
 
-public class ModStructureTypes {
+public class MirageStructureTypes {
     public static final DeferredRegister<StructureType<?>> STRUCTURE_TYPES = DeferredRegister.create(BuiltInRegistries.STRUCTURE_TYPE, MODID);
 
     public static final DeferredHolder<StructureType<?>,StructureType<RandomLandStructure>> RANDOM_LAND_STRUCTURE = STRUCTURE_TYPES.register("random_land", () -> () -> RandomLandStructure.CODEC);

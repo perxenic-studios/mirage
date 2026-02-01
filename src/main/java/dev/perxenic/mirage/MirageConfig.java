@@ -8,7 +8,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import java.util.HashMap;
 
 @EventBusSubscriber
-public class Config {
+public class MirageConfig {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.BooleanValue ARMADILLO_UNAFRAID_ARMOR = BUILDER

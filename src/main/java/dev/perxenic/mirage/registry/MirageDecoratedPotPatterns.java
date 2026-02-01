@@ -20,10 +20,10 @@ public class MirageDecoratedPotPatterns {
     private static final DeferredRegister<DecoratedPotPattern> PATTERNS =
             DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MODID);
 
-    public static final Holder<DecoratedPotPattern> CRACKED = addPotPattern(ModItems.CRACKED_POTTERY_SHERD.getId(), "cracked");
-    public static final Holder<DecoratedPotPattern> BLANK = addPotPattern(ModItems.BLANK_POTTERY_SHERD.getId(), "blank");
-    public static final Holder<DecoratedPotPattern> HIDE = addPotPattern(ModItems.HIDE_POTTERY_SHERD.getId(), "hide");
-    public static final Holder<DecoratedPotPattern> BARREN = addPotPattern(ModItems.BARREN_POTTERY_SHERD.getId(), "barren");
+    public static final Holder<DecoratedPotPattern> CRACKED = addPotPattern(MirageItems.CRACKED_POTTERY_SHERD.getId(), "cracked");
+    public static final Holder<DecoratedPotPattern> BLANK = addPotPattern(MirageItems.BLANK_POTTERY_SHERD.getId(), "blank");
+    public static final Holder<DecoratedPotPattern> HIDE = addPotPattern(MirageItems.HIDE_POTTERY_SHERD.getId(), "hide");
+    public static final Holder<DecoratedPotPattern> BARREN = addPotPattern(MirageItems.BARREN_POTTERY_SHERD.getId(), "barren");
 
     public static void register(IEventBus eventBus) {
         PATTERNS.register(eventBus);

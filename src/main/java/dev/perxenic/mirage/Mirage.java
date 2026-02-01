@@ -17,17 +17,17 @@ public class Mirage {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public Mirage(IEventBus modEventBus, ModContainer modContainer) {
-        ModArmorMaterials.register(modEventBus);
-        ModBlocks.register(modEventBus);
-        ModConditionCodecs.register(modEventBus);
-        ModItems.register(modEventBus);
-        ModStructureTypes.register(modEventBus);
+        MirageArmorMaterials.register(modEventBus);
+        MirageBlocks.register(modEventBus);
+        MirageConditionCodecs.register(modEventBus);
+        MirageItems.register(modEventBus);
+        MirageStructureTypes.register(modEventBus);
         MirageDecoratedPotPatterns.register(modEventBus);
 
-        modEventBus.addListener(ModBlocks::onBlockEntityTypeAddBlocksEvent);
-        modEventBus.addListener(ModItems::addCreative);
+        modEventBus.addListener(MirageBlocks::onBlockEntityTypeAddBlocksEvent);
+        modEventBus.addListener(MirageItems::addCreative);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, MirageConfig.SPEC);
     }
 
     public static ResourceLocation mirageLoc(String path) {

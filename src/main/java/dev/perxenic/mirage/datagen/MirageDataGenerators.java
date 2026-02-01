@@ -12,7 +12,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber
-public class DataGenerators {
+public class MirageDataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
@@ -20,17 +20,17 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
+        BlockTagsProvider blockTagsProvider = new MirageBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ModItemTagProvider(
+        generator.addProvider(event.includeServer(), new MirageItemTagProvider(
                 packOutput,
                 lookupProvider,
                 blockTagsProvider.contentsGetter(),
                 existingFileHelper
         ));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new MirageRecipeProvider(packOutput, lookupProvider));
 
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new MirageBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new MirageItemModelProvider(packOutput, existingFileHelper));
     }
 }

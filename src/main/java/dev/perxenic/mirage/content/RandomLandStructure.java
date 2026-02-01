@@ -3,7 +3,7 @@ package dev.perxenic.mirage.content;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.perxenic.mirage.registry.ModStructureTypes;
+import dev.perxenic.mirage.registry.MirageStructureTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.Rotation;
@@ -79,6 +79,6 @@ public class RandomLandStructure extends Structure {
 
     @Override
     public @NotNull StructureType<?> type() {
-        return ModStructureTypes.RANDOM_LAND_STRUCTURE.get();
+        return MirageStructureTypes.RANDOM_LAND_STRUCTURE.get();
     }
 }

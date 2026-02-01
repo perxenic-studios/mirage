@@ -9,9 +9,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagProvider extends BlockTagsProvider {
-    public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
-                               @Nullable ExistingFileHelper existingFileHelper) {
+public class MirageBlockTagProvider extends BlockTagsProvider {
+    public MirageBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+                                  @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, Mirage.MODID, existingFileHelper);
     }
 

@@ -3,7 +3,7 @@ package dev.perxenic.mirage.content.conditions;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.perxenic.mirage.Config;
+import dev.perxenic.mirage.MirageConfig;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,8 +14,8 @@ public record MirageConfigCondition(String configKey) implements ICondition {
 
     @Override
     public boolean test(@NotNull IContext iContext) {
-        if (!Config.configDict.containsKey(configKey)) return false;
-        return Config.configDict.get(configKey);
+        if (!MirageConfig.configDict.containsKey(configKey)) return false;
+        return MirageConfig.configDict.get(configKey);
     }
 
     @Override

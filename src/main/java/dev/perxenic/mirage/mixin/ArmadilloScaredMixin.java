@@ -1,8 +1,8 @@
 package dev.perxenic.mirage.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.perxenic.mirage.Config;
-import dev.perxenic.mirage.registry.ModItems;
+import dev.perxenic.mirage.MirageConfig;
+import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.armadillo.Armadillo;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,9 +18,9 @@ public class ArmadilloScaredMixin {
             cancellable = true
     )
     private void noScareArmadilloArmor(CallbackInfoReturnable<Boolean> cir, @Local(argsOnly = true) LivingEntity entity) {
-        if (Config.armadilloUnafraidArmor) {
+        if (MirageConfig.armadilloUnafraidArmor) {
             entity.getArmorSlots().forEach(itemStack -> {
-                if (itemStack.is(ModItems.ARMADILLO_CHESTPLATE)) {
+                if (itemStack.is(MirageItems.ARMADILLO_CHESTPLATE)) {
                     cir.setReturnValue(false);
                 }
             });
