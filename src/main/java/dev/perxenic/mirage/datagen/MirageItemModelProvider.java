@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.LinkedHashMap;
 
-import static dev.perxenic.mirage.Mirage.MODID;
+import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 
 public class MirageItemModelProvider extends ItemModelProvider {
     private static final LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
@@ -33,7 +33,7 @@ public class MirageItemModelProvider extends ItemModelProvider {
     }
 
     public MirageItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, MODID, existingFileHelper);
+        super(output, MIRAGE_ID, existingFileHelper);
     }
 
     @Override
@@ -79,7 +79,7 @@ public class MirageItemModelProvider extends ItemModelProvider {
                     .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace() + ":item/" + trimNameResLoc.getPath()))
                     .predicate(mcLoc("trim_type"), trimValue).end()
                     .texture("layer0",
-                            ResourceLocation.fromNamespaceAndPath(MODID,
+                            ResourceLocation.fromNamespaceAndPath(MIRAGE_ID,
                                     "item/" + itemDeferredItem.getId().getPath()));
         });
     }

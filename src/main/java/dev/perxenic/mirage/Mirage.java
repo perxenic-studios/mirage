@@ -11,10 +11,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 
-@Mod(Mirage.MODID)
+@Mod(Mirage.MIRAGE_ID)
 public class Mirage {
-    public static final String MODID = "mirage";
-    public static final Logger LOGGER = LogUtils.getLogger();
+    public static final String MIRAGE_ID = "mirage";
+    public static final Logger MIRAGE_LOGGER = LogUtils.getLogger();
 
     public Mirage(IEventBus modEventBus, ModContainer modContainer) {
         MirageArmorMaterials.register(modEventBus);
@@ -31,6 +31,6 @@ public class Mirage {
     }
 
     public static ResourceLocation mirageLoc(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
+        return ResourceLocation.fromNamespaceAndPath(MIRAGE_ID, path);
     }
 }

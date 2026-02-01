@@ -7,10 +7,10 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static dev.perxenic.mirage.Mirage.MODID;
+import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 
 public class MirageStructureTypes {
-    public static final DeferredRegister<StructureType<?>> STRUCTURE_TYPES = DeferredRegister.create(BuiltInRegistries.STRUCTURE_TYPE, MODID);
+    public static final DeferredRegister<StructureType<?>> STRUCTURE_TYPES = DeferredRegister.create(BuiltInRegistries.STRUCTURE_TYPE, MIRAGE_ID);
 
     public static final DeferredHolder<StructureType<?>,StructureType<RandomLandStructure>> RANDOM_LAND_STRUCTURE = STRUCTURE_TYPES.register("random_land", () -> () -> RandomLandStructure.CODEC);
 

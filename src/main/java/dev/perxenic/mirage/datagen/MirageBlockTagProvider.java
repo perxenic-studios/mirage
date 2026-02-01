@@ -12,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 public class MirageBlockTagProvider extends BlockTagsProvider {
     public MirageBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
                                   @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, Mirage.MODID, existingFileHelper);
+        super(output, lookupProvider, Mirage.MIRAGE_ID, existingFileHelper);
     }
 
 

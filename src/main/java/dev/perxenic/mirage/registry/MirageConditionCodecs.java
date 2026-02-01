@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 public class MirageConditionCodecs {
     public static final DeferredRegister<MapCodec<? extends ICondition>> CONDITION_CODECS =
-            DeferredRegister.create(NeoForgeRegistries.Keys.CONDITION_CODECS, Mirage.MODID);
+            DeferredRegister.create(NeoForgeRegistries.Keys.CONDITION_CODECS, Mirage.MIRAGE_ID);
 
     public static final Supplier<MapCodec<MirageConfigCondition>> CONFIG =
             CONDITION_CODECS.register("config", () -> MirageConfigCondition.CODEC);

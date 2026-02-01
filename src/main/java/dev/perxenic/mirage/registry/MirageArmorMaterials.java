@@ -14,11 +14,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.EnumMap;
 import java.util.List;
 
-import static dev.perxenic.mirage.Mirage.MODID;
+import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageArmorMaterials {
-    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(BuiltInRegistries.ARMOR_MATERIAL, MODID);
+    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(BuiltInRegistries.ARMOR_MATERIAL, MIRAGE_ID);
 
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> ARMADILLO = ARMOR_MATERIALS.register("armadillo", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {

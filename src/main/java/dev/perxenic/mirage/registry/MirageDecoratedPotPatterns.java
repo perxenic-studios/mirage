@@ -11,14 +11,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.HashMap;
 import java.util.Map;
 
-import static dev.perxenic.mirage.Mirage.MODID;
+import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageDecoratedPotPatterns {
     public static final Map<ResourceLocation, ResourceKey<DecoratedPotPattern>> EDITABLE_ITEM_TO_POT_TEXTURE = new HashMap<>();
 
     private static final DeferredRegister<DecoratedPotPattern> PATTERNS =
-            DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MODID);
+            DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MIRAGE_ID);
 
     public static final Holder<DecoratedPotPattern> CRACKED = addPotPattern(MirageItems.CRACKED_POTTERY_SHERD.getId(), "cracked");
     public static final Holder<DecoratedPotPattern> BLANK = addPotPattern(MirageItems.BLANK_POTTERY_SHERD.getId(), "blank");

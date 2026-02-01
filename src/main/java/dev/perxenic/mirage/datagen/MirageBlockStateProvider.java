@@ -11,12 +11,12 @@ import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
-import static dev.perxenic.mirage.Mirage.MODID;
+import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageBlockStateProvider extends BlockStateProvider {
     public MirageBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, MODID, existingFileHelper);
+        super(output, MIRAGE_ID, existingFileHelper);
     }
 
     @Override

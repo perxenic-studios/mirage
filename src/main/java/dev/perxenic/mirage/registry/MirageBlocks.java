@@ -15,10 +15,10 @@ import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static dev.perxenic.mirage.Mirage.MODID;
+import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 
 public class MirageBlocks {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MIRAGE_ID);
 
     public static final BlockBehaviour.Properties FADED_TERRACOTTA_PROPERTIES = BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_ORANGE)

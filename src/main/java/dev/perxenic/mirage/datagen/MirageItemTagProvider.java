@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 public class MirageItemTagProvider extends ItemTagsProvider {
     public MirageItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
                                  CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, blockTags, Mirage.MODID, existingFileHelper);
+        super(output, lookupProvider, blockTags, Mirage.MIRAGE_ID, existingFileHelper);
     }
 
     @Override
