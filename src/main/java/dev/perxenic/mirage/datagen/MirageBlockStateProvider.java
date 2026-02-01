@@ -2,13 +2,9 @@ package dev.perxenic.mirage.datagen;
 
 import dev.perxenic.mirage.registry.MirageBlocks;
 import dev.perxenic.mirage.util.MirageBlockStateHelper;
-import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GlazedTerracottaBlock;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -29,7 +25,7 @@ public class MirageBlockStateProvider extends BlockStateProvider {
         MirageBlockStateHelper.brushableBlock(
                 this,
                 MirageBlocks.SUSPICIOUS_RED_SAND.get(),
-                "suspicious_red_sand"
+                mirageLoc("suspicious_red_sand")
         );
     }
 }
