@@ -7,8 +7,10 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.GlazedTerracottaBlock;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -40,26 +42,13 @@ public class MirageItems {
             () -> new Item(new Item.Properties())
     );
 
-    public static final DeferredItem<BlockItem> WHITE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_SUN_TERRACOTTA);
-    public static final DeferredItem<BlockItem> LIGHT_GRAY_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_MODERN_TERRACOTTA);
-    public static final DeferredItem<BlockItem> GRAY_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_CROSS_TERRACOTTA);
-    public static final DeferredItem<BlockItem> BLACK_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_CRAWL_TERRACOTTA);
-    public static final DeferredItem<BlockItem> BROWN_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_TARGET_TERRACOTTA);
-    public static final DeferredItem<BlockItem> RED_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_POTION_TERRACOTTA);
-    public static final DeferredItem<BlockItem> ORANGE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_FISH_TERRACOTTA);
-    public static final DeferredItem<BlockItem> YELLOW_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_FLOWER_TERRACOTTA);
-    public static final DeferredItem<BlockItem> LIME_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_SPOKE_TERRACOTTA);
-    public static final DeferredItem<BlockItem> GREEN_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_PLANT_TERRACOTTA);
-    public static final DeferredItem<BlockItem> CYAN_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_CREEP_TERRACOTTA);
-    public static final DeferredItem<BlockItem> LIGHT_BLUE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_GEO_TERRACOTTA);
-    public static final DeferredItem<BlockItem> BLUE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_FAN_TERRACOTTA);
-    public static final DeferredItem<BlockItem> PURPLE_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_BLADE_TERRACOTTA);
-    public static final DeferredItem<BlockItem> MAGENTA_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_ARROW_TERRACOTTA);
-    public static final DeferredItem<BlockItem> PINK_FADED_TERRACOTTA = ITEMS.registerSimpleBlockItem(MirageBlocks.FADED_LEAF_TERRACOTTA);
-
     public static final DeferredItem<BlockItem> SUSPICIOUS_RED_SAND = ITEMS.registerSimpleBlockItem(MirageBlocks.SUSPICIOUS_RED_SAND);
 
     public static void register(IEventBus eventBus) {
+        for (DeferredBlock<GlazedTerracottaBlock> block : MirageBlocks.FADED_TERRACOTTA) {
+            ITEMS.registerSimpleBlockItem(block);
+        }
+
         ITEMS.register(eventBus);
     }
 
