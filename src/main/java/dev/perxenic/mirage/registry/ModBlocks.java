@@ -1,7 +1,6 @@
 package dev.perxenic.mirage.registry;
 
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BrushableBlock;
 import net.minecraft.world.level.block.GlazedTerracottaBlock;
@@ -28,22 +27,22 @@ public class ModBlocks {
             .strength(1.4F)
             .pushReaction(PushReaction.PUSH_ONLY);
 
-    public static final DeferredBlock<GlazedTerracottaBlock> WHITE_FADED_TERRACOTTA = fadedTerracottaBlock("white_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> LIGHT_GRAY_FADED_TERRACOTTA = fadedTerracottaBlock("light_gray_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> GRAY_FADED_TERRACOTTA = fadedTerracottaBlock("gray_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> BLACK_FADED_TERRACOTTA = fadedTerracottaBlock("black_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> BROWN_FADED_TERRACOTTA = fadedTerracottaBlock("brown_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> RED_FADED_TERRACOTTA = fadedTerracottaBlock("red_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> ORANGE_FADED_TERRACOTTA = fadedTerracottaBlock("orange_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> YELLOW_FADED_TERRACOTTA = fadedTerracottaBlock("yellow_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> LIME_FADED_TERRACOTTA = fadedTerracottaBlock("lime_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> GREEN_FADED_TERRACOTTA = fadedTerracottaBlock("green_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> CYAN_FADED_TERRACOTTA = fadedTerracottaBlock("cyan_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> LIGHT_BLUE_FADED_TERRACOTTA = fadedTerracottaBlock("light_blue_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> BLUE_FADED_TERRACOTTA = fadedTerracottaBlock("blue_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> PURPLE_FADED_TERRACOTTA = fadedTerracottaBlock("purple_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> MAGENTA_FADED_TERRACOTTA = fadedTerracottaBlock("magenta_faded_terracotta");
-    public static final DeferredBlock<GlazedTerracottaBlock> PINK_FADED_TERRACOTTA = fadedTerracottaBlock("pink_faded_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_SUN_TERRACOTTA = fadedTerracottaBlock("faded_sun_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_MODERN_TERRACOTTA = fadedTerracottaBlock("faded_modern_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_CROSS_TERRACOTTA = fadedTerracottaBlock("faded_cross_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_CRAWL_TERRACOTTA = fadedTerracottaBlock("faded_crawl_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_TARGET_TERRACOTTA = fadedTerracottaBlock("faded_target_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_POTION_TERRACOTTA = fadedTerracottaBlock("faded_potion_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_FISH_TERRACOTTA = fadedTerracottaBlock("faded_fish_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_FLOWER_TERRACOTTA = fadedTerracottaBlock("faded_flower_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_SPOKE_TERRACOTTA = fadedTerracottaBlock("faded_spoke_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_PLANT_TERRACOTTA = fadedTerracottaBlock("faded_plant_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_CREEP_TERRACOTTA = fadedTerracottaBlock("faded_creep_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_GEO_TERRACOTTA = fadedTerracottaBlock("faded_geo_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_FAN_TERRACOTTA = fadedTerracottaBlock("faded_fan_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_BLADE_TERRACOTTA = fadedTerracottaBlock("faded_blade_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_ARROW_TERRACOTTA = fadedTerracottaBlock("faded_arrow_terracotta");
+    public static final DeferredBlock<GlazedTerracottaBlock> FADED_LEAF_TERRACOTTA = fadedTerracottaBlock("faded_leaf_terracotta");
 
     public static final DeferredBlock<BrushableBlock> SUSPICIOUS_RED_SAND = BLOCKS.register("suspicious_red_sand", () -> new BrushableBlock(
             Blocks.RED_SAND,

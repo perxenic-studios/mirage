@@ -53,83 +53,83 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         fadedTerracottaSmelting(recipeOutput,
                 Items.WHITE_GLAZED_TERRACOTTA,
-                ModBlocks.WHITE_FADED_TERRACOTTA,
-                "white_faded_terracotta"
+                ModBlocks.FADED_SUN_TERRACOTTA,
+                "faded_sun_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.LIGHT_GRAY_GLAZED_TERRACOTTA,
-                ModBlocks.LIGHT_GRAY_FADED_TERRACOTTA,
-                "light_gray_faded_terracotta"
+                ModBlocks.FADED_MODERN_TERRACOTTA,
+                "faded_modern_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.GRAY_GLAZED_TERRACOTTA,
-                ModBlocks.GRAY_FADED_TERRACOTTA,
-                "gray_faded_terracotta"
+                ModBlocks.FADED_CROSS_TERRACOTTA,
+                "faded_cross_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.BLACK_GLAZED_TERRACOTTA,
-                ModBlocks.BLACK_FADED_TERRACOTTA,
-                "black_faded_terracotta"
+                ModBlocks.FADED_CRAWL_TERRACOTTA,
+                "faded_crawl_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.BROWN_GLAZED_TERRACOTTA,
-                ModBlocks.BROWN_FADED_TERRACOTTA,
-                "brown_faded_terracotta"
+                ModBlocks.FADED_TARGET_TERRACOTTA,
+                "faded_target_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.RED_GLAZED_TERRACOTTA,
-                ModBlocks.RED_FADED_TERRACOTTA,
-                "red_faded_terracotta"
+                ModBlocks.FADED_POTION_TERRACOTTA,
+                "faded_potion_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.ORANGE_GLAZED_TERRACOTTA,
-                ModBlocks.ORANGE_FADED_TERRACOTTA,
-                "orange_faded_terracotta"
+                ModBlocks.FADED_FISH_TERRACOTTA,
+                "faded_fish_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.YELLOW_GLAZED_TERRACOTTA,
-                ModBlocks.YELLOW_FADED_TERRACOTTA,
-                "yellow_faded_terracotta"
+                ModBlocks.FADED_FLOWER_TERRACOTTA,
+                "faded_flower_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.LIME_GLAZED_TERRACOTTA,
-                ModBlocks.LIME_FADED_TERRACOTTA,
-                "lime_faded_terracotta"
+                ModBlocks.FADED_SPOKE_TERRACOTTA,
+                "faded_spoke_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.GREEN_GLAZED_TERRACOTTA,
-                ModBlocks.GREEN_FADED_TERRACOTTA,
-                "green_faded_terracotta"
+                ModBlocks.FADED_PLANT_TERRACOTTA,
+                "faded_plant_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.CYAN_GLAZED_TERRACOTTA,
-                ModBlocks.CYAN_FADED_TERRACOTTA,
-                "cyan_faded_terracotta"
+                ModBlocks.FADED_CREEP_TERRACOTTA,
+                "faded_creep_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.LIGHT_BLUE_GLAZED_TERRACOTTA,
-                ModBlocks.LIGHT_BLUE_FADED_TERRACOTTA,
-                "light_blue_faded_terracotta"
+                ModBlocks.FADED_GEO_TERRACOTTA,
+                "faded_geo_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.BLUE_GLAZED_TERRACOTTA,
-                ModBlocks.BLUE_FADED_TERRACOTTA,
-                "blue_faded_terracotta"
+                ModBlocks.FADED_FAN_TERRACOTTA,
+                "faded_fan_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.PURPLE_GLAZED_TERRACOTTA,
-                ModBlocks.PURPLE_FADED_TERRACOTTA,
-                "purple_faded_terracotta"
+                ModBlocks.FADED_BLADE_TERRACOTTA,
+                "faded_blade_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.MAGENTA_GLAZED_TERRACOTTA,
-                ModBlocks.MAGENTA_FADED_TERRACOTTA,
-                "magenta_faded_terracotta"
+                ModBlocks.FADED_ARROW_TERRACOTTA,
+                "faded_arrow_terracotta"
         );
         fadedTerracottaSmelting(recipeOutput,
                 Items.PINK_GLAZED_TERRACOTTA,
-                ModBlocks.PINK_FADED_TERRACOTTA,
-                "pink_faded_terracotta"
+                ModBlocks.FADED_LEAF_TERRACOTTA,
+                "faded_leaf_terracotta"
         );
 
         SimpleCookingRecipeBuilder.smelting(
@@ -202,7 +202,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         0.1f,
                         200)
                 .unlockedBy("has_glazed_terracotta", has(input))
-                .save(recipeOutput.withConditions(fadedTerracottaSmeltingCondition), mirageLoc(name));
+                .save(recipeOutput.withConditions(fadedTerracottaSmeltingCondition), mirageLoc(name + "_smelting"));
     }
 
     public void sherdCrafting(RecipeOutput recipeOutput, ItemLike input, ItemLike output, String name) {

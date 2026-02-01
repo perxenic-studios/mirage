@@ -4,10 +4,12 @@ import dev.perxenic.mirage.registry.ModBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GlazedTerracottaBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import static dev.perxenic.mirage.Mirage.MODID;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
@@ -19,22 +21,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        fadedTerracotta(ModBlocks.WHITE_FADED_TERRACOTTA.get(), "white_faded_terracotta");
-        fadedTerracotta(ModBlocks.LIGHT_GRAY_FADED_TERRACOTTA.get(), "light_gray_faded_terracotta");
-        fadedTerracotta(ModBlocks.GRAY_FADED_TERRACOTTA.get(), "gray_faded_terracotta");
-        fadedTerracotta(ModBlocks.BLACK_FADED_TERRACOTTA.get(), "black_faded_terracotta");
-        fadedTerracotta(ModBlocks.BROWN_FADED_TERRACOTTA.get(), "brown_faded_terracotta");
-        fadedTerracotta(ModBlocks.RED_FADED_TERRACOTTA.get(), "red_faded_terracotta");
-        fadedTerracotta(ModBlocks.ORANGE_FADED_TERRACOTTA.get(), "orange_faded_terracotta");
-        fadedTerracotta(ModBlocks.YELLOW_FADED_TERRACOTTA.get(), "yellow_faded_terracotta");
-        fadedTerracotta(ModBlocks.LIME_FADED_TERRACOTTA.get(), "lime_faded_terracotta");
-        fadedTerracotta(ModBlocks.GREEN_FADED_TERRACOTTA.get(), "green_faded_terracotta");
-        fadedTerracotta(ModBlocks.CYAN_FADED_TERRACOTTA.get(), "cyan_faded_terracotta");
-        fadedTerracotta(ModBlocks.LIGHT_BLUE_FADED_TERRACOTTA.get(), "light_blue_faded_terracotta");
-        fadedTerracotta(ModBlocks.BLUE_FADED_TERRACOTTA.get(), "blue_faded_terracotta");
-        fadedTerracotta(ModBlocks.PURPLE_FADED_TERRACOTTA.get(), "purple_faded_terracotta");
-        fadedTerracotta(ModBlocks.MAGENTA_FADED_TERRACOTTA.get(), "magenta_faded_terracotta");
-        fadedTerracotta(ModBlocks.PINK_FADED_TERRACOTTA.get(), "pink_faded_terracotta");
+        fadedTerracotta(ModBlocks.FADED_SUN_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_MODERN_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_CROSS_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_CRAWL_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_TARGET_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_POTION_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_FISH_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_FLOWER_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_SPOKE_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_PLANT_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_CREEP_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_GEO_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_FAN_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_BLADE_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_ARROW_TERRACOTTA);
+        fadedTerracotta(ModBlocks.FADED_LEAF_TERRACOTTA);
 
         brushableBlock(ModBlocks.SUSPICIOUS_RED_SAND.get(), "suspicious_red_sand");
     }
@@ -51,8 +53,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block, models().getExistingFile(mirageLoc(name + "_0")));
     }
 
-    public void fadedTerracotta(Block block, String name) {
-        getVariantBuilder(block).forAllStates(state -> {
+    public void fadedTerracotta(DeferredBlock<GlazedTerracottaBlock> block) {
+        String name = block.getId().getPath();
+
+        getVariantBuilder(block.get()).forAllStates(state -> {
             Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
 
             return ConfiguredModel.builder().modelFile(models().singleTexture(
@@ -62,6 +66,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     mirageLoc("block/" + name)
             )).rotationY((int) facing.toYRot()).build();
         });
-        simpleBlockItem(block, models().getExistingFile(mirageLoc(name)));
+        simpleBlockItem(block.get(), models().getExistingFile(mirageLoc(name)));
     }
 }
