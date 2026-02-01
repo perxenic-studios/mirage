@@ -23,6 +23,9 @@ public class MirageItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
+        tag(ItemTags.SAND)
+                .add(MirageItems.SUSPICIOUS_RED_SAND.get());
+
         tag(ItemTags.DECORATED_POT_INGREDIENTS).add(
                 MirageItems.CRACKED_POTTERY_SHERD.get(),
                 MirageItems.BLANK_POTTERY_SHERD.get(),
