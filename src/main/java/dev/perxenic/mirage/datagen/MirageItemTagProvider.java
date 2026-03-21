@@ -5,20 +5,16 @@ import dev.perxenic.mirage.content.MirageItemTags;
 import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
 public class MirageItemTagProvider extends ItemTagsProvider {
-    public MirageItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
-                                 CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, blockTags, Mirage.MIRAGE_ID, existingFileHelper);
+    public MirageItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, lookupProvider, Mirage.MIRAGE_ID);
     }
 
     @Override

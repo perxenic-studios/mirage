@@ -19,13 +19,9 @@ public class MirageDataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        BlockTagsProvider blockTagsProvider = new MirageBlockTagProvider(packOutput, lookupProvider);
-        generator.addProvider(true, blockTagsProvider);
-        //generator.addProvider(true, new MirageItemTagProvider(
-        //        packOutput,
-        //        lookupProvider,
-        //        blockTagsProvider.contentsGetter()
-        //));
+        generator.addProvider(true, new MirageBlockTagProvider(packOutput, lookupProvider));
+        generator.addProvider(true, new MirageItemTagProvider(packOutput, lookupProvider));
+
         // generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
 
         generator.addProvider(true, new MirageModelProvider(packOutput));
