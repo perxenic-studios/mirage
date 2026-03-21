@@ -12,6 +12,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GlazedTerracottaBlock;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.stream.Stream;
@@ -39,6 +41,11 @@ public class MirageModelProvider extends ModelProvider {
         itemModels.generateFlatItem(MirageItems.BLANK_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MirageItems.HIDE_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MirageItems.BARREN_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
+
+        for (DeferredBlock<GlazedTerracottaBlock> block : MirageBlocks.FADED_TERRACOTTA) {
+            blockModels.createRotatedVariantBlock(block.get()); // Check to see if this is correct model
+        }
+        blockModels.createBrushableBlock(MirageBlocks.SUSPICIOUS_RED_SAND.get());
     }
 
     @Override
