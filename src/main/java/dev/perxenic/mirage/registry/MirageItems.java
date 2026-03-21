@@ -2,6 +2,8 @@ package dev.perxenic.mirage.registry;
 
 import dev.perxenic.mirage.MirageConfig;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -15,30 +17,30 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
+import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MIRAGE_ID);
 
-    public static final DeferredItem<BundleItem> ARMADILLO_BASKET = ITEMS.register("armadillo_basket", () -> new BundleItem(
-            new Item.Properties().stacksTo(1).component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY)
-    ));
+    public static final DeferredItem<BundleItem> ARMADILLO_BASKET = ITEMS.register("armadillo_basket",
+            () -> new BundleItem(new Item.Properties()
+                    .stacksTo(1)
+                    .component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY)
+                    .setId(ResourceKey.create(Registries.ITEM, mirageLoc("armadillo_basket")))
+            )
+    );
 
     public static final DeferredItem<Item> ARMADILLO_CHESTPLATE = ITEMS.register("armadillo_chestplate",
-            () -> new Item(new Item.Properties().humanoidArmor(MirageArmorMaterials.ARMADILLO, ArmorType.CHESTPLATE)
-    ));
+            () -> new Item(new Item.Properties()
+                    .humanoidArmor(MirageArmorMaterials.ARMADILLO, ArmorType.CHESTPLATE)
+                    .setId(ResourceKey.create(Registries.ITEM, mirageLoc("armadillo_chestplate")))
+            )
+    );
 
-    public static final DeferredItem<Item> CRACKED_POTTERY_SHERD = ITEMS.register("cracked_pottery_sherd",
-            () -> new Item(new Item.Properties())
-    );
-    public static final DeferredItem<Item> BLANK_POTTERY_SHERD = ITEMS.register("blank_pottery_sherd",
-            () -> new Item(new Item.Properties())
-    );
-    public static final DeferredItem<Item> HIDE_POTTERY_SHERD = ITEMS.register("hide_pottery_sherd",
-            () -> new Item(new Item.Properties())
-    );
-    public static final DeferredItem<Item> BARREN_POTTERY_SHERD = ITEMS.register("barren_pottery_sherd",
-            () -> new Item(new Item.Properties())
-    );
+    public static final DeferredItem<Item> CRACKED_POTTERY_SHERD = ITEMS.registerSimpleItem("cracked_pottery_sherd");
+    public static final DeferredItem<Item> BLANK_POTTERY_SHERD = ITEMS.registerSimpleItem("blank_pottery_sherd");
+    public static final DeferredItem<Item> HIDE_POTTERY_SHERD = ITEMS.registerSimpleItem("hide_pottery_sherd");
+    public static final DeferredItem<Item> BARREN_POTTERY_SHERD = ITEMS.registerSimpleItem("barren_pottery_sherd");
 
     public static final DeferredItem<BlockItem> SUSPICIOUS_RED_SAND = ITEMS.registerSimpleBlockItem(MirageBlocks.SUSPICIOUS_RED_SAND);
 

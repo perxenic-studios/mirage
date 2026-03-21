@@ -1,6 +1,8 @@
 package dev.perxenic.mirage.registry;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BrushableBlock;
@@ -19,16 +21,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.List;
 
 import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
+import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MIRAGE_ID);
-
-    public static final BlockBehaviour.Properties FADED_TERRACOTTA_PROPERTIES = BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_ORANGE)
-            .instrument(NoteBlockInstrument.BASEDRUM)
-            .requiresCorrectToolForDrops()
-            .strength(1.4F)
-            .pushReaction(PushReaction.PUSH_ONLY);
 
     public static final DeferredBlock<GlazedTerracottaBlock> FADED_SUN_TERRACOTTA = fadedTerracottaBlock("faded_sun_terracotta");
     public static final DeferredBlock<GlazedTerracottaBlock> FADED_MODERN_TERRACOTTA = fadedTerracottaBlock("faded_modern_terracotta");
@@ -76,6 +72,7 @@ public class MirageBlocks {
                     .strength(0.25F)
                     .sound(SoundType.SUSPICIOUS_SAND)
                     .pushReaction(PushReaction.DESTROY)
+                    .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("suspicious_red_sand")))
     ));
 
     public static void register(IEventBus eventBus) {
@@ -83,7 +80,14 @@ public class MirageBlocks {
     }
 
     public static DeferredBlock<GlazedTerracottaBlock> fadedTerracottaBlock(String name) {
-        return BLOCKS.register(name, () -> new GlazedTerracottaBlock(FADED_TERRACOTTA_PROPERTIES));
+        return BLOCKS.register(name, () -> new GlazedTerracottaBlock(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.COLOR_ORANGE)
+                .instrument(NoteBlockInstrument.BASEDRUM)
+                .requiresCorrectToolForDrops()
+                .strength(1.4F)
+                .pushReaction(PushReaction.PUSH_ONLY)
+                .setId(ResourceKey.create(Registries.BLOCK, mirageLoc(name))))
+        );
     }
 
     public static void onBlockEntityTypeAddBlocksEvent(BlockEntityTypeAddBlocksEvent event) {
