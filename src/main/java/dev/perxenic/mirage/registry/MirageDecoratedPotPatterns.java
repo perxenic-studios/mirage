@@ -3,7 +3,7 @@ package dev.perxenic.mirage.registry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.entity.DecoratedPotPattern;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -15,7 +15,7 @@ import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageDecoratedPotPatterns {
-    public static final Map<ResourceLocation, ResourceKey<DecoratedPotPattern>> EDITABLE_ITEM_TO_POT_TEXTURE = new HashMap<>();
+    public static final Map<Identifier, ResourceKey<DecoratedPotPattern>> EDITABLE_ITEM_TO_POT_TEXTURE = new HashMap<>();
 
     private static final DeferredRegister<DecoratedPotPattern> PATTERNS =
             DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MIRAGE_ID);
@@ -29,7 +29,7 @@ public class MirageDecoratedPotPatterns {
         PATTERNS.register(eventBus);
     }
 
-    private static Holder<DecoratedPotPattern> addPotPattern(ResourceLocation item, String name) {
+    private static Holder<DecoratedPotPattern> addPotPattern(Identifier item, String name) {
         Holder<DecoratedPotPattern> pattern = PATTERNS.register(name,
                 () -> new DecoratedPotPattern(mirageLoc(name+"_pottery_pattern"))
         );

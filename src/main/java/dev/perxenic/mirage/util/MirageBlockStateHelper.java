@@ -1,7 +1,7 @@
 package dev.perxenic.mirage.util;
 
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GlazedTerracottaBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import static dev.perxenic.mirage.Mirage.mcLoc;
 
 public class MirageBlockStateHelper {
-    public static void brushableBlock(BlockStateProvider provider, Block block, ResourceLocation location) {
+    public static void brushableBlock(BlockStateProvider provider, Block block, Identifier location) {
         provider.getVariantBuilder(block).forAllStates(state -> {
             int dusted = state.getValue(BlockStateProperties.DUSTED);
 
@@ -25,7 +25,7 @@ public class MirageBlockStateHelper {
     }
 
     public static void fadedTerracotta(BlockStateProvider provider, DeferredBlock<GlazedTerracottaBlock> block) {
-        ResourceLocation location = block.getId();
+        Identifier location = block.getId();
 
         provider.getVariantBuilder(block.get()).forAllStates(state -> {
             Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);

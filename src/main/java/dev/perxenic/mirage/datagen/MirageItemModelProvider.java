@@ -3,7 +3,7 @@ package dev.perxenic.mirage.datagen;
 import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.armortrim.TrimMaterial;
@@ -62,9 +62,9 @@ public class MirageItemModelProvider extends ItemModelProvider {
             String armorItemPath = armorItem.toString();
             String trimPath = "trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath();
             String currentTrimName = armorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
-            ResourceLocation armorItemResLoc = ResourceLocation.parse(armorItemPath);
-            ResourceLocation trimResLoc = ResourceLocation.parse(trimPath); // minecraft namespace
-            ResourceLocation trimNameResLoc = ResourceLocation.parse(currentTrimName);
+            Identifier armorItemResLoc = Identifier.parse(armorItemPath);
+            Identifier trimResLoc = Identifier.parse(trimPath); // minecraft namespace
+            Identifier trimNameResLoc = Identifier.parse(currentTrimName);
 
             existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
 
@@ -79,7 +79,7 @@ public class MirageItemModelProvider extends ItemModelProvider {
                     .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace() + ":item/" + trimNameResLoc.getPath()))
                     .predicate(mcLoc("trim_type"), trimValue).end()
                     .texture("layer0",
-                            ResourceLocation.fromNamespaceAndPath(MIRAGE_ID,
+                            Identifier.fromNamespaceAndPath(MIRAGE_ID,
                                     "item/" + itemDeferredItem.getId().getPath()));
         });
     }

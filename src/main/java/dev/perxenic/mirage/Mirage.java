@@ -1,7 +1,7 @@
 package dev.perxenic.mirage;
 
 import dev.perxenic.mirage.registry.*;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -30,11 +30,11 @@ public class Mirage {
         modContainer.registerConfig(ModConfig.Type.COMMON, MirageConfig.SPEC);
     }
 
-    public static ResourceLocation mcLoc(String path) {
-        return ResourceLocation.withDefaultNamespace(path);
+    public static Identifier mcLoc(String path) {
+        return Identifier.withDefaultNamespace(path);
     }
 
-    public static ResourceLocation mirageLoc(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MIRAGE_ID, path);
+    public static Identifier mirageLoc(String path) {
+        return Identifier.fromNamespaceAndPath(MIRAGE_ID, path);
     }
 }
