@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:acacia_sapling"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:acacia_sapling"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:shelter_pottery_sherd"
   }
 }

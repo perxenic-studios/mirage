@@ -9,12 +9,8 @@
   "category": "misc",
   "group": "pottery_sherd",
   "key": {
-    "#": {
-      "item": "minecraft:brick"
-    },
-    ".": {
-      "item": "minecraft:bow"
-    }
+    "#": "minecraft:brick",
+    ".": "minecraft:bow"
   },
   "pattern": [
     "#",
@@ -22,7 +18,6 @@
     "#"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:archer_pottery_sherd"
   }
 }

@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:gunpowder"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:gunpowder"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:danger_pottery_sherd"
   }
 }

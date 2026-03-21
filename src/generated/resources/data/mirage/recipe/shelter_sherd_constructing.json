@@ -9,12 +9,8 @@
   "category": "misc",
   "group": "pottery_sherd",
   "key": {
-    "#": {
-      "item": "minecraft:brick"
-    },
-    ".": {
-      "item": "minecraft:acacia_sapling"
-    }
+    "#": "minecraft:brick",
+    ".": "minecraft:acacia_sapling"
   },
   "pattern": [
     "#",
@@ -22,7 +18,6 @@
     "#"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:shelter_pottery_sherd"
   }
 }

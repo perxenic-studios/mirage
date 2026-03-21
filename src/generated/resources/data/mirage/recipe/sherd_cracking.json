@@ -9,11 +9,8 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "tag": "minecraft:decorated_pot_sherds"
-  },
+  "ingredient": "#minecraft:decorated_pot_sherds",
   "result": {
-    "count": 1,
     "id": "mirage:cracked_pottery_sherd"
   }
 }

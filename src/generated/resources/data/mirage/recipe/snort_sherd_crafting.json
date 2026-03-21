@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:pitcher_pod"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:pitcher_pod"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:snort_pottery_sherd"
   }
 }

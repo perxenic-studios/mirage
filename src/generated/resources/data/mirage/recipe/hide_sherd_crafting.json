@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:armadillo_scute"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:armadillo_scute"
   ],
   "result": {
-    "count": 1,
     "id": "mirage:hide_pottery_sherd"
   }
 }

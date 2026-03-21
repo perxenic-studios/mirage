@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:wheat"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:sheaf_pottery_sherd"
   }
 }

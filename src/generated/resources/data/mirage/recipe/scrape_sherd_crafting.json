@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:stone_axe"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:stone_axe"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:scrape_pottery_sherd"
   }
 }

@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:fishing_rod"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:fishing_rod"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:angler_pottery_sherd"
   }
 }

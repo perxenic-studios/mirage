@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:glass_bottle"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:glass_bottle"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:brewer_pottery_sherd"
   }
 }

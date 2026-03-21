@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:diamond"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:diamond"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:prize_pottery_sherd"
   }
 }

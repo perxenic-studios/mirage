@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:cactus"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:cactus"
   ],
   "result": {
-    "count": 1,
     "id": "mirage:barren_pottery_sherd"
   }
 }

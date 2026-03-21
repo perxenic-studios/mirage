@@ -9,12 +9,8 @@
   "category": "misc",
   "group": "pottery_sherd",
   "key": {
-    "#": {
-      "item": "minecraft:brick"
-    },
-    ".": {
-      "item": "minecraft:campfire"
-    }
+    "#": "minecraft:brick",
+    ".": "minecraft:campfire"
   },
   "pattern": [
     "#",
@@ -22,7 +18,6 @@
     "#"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:burn_pottery_sherd"
   }
 }

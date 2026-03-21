@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:map"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:map"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:explorer_pottery_sherd"
   }
 }

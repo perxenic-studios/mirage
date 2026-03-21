@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:rabbit_hide"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:rabbit_hide"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:arms_up_pottery_sherd"
   }
 }

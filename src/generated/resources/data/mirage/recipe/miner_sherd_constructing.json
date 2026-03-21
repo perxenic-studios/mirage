@@ -9,12 +9,8 @@
   "category": "misc",
   "group": "pottery_sherd",
   "key": {
-    "#": {
-      "item": "minecraft:brick"
-    },
-    ".": {
-      "item": "minecraft:stone_pickaxe"
-    }
+    "#": "minecraft:brick",
+    ".": "minecraft:stone_pickaxe"
   },
   "pattern": [
     "#",
@@ -22,7 +18,6 @@
     "#"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:miner_pottery_sherd"
   }
 }

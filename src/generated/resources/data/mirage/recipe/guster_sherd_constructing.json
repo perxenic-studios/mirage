@@ -9,12 +9,8 @@
   "category": "misc",
   "group": "pottery_sherd",
   "key": {
-    "#": {
-      "item": "minecraft:brick"
-    },
-    ".": {
-      "item": "minecraft:wind_charge"
-    }
+    "#": "minecraft:brick",
+    ".": "minecraft:wind_charge"
   },
   "pattern": [
     "#",
@@ -22,7 +18,6 @@
     "#"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:guster_pottery_sherd"
   }
 }

@@ -9,15 +9,10 @@
   "category": "misc",
   "group": "pottery_sherd",
   "ingredients": [
-    {
-      "item": "mirage:blank_pottery_sherd"
-    },
-    {
-      "item": "minecraft:campfire"
-    }
+    "mirage:blank_pottery_sherd",
+    "minecraft:campfire"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:burn_pottery_sherd"
   }
 }

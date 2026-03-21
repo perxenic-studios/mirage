@@ -9,11 +9,8 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "minecraft:black_glazed_terracotta"
-  },
+  "ingredient": "minecraft:black_glazed_terracotta",
   "result": {
-    "count": 1,
     "id": "mirage:faded_crawl_terracotta"
   }
 }

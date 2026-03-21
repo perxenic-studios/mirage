@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "item": "minecraft:armadillo_scute"
-    }
+    "A": "minecraft:armadillo_scute"
   },
   "pattern": [
     "A A",
@@ -12,7 +10,6 @@
     "AAA"
   ],
   "result": {
-    "count": 1,
     "id": "mirage:armadillo_chestplate"
   }
 }

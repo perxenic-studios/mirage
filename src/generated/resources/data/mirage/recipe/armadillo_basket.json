@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "item": "minecraft:armadillo_scute"
-    },
-    "S": {
-      "item": "minecraft:string"
-    }
+    "A": "minecraft:armadillo_scute",
+    "S": "minecraft:string"
   },
   "pattern": [
     " S ",
@@ -15,7 +11,6 @@
     "AAA"
   ],
   "result": {
-    "count": 1,
     "id": "mirage:armadillo_basket"
   }
 }

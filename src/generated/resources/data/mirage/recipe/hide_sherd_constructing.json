@@ -9,12 +9,8 @@
   "category": "misc",
   "group": "pottery_sherd",
   "key": {
-    "#": {
-      "item": "minecraft:brick"
-    },
-    ".": {
-      "item": "minecraft:armadillo_scute"
-    }
+    "#": "minecraft:brick",
+    ".": "minecraft:armadillo_scute"
   },
   "pattern": [
     "#",
@@ -22,7 +18,6 @@
     "#"
   ],
   "result": {
-    "count": 1,
     "id": "mirage:hide_pottery_sherd"
   }
 }
