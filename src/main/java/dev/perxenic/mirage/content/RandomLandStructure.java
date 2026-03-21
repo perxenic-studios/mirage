@@ -52,7 +52,7 @@ public class RandomLandStructure extends Structure {
         int y = context.chunkGenerator().getFirstFreeHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, context.heightAccessor(), context.randomState()) - poolElement.getGroundLevelDelta() + 1;
 
         // Don't generate if at minimum build height in case of floating islands
-        if (y <= context.heightAccessor().getMinBuildHeight()) return Optional.empty();
+        if (y <= context.heightAccessor().getMinY()) return Optional.empty();
 
         if (y < minHeight) return Optional.empty();
         if (y > maxHeight) return Optional.empty();
