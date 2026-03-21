@@ -1,42 +1,33 @@
 package dev.perxenic.mirage.registry;
 
-import net.minecraft.Util;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.util.Util;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.EnumMap;
-import java.util.List;
-
-import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
-import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageArmorMaterials {
-    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(BuiltInRegistries.ARMOR_MATERIAL, MIRAGE_ID);
+    public static final ResourceKey<EquipmentAsset> ARMADILLO_ASSET = EquipmentAssets.createId("armadillo");
 
-    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> ARMADILLO = ARMOR_MATERIALS.register("armadillo", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.BOOTS, 2);
-                attribute.put(ArmorItem.Type.LEGGINGS, 5);
-                attribute.put(ArmorItem.Type.CHESTPLATE, 6);
-                attribute.put(ArmorItem.Type.HELMET, 2);
-                attribute.put(ArmorItem.Type.BODY, 5);
+    public static final ArmorMaterial ARMADILLO = new ArmorMaterial(
+            15,
+            Util.make(new EnumMap<>(ArmorType.class), attribute -> {
+                attribute.put(ArmorType.BOOTS, 2);
+                attribute.put(ArmorType.LEGGINGS, 5);
+                attribute.put(ArmorType.CHESTPLATE, 6);
+                attribute.put(ArmorType.HELMET, 2);
+                attribute.put(ArmorType.BODY, 5);
             }),
             9,
             SoundEvents.ARMOR_EQUIP_WOLF,
-            () -> Ingredient.of(Items.ARMADILLO_SCUTE),
-            List.of(new ArmorMaterial.Layer(mirageLoc("armadillo"))),
             0f,
-            0.0f
-    ));
-
-    public static void register(IEventBus eventBus) {
-        ARMOR_MATERIALS.register(eventBus);
-    }
+            0f,
+            ItemTags.REPAIRS_WOLF_ARMOR,
+            ARMADILLO_ASSET
+    );
 }
