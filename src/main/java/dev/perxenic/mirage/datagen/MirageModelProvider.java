@@ -7,7 +7,11 @@ import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.renderer.block.dispatch.Variant;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -43,7 +47,15 @@ public class MirageModelProvider extends ModelProvider {
         itemModels.generateFlatItem(MirageItems.BARREN_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
 
         for (DeferredBlock<GlazedTerracottaBlock> block : MirageBlocks.FADED_TERRACOTTA) {
-            blockModels.createRotatedVariantBlock(block.get()); // Check to see if this is correct model
+            blockModels.blockStateOutput.accept(
+                    MultiVariantGenerator.dispatch(
+                            block.get(),
+                            BlockModelGenerators.plainVariant(
+                                    TexturedModel.GLAZED_TERRACOTTA.create(block.get(), blockModels.modelOutput)
+                            )
+                    )
+                    .with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING_ALT)
+            );
         }
         blockModels.createBrushableBlock(MirageBlocks.SUSPICIOUS_RED_SAND.get());
     }
