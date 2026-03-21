@@ -2,9 +2,9 @@ package dev.perxenic.mirage.registry;
 
 import dev.perxenic.mirage.MirageConfig;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BundleContents;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlazedTerracottaBlock;
@@ -20,13 +20,11 @@ public class MirageItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MIRAGE_ID);
 
     public static final DeferredItem<BundleItem> ARMADILLO_BASKET = ITEMS.register("armadillo_basket", () -> new BundleItem(
-            new Item.Properties().stacksTo(1).component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY).requiredFeatures(FeatureFlags.BUNDLE)
+            new Item.Properties().stacksTo(1).component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY)
     ));
 
-    public static final DeferredItem<ArmorItem> ARMADILLO_CHESTPLATE = ITEMS.register("armadillo_chestplate", () -> new ArmorItem(
-            MirageArmorMaterials.ARMADILLO,
-            ArmorItem.Type.CHESTPLATE,
-            new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(5))
+    public static final DeferredItem<Item> ARMADILLO_CHESTPLATE = ITEMS.register("armadillo_chestplate",
+            () -> new Item(new Item.Properties().humanoidArmor(MirageArmorMaterials.ARMADILLO, ArmorType.CHESTPLATE)
     ));
 
     public static final DeferredItem<Item> CRACKED_POTTERY_SHERD = ITEMS.register("cracked_pottery_sherd",
@@ -68,7 +66,7 @@ public class MirageItems {
                     );
             }
         }
-        else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES && event.getFlags().contains(FeatureFlags.BUNDLE)) {
+        else if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             simpleInsertAfter(event, Items.BUNDLE, ARMADILLO_BASKET);
         }
         else if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
