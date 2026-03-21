@@ -17,7 +17,6 @@ public class Mirage {
     public static final Logger MIRAGE_LOGGER = LogUtils.getLogger();
 
     public Mirage(IEventBus modEventBus, ModContainer modContainer) {
-        MirageArmorMaterials.register(modEventBus);
         MirageBlocks.register(modEventBus);
         MirageConditionCodecs.register(modEventBus);
         MirageItems.register(modEventBus);
