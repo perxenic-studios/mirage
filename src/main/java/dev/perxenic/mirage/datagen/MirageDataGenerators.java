@@ -14,23 +14,20 @@ import java.util.concurrent.CompletableFuture;
 @EventBusSubscriber
 public class MirageDataGenerators {
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
+    public static void gatherClientData(GatherDataEvent.Client event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
-        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        BlockTagsProvider blockTagsProvider = new MirageBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
-        generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new MirageItemTagProvider(
-                packOutput,
-                lookupProvider,
-                blockTagsProvider.contentsGetter(),
-                existingFileHelper
-        ));
-        generator.addProvider(event.includeServer(), new MirageRecipeProvider(packOutput, lookupProvider));
+        BlockTagsProvider blockTagsProvider = new MirageBlockTagProvider(packOutput, lookupProvider);
+        generator.addProvider(true, blockTagsProvider);
+        //generator.addProvider(true, new MirageItemTagProvider(
+        //        packOutput,
+        //        lookupProvider,
+        //        blockTagsProvider.contentsGetter()
+        //));
+        // generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
 
-        generator.addProvider(event.includeClient(), new MirageBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new MirageItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(true, new MirageModelProvider(packOutput));
     }
 }
