@@ -6,16 +6,21 @@ import dev.perxenic.mirage.registry.MirageBlocks;
 import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.concurrent.CompletableFuture;
+
+import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
@@ -43,7 +48,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                 .define('S', Items.STRING)
                 .define('A', Items.ARMADILLO_SCUTE)
                 .unlockedBy("has_armadillo_scute", has(Items.ARMADILLO_SCUTE))
-                .save(output, "armadillo_basket");
+                .save(output, ResourceKey.create(Registries.RECIPE, mirageLoc("armadillo_basket")));
 
         shaped(RecipeCategory.COMBAT, MirageItems.ARMADILLO_CHESTPLATE)
                 .pattern("A A")
@@ -51,7 +56,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                 .pattern("AAA")
                 .define('A', Items.ARMADILLO_SCUTE)
                 .unlockedBy("has_armadillo_scute", has(Items.ARMADILLO_SCUTE))
-                .save(output, "armadillo_chestplate");
+                .save(output, ResourceKey.create(Registries.RECIPE, mirageLoc("armadillo_chestplate")));
 
         fadedTerracottaSmelting(
                 Items.WHITE_GLAZED_TERRACOTTA,
@@ -135,7 +140,7 @@ public class MirageRecipeProvider extends RecipeProvider {
         );
 
         SimpleCookingRecipeBuilder.smelting(
-                        Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(ItemTags.DECORATED_POT_SHERDS)),
+                        Ingredient.of(registries.getOrThrow(ItemTags.DECORATED_POT_SHERDS)),
                         RecipeCategory.MISC,
                         CookingBookCategory.MISC,
                         MirageItems.CRACKED_POTTERY_SHERD,
@@ -144,7 +149,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_sherd", has(ItemTags.DECORATED_POT_SHERDS))
                 .save(
                         output.withConditions(new MirageConfigCondition("sherdCracking")),
-                        "sherd_cracking"
+                        ResourceKey.create(Registries.RECIPE, mirageLoc("sherd_cracking"))
                 );
 
         shapeless(RecipeCategory.MISC, MirageItems.BLANK_POTTERY_SHERD)
@@ -154,7 +159,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_cracked_sherd", has(MirageItems.CRACKED_POTTERY_SHERD))
                 .save(
                         output.withConditions(new MirageConfigCondition("sherdRepairing")),
-                        "sherd_repairing"
+                        ResourceKey.create(Registries.RECIPE, mirageLoc("sherd_repairing"))
                 );
 
         sherdCrafting(Items.FISHING_ROD, Items.ANGLER_POTTERY_SHERD, "angler");
@@ -193,7 +198,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_brick", has(Items.BRICK))
                 .save(
                         output.withConditions(new MirageConfigCondition("blankSherdConstructing")),
-                        "blank_sherd_constructing"
+                        ResourceKey.create(Registries.RECIPE, mirageLoc("blank_sherd_constructing"))
                 );
     }
 
@@ -206,7 +211,10 @@ public class MirageRecipeProvider extends RecipeProvider {
                         0.1f,
                         200)
                 .unlockedBy("has_glazed_terracotta", has(inputItem))
-                .save(output.withConditions(fadedTerracottaSmeltingCondition), name + "_smelting");
+                .save(
+                        output.withConditions(fadedTerracottaSmeltingCondition),
+                        ResourceKey.create(Registries.RECIPE, mirageLoc(name + "_smelting"))
+                );
     }
 
     public void sherdCrafting(ItemLike inputItem, ItemLike outputItem, String name) {
@@ -217,7 +225,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_blank_sherd", has(MirageItems.BLANK_POTTERY_SHERD))
                 .save(
                         output.withConditions(sherdCraftingCondition),
-                        name + "_sherd_crafting"
+                        ResourceKey.create(Registries.RECIPE, mirageLoc(name + "_sherd_crafting"))
                 );
         shaped(RecipeCategory.MISC, outputItem)
                 .pattern("#")
@@ -229,7 +237,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_brick", has(Items.BRICK))
                 .save(
                         output.withConditions(sherdConstructingCondition),
-                        name + "_sherd_constructing"
+                        ResourceKey.create(Registries.RECIPE, mirageLoc(name + "_sherd_constructing"))
                 );
     }
 
