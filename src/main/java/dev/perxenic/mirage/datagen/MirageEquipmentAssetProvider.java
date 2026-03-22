@@ -22,9 +22,9 @@ public class MirageEquipmentAssetProvider extends EquipmentAssetProvider {
     protected void registerModels(BiConsumer<ResourceKey<EquipmentAsset>, EquipmentClientInfo> output) {
         output.accept(
                 MirageArmorMaterials.ARMADILLO_ASSET,
-                new EquipmentClientInfo(ImmutableMap.of(
-                        EquipmentClientInfo.LayerType.HUMANOID, ImmutableList.of(new EquipmentClientInfo.Layer(mirageLoc("armadillo")))
-                ))
+                EquipmentClientInfo.builder()
+                        .addMainHumanoidLayer(mirageLoc("armadillo"), false)
+                        .build()
         );
     }
 }

@@ -4,6 +4,11 @@
       {
         "texture": "mirage:armadillo"
       }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "mirage:armadillo"
+      }
     ]
   }
 }
