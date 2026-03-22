@@ -21,7 +21,9 @@ public class MirageDataGenerators {
         generator.addProvider(true, new MirageItemTagProvider(packOutput, lookupProvider));
 
         generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
+        generator.addProvider(true, new MirageDatapackProvider(packOutput, lookupProvider));
 
+        generator.addProvider(true, new MirageAtlasProvider(packOutput));
         generator.addProvider(true, new MirageEquipmentAssetProvider(packOutput));
         generator.addProvider(true, new MirageModelProvider(packOutput));
     }

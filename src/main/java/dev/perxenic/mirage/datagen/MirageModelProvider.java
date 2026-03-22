@@ -7,11 +7,9 @@ import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TexturedModel;
-import net.minecraft.client.renderer.block.dispatch.Variant;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -23,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.stream.Stream;
 
 import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
-import static dev.perxenic.mirage.Mirage.mcLoc;
+import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -37,7 +35,7 @@ public class MirageModelProvider extends ModelProvider {
         itemModels.generateTrimmableItem(
                 MirageItems.ARMADILLO_CHESTPLATE.get(),
                 MirageArmorMaterials.ARMADILLO_ASSET,
-                mcLoc("trims/items/chestplate_trim"),
+                mirageLoc("trims/items/armadillo_trim"),
                 false
         );
 
