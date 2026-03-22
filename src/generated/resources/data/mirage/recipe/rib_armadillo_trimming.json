@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smithing_trim",
+  "addition": "#minecraft:trim_materials",
+  "base": "mirage:armadillo_chestplate",
+  "pattern": "mirage:armadillo_rib",
+  "template": "minecraft:rib_armor_trim_smithing_template"
+}

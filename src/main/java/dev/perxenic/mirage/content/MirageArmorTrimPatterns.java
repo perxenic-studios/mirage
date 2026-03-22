@@ -44,7 +44,7 @@ public class MirageArmorTrimPatterns {
                     false
             );
 
-            context.register(ResourceKey.create(vanillaPattern.registryKey(), newTrimIdentifier), armadilloPattern);
+            context.register(toArmadillo(vanillaPattern), armadilloPattern);
         }
     }
 

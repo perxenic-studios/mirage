@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_armadillo_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mirage:armadillo_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mirage:flow_armadillo_trimming"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_armadillo_chestplate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mirage:flow_armadillo_trimming"
+    ]
+  }
+}

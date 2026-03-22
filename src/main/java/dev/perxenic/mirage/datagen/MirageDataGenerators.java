@@ -20,8 +20,11 @@ public class MirageDataGenerators {
         generator.addProvider(true, new MirageBlockTagProvider(packOutput, lookupProvider));
         generator.addProvider(true, new MirageItemTagProvider(packOutput, lookupProvider));
 
+        // Update lookup provider after registering the armor trim patterns
+        lookupProvider = generator.addProvider(true, new MirageDatapackProvider(packOutput, lookupProvider))
+                .getRegistryProvider();
+
         generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
-        generator.addProvider(true, new MirageDatapackProvider(packOutput, lookupProvider));
 
         generator.addProvider(true, new MirageAtlasProvider(packOutput));
         generator.addProvider(true, new MirageEquipmentAssetProvider(packOutput));

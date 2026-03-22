@@ -1,7 +1,5 @@
 package dev.perxenic.mirage.datagen;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import dev.perxenic.mirage.registry.MirageArmorMaterials;
 import net.minecraft.client.data.models.EquipmentAssetProvider;
 import net.minecraft.client.resources.model.EquipmentClientInfo;
