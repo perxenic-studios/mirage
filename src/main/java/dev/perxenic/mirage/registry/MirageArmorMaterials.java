@@ -15,7 +15,7 @@ public class MirageArmorMaterials {
     public static final ResourceKey<EquipmentAsset> ARMADILLO_ASSET = EquipmentAssets.createId("armadillo");
 
     public static final ArmorMaterial ARMADILLO = new ArmorMaterial(
-            15,
+            5,
             Util.make(new EnumMap<>(ArmorType.class), attribute -> {
                 attribute.put(ArmorType.BOOTS, 2);
                 attribute.put(ArmorType.LEGGINGS, 5);
