@@ -42,12 +42,20 @@ public class MirageAtlasProvider implements DataProvider {
 
     @Override
     public CompletableFuture<?> run(CachedOutput cache) {
-        return CompletableFuture.allOf(DataProvider.saveStable(
-                cache,
-                SpriteSources.FILE_CODEC,
-                List.of(new PalettedPermutations(patternTextures(), TRIM_PALETTE_KEY, TRIM_PALETTE_VALUES)),
-                this.pathProvider.json(AtlasIds.ARMOR_TRIMS)
-        ));
+        return CompletableFuture.allOf(
+                DataProvider.saveStable(
+                    cache,
+                    SpriteSources.FILE_CODEC,
+                    List.of(new PalettedPermutations(patternTextures(), TRIM_PALETTE_KEY, TRIM_PALETTE_VALUES)),
+                    this.pathProvider.json(AtlasIds.ARMOR_TRIMS)
+                ),
+                DataProvider.saveStable(
+                        cache,
+                        SpriteSources.FILE_CODEC,
+                        List.of(new PalettedPermutations(List.of(mirageLoc("trims/items/armadillo_trim")), TRIM_PALETTE_KEY, TRIM_PALETTE_VALUES)),
+                        this.pathProvider.json(AtlasIds.ITEMS)
+                )
+        );
     }
 
     private static Stream<MaterialAssetGroup.AssetInfo> extractAllMaterialAssets() {
