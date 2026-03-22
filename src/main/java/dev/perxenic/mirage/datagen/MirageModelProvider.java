@@ -23,6 +23,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.stream.Stream;
 
 import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
+import static dev.perxenic.mirage.Mirage.mcLoc;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -36,7 +37,7 @@ public class MirageModelProvider extends ModelProvider {
         itemModels.generateTrimmableItem(
                 MirageItems.ARMADILLO_CHESTPLATE.get(),
                 MirageArmorMaterials.ARMADILLO_ASSET,
-                MirageArmorMaterials.ARMADILLO_ASSET.identifier(),
+                mcLoc("trims/items/chestplate_trim"),
                 false
         );
 
