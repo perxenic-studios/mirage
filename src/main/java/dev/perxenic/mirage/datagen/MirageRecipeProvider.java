@@ -1,11 +1,12 @@
 package dev.perxenic.mirage.datagen;
 
+import com.google.common.collect.ImmutableMap;
 import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
+import dev.perxenic.mirage.content.MirageArmorTrimPatterns;
 import dev.perxenic.mirage.content.conditions.MirageConfigCondition;
 import dev.perxenic.mirage.registry.MirageBlocks;
 import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -14,10 +15,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.equipment.trim.TrimPattern;
+import net.minecraft.world.item.equipment.trim.TrimPatterns;
 import net.minecraft.world.level.ItemLike;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import static dev.perxenic.mirage.Mirage.mirageLoc;
@@ -34,6 +37,27 @@ public class MirageRecipeProvider extends RecipeProvider {
 
     public static final MirageConfigCondition sherdConstructingCondition =
             new MirageConfigCondition("sherdConstructing");
+
+    public static final Map<ItemLike, ResourceKey<TrimPattern>> VANILLA_TRIM_MAP =
+            new ImmutableMap.Builder<ItemLike, ResourceKey<TrimPattern>>()
+                    .put(Items.SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.SENTRY)
+                    .put(Items.VEX_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.VEX)
+                    .put(Items.WILD_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.WILD)
+                    .put(Items.DUNE_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.DUNE)
+                    .put(Items.WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.WAYFINDER)
+                    .put(Items.RAISER_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.RAISER)
+                    .put(Items.SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.SHAPER)
+                    .put(Items.HOST_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.HOST)
+                    .put(Items.WARD_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.WARD)
+                    .put(Items.SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.SILENCE)
+                    .put(Items.TIDE_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.TIDE)
+                    .put(Items.SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.SNOUT)
+                    .put(Items.RIB_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.RIB)
+                    .put(Items.EYE_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.EYE)
+                    .put(Items.SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.SPIRE)
+                    .put(Items.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.FLOW)
+                    .put(Items.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE, TrimPatterns.BOLT)
+                    .build();
 
     public MirageRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
         super(provider, recipeOutput);
@@ -200,6 +224,22 @@ public class MirageRecipeProvider extends RecipeProvider {
                         output.withConditions(new MirageConfigCondition("blankSherdConstructing")),
                         ResourceKey.create(Registries.RECIPE, mirageLoc("blank_sherd_constructing"))
                 );
+
+        VANILLA_TRIM_MAP.forEach((trimItem, vanillaPattern) -> {
+            SmithingTrimRecipeBuilder.smithingTrim(
+                    Ingredient.of(trimItem),
+                    Ingredient.of(MirageItems.ARMADILLO_CHESTPLATE),
+                    Ingredient.of(registries.getOrThrow(ItemTags.TRIM_MATERIALS)),
+                    registries.getOrThrow(MirageArmorTrimPatterns.toArmadillo(vanillaPattern)),
+                    RecipeCategory.MISC
+            ).unlocks("has_armadillo_chestplate", has(MirageItems.ARMADILLO_CHESTPLATE)).save(
+                    output,
+                    ResourceKey.create(
+                            Registries.RECIPE,
+                            mirageLoc(vanillaPattern.identifier().getPath() + "_armadillo_trimming")
+                    )
+            );
+        });
     }
 
     public void fadedTerracottaSmelting(ItemLike inputItem, ItemLike outputItem, String name) {

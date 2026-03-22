@@ -47,4 +47,12 @@ public class MirageArmorTrimPatterns {
             context.register(ResourceKey.create(vanillaPattern.registryKey(), newTrimIdentifier), armadilloPattern);
         }
     }
+
+    public static Identifier toArmadillo(Identifier identifier) {
+        return mirageLoc("armadillo_"+identifier.getPath());
+    }
+
+    public static ResourceKey<TrimPattern> toArmadillo(ResourceKey<TrimPattern> key) {
+        return ResourceKey.create(key.registryKey(), toArmadillo(key.identifier()));
+    }
 }
