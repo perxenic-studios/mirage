@@ -19,6 +19,9 @@ public class MirageItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(MirageItems.ARMADILLO_CHESTPLATE.get());
+
         tag(ItemTags.SAND)
                 .add(MirageItems.SUSPICIOUS_RED_SAND.get());
 
