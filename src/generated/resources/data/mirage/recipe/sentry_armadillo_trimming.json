@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "armadilloArmorTrimming"
+    }
+  ],
   "type": "minecraft:smithing_trim",
   "addition": "#minecraft:trim_materials",
   "base": "mirage:armadillo_chestplate",

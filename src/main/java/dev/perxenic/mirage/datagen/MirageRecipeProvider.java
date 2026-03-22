@@ -233,7 +233,7 @@ public class MirageRecipeProvider extends RecipeProvider {
                     registries.getOrThrow(MirageArmorTrimPatterns.toArmadillo(vanillaPattern)),
                     RecipeCategory.MISC
             ).unlocks("has_armadillo_chestplate", has(MirageItems.ARMADILLO_CHESTPLATE)).save(
-                    output,
+                    output.withConditions(new MirageConfigCondition("armadilloArmorTrimming")),
                     ResourceKey.create(
                             Registries.RECIPE,
                             mirageLoc(vanillaPattern.identifier().getPath() + "_armadillo_trimming")

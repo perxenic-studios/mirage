@@ -30,6 +30,8 @@
   "mirage.configuration.section.mirage.common.toml.title": "Mirage Configs",
   "mirage.configuration.armadilloUnafraidArmor": "Armadillos unafraid with armor",
   "mirage.configuration.armadilloUnafraidArmor.tooltip": "Whether armadillos are no longer afraid of mobs wearing armadillo chestplates",
+  "mirage.configuration.armadilloArmorTrimming": "Armadillo Armor Trimming",
+  "mirage.configuration.armadilloArmorTrimming.tooltip": "Whether armadillo armor can have armor trims applied to it (Reload Required)",
   "mirage.configuration.fadedTerracottaSmelting": "Faded Terracotta Smelting",
   "mirage.configuration.fadedTerracottaSmelting.tooltip": "Whether glazed terracotta should be able to be smelted/blasted into faded terracotta (Reload Required)",
   "mirage.configuration.fadedTerracottaCreative": "Faded Terracotta in Creative",

@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "armadilloArmorTrimming"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_armadillo_chestplate": {

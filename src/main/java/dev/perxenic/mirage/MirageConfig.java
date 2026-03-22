@@ -15,6 +15,10 @@ public class MirageConfig {
             .comment("Whether armadillos are no longer afraid of mobs wearing armadillo chestplates")
             .define("armadilloUnafraidArmor", true);
 
+    public static final ModConfigSpec.BooleanValue ARMADILLO_ARMOR_TRIMMING = BUILDER
+            .comment("Whether armadillo armor can have armor trims applied to it (Reload Required)")
+            .define("armadilloArmorTrimming", true);
+
     public static final ModConfigSpec.BooleanValue FADED_TERRACOTTA_SMELTING = BUILDER
             .comment("Whether glazed terracotta should be able to be smelted/blasted into faded terracotta (Reload Required)")
             .define("fadedTerracottaSmelting", true);
@@ -46,6 +50,7 @@ public class MirageConfig {
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean armadilloUnafraidArmor;
+    public static boolean armadilloArmorTrimming;
     public static boolean fadedTerracottaSmelting;
     public static boolean fadedTerracottaCreative;
     public static boolean sherdCracking;
@@ -60,6 +65,9 @@ public class MirageConfig {
     static void onLoad(final ModConfigEvent event) {
         armadilloUnafraidArmor = ARMADILLO_UNAFRAID_ARMOR.get();
         configDict.put("armadilloUnafraidArmor", armadilloUnafraidArmor);
+
+        armadilloArmorTrimming = ARMADILLO_ARMOR_TRIMMING.get();
+        configDict.put("armadilloArmorTrimming", armadilloArmorTrimming);
 
         fadedTerracottaSmelting = FADED_TERRACOTTA_SMELTING.get();
         configDict.put("fadedTerracottaSmelting", fadedTerracottaSmelting);
