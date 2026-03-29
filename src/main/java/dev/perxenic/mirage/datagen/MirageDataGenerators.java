@@ -30,4 +30,20 @@ public class MirageDataGenerators {
         generator.addProvider(true, new MirageEquipmentAssetProvider(packOutput));
         generator.addProvider(true, new MirageModelProvider(packOutput));
     }
+
+    @SubscribeEvent
+    public static void gatherServerData(GatherDataEvent.Server event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+        generator.addProvider(true, new MirageBlockTagProvider(packOutput, lookupProvider));
+        generator.addProvider(true, new MirageItemTagProvider(packOutput, lookupProvider));
+
+        // Update lookup provider after registering the armor trim patterns
+        lookupProvider = generator.addProvider(true, new MirageDatapackProvider(packOutput, lookupProvider))
+                .getRegistryProvider();
+
+        generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
+    }
 }
