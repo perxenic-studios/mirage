@@ -2,12 +2,10 @@
   "feature": "mirage:desert_rock",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:biased_to_bottom",
-        "min_inclusive": 0,
-        "max_inclusive": 3
-      }
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 4,
+      "noise_factor": 8,
+      "noise_offset": -0.15
     },
     {
       "type": "minecraft:in_square"
