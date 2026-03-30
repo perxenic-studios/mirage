@@ -35,6 +35,10 @@ public class MirageBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.SAND)
                 .add(MirageBlocks.SUSPICIOUS_RED_SAND.get());
 
+        tag(BlockTags.SUPPORTS_DRY_VEGETATION)
+                .add(MirageBlocks.SUSPICIOUS_RED_SAND.get())
+                .add(MirageBlocks.SANDY_STONE.get());
+
         //tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
         //        .add(terracottaBlocks)
         //        .add(MirageBlocks.SUSPICIOUS_RED_SAND.get());
