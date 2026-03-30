@@ -1,0 +1,38 @@
+[
+  {
+    "processor_type": "minecraft:block_rot",
+    "integrity": 0.9,
+    "rottable_blocks": "minecraft:calcite"
+  },
+  {
+    "processor_type": "minecraft:rule",
+    "rules": [
+      {
+        "location_predicate": {
+          "predicate_type": "minecraft:always_true"
+        },
+        "input_predicate": {
+          "predicate_type": "minecraft:random_block_match",
+          "block": "minecraft:calcite",
+          "probability": 0.15
+        },
+        "output_state": {
+          "Name": "mirage:gilded_calcite"
+        }
+      },
+      {
+        "location_predicate": {
+          "predicate_type": "minecraft:always_true"
+        },
+        "input_predicate": {
+          "predicate_type": "minecraft:random_block_match",
+          "block": "minecraft:raw_gold_block",
+          "probability": 0.5
+        },
+        "output_state": {
+          "Name": "mirage:gilded_calcite"
+        }
+      }
+    ]
+  }
+]
