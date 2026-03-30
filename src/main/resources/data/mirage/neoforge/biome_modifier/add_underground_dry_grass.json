@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#mirage:has_sandy_stone",
+  "features": "mirage:placed_underground_dry_grass",
+  "step": "underground_decoration"
+}
