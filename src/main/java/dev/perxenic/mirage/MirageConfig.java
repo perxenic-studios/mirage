@@ -49,7 +49,7 @@ public class MirageConfig {
 
     public static final ModConfigSpec.BooleanValue DESERT_ROCK_SPAWNING = BUILDER
             .comment("Whether desert rocks should spawn in deserts (Reload Required)")
-            .define("desertRockSpawning", false);
+            .define("desertRockSpawning", true);
 
     static final ModConfigSpec SPEC = BUILDER.build();
 
