@@ -44,6 +44,7 @@ public class MirageItems {
 
     public static final DeferredItem<BlockItem> SUSPICIOUS_RED_SAND = ITEMS.registerSimpleBlockItem(MirageBlocks.SUSPICIOUS_RED_SAND);
     public static final DeferredItem<BlockItem> SANDY_STONE = ITEMS.registerSimpleBlockItem(MirageBlocks.SANDY_STONE);
+    public static final DeferredItem<BlockItem> GILDED_CALCITE = ITEMS.registerSimpleBlockItem(MirageBlocks.GILDED_CALCITE);
 
     public static void register(IEventBus eventBus) {
         for (DeferredBlock<GlazedTerracottaBlock> block : MirageBlocks.FADED_TERRACOTTA) {

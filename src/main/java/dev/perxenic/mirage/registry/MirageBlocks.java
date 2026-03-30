@@ -77,6 +77,11 @@ public class MirageBlocks {
                     .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("sandy_stone")))
     ));
 
+    public static final DeferredBlock<Block> GILDED_CALCITE = BLOCKS.register("gilded_calcite", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE)
+                    .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("gilded_calcite")))
+    ));
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
