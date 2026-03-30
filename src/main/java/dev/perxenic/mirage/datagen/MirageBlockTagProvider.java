@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import org.jetbrains.annotations.NotNull;
 
@@ -52,6 +53,16 @@ public class MirageBlockTagProvider extends BlockTagsProvider {
                 .add(MirageBlocks.SUSPICIOUS_RED_SAND.get());
 
         tag(BlockTags.STONE_ORE_REPLACEABLES)
+                .add(MirageBlocks.SANDY_STONE.get());
+        tag(BlockTags.AZALEA_ROOT_REPLACEABLE)
+                .add(MirageBlocks.SANDY_STONE.get());
+        tag(BlockTags.SCULK_REPLACEABLE_WORLD_GEN)
+                .add(MirageBlocks.SANDY_STONE.get());
+        tag(BlockTags.LUSH_GROUND_REPLACEABLE)
+                .add(MirageBlocks.SANDY_STONE.get());
+        tag(BlockTags.MOSS_REPLACEABLE)
+                .add(MirageBlocks.SANDY_STONE.get());
+        tag(Tags.Blocks.STONES)
                 .add(MirageBlocks.SANDY_STONE.get());
     }
 }
