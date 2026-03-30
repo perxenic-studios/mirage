@@ -51,6 +51,18 @@ public class MirageConfig {
             .comment("Whether desert rocks should spawn in deserts (Reload Required)")
             .define("desertRockSpawning", true);
 
+    public static final ModConfigSpec.BooleanValue SANDY_STONE_GENERATION = BUILDER
+            .comment("Whether patches of sandy stone should spawn under the desert (Reload Required)")
+            .define("sandyStoneGeneration", true);
+
+    public static final ModConfigSpec.BooleanValue SANDIER_STONE_PATCHES = BUILDER
+            .comment("Whether patches of sandy stone should sometimes contain sand (Reload Required)")
+            .define("sandierStonePatches", true);
+
+    public static final ModConfigSpec.BooleanValue UNDERGROUND_DRY_GRASS = BUILDER
+            .comment("Whether patches of sandy stone should sometimes have dry grass growing on them (Reload Required)")
+            .define("undergroundDryGrass", true);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean armadilloUnafraidArmor;
@@ -62,7 +74,11 @@ public class MirageConfig {
     public static boolean sherdCrafting;
     public static boolean blankSherdConstructing;
     public static boolean sherdConstructing;
+
     public static boolean desertRockSpawning;
+    public static boolean sandyStoneGeneration;
+    public static boolean sandierStonePatches;
+    public static boolean undergroundDryGrass;
 
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
@@ -97,5 +113,14 @@ public class MirageConfig {
 
         desertRockSpawning = DESERT_ROCK_SPAWNING.get();
         configDict.put("desertRockSpawning", desertRockSpawning);
+
+        sandyStoneGeneration = SANDY_STONE_GENERATION.get();
+        configDict.put("sandyStoneGeneration", sandyStoneGeneration);
+
+        sandierStonePatches = SANDIER_STONE_PATCHES.get();
+        configDict.put("sandierStonePatches", sandierStonePatches);
+
+        undergroundDryGrass = UNDERGROUND_DRY_GRASS.get();
+        configDict.put("undergroundDryGrass", undergroundDryGrass);
     }
 }
