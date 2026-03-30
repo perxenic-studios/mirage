@@ -47,6 +47,10 @@ public class MirageConfig {
             .comment("Whether any sherd should be able to be crafted from basic materials (Reload Required)")
             .define("sherdConstructing", false);
 
+    public static final ModConfigSpec.BooleanValue DESERT_ROCK_SPAWNING = BUILDER
+            .comment("Whether desert rocks should spawn in deserts (Reload Required)")
+            .define("desertRockSpawning", false);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean armadilloUnafraidArmor;
@@ -58,6 +62,7 @@ public class MirageConfig {
     public static boolean sherdCrafting;
     public static boolean blankSherdConstructing;
     public static boolean sherdConstructing;
+    public static boolean desertRockSpawning;
 
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
@@ -89,5 +94,8 @@ public class MirageConfig {
 
         sherdConstructing = SHERD_CONSTRUCTING.get();
         configDict.put("sherdConstructing", sherdConstructing);
+
+        desertRockSpawning = DESERT_ROCK_SPAWNING.get();
+        configDict.put("desertRockSpawning", desertRockSpawning);
     }
 }

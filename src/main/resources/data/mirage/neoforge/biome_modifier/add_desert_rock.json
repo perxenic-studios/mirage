@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "mirage:config",
+      "config_key": "desertRockSpawning"
+    }
+  ],
   "type": "neoforge:add_features",
   "biomes": "#mirage:has_desert_rock",
   "features": "mirage:placed_desert_rock",
