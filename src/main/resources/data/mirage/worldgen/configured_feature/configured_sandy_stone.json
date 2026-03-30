@@ -8,7 +8,7 @@
           "tag": "mirage:sandy_stone_replaceable"
         },
         "state": {
-          "Name": "minecraft:diamond_block"
+          "Name": "mirage:sandy_stone"
         }
       }
     ],

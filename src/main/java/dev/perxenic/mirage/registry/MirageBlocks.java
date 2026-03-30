@@ -4,10 +4,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BrushableBlock;
-import net.minecraft.world.level.block.GlazedTerracottaBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -73,6 +70,11 @@ public class MirageBlocks {
                     .sound(SoundType.SUSPICIOUS_SAND)
                     .pushReaction(PushReaction.DESTROY)
                     .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("suspicious_red_sand")))
+    ));
+
+    public static final DeferredBlock<Block> SANDY_STONE = BLOCKS.register("sandy_stone", () -> new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+                    .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("sandy_stone")))
     ));
 
     public static void register(IEventBus eventBus) {

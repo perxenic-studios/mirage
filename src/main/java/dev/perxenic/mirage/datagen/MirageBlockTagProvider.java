@@ -25,7 +25,8 @@ public class MirageBlockTagProvider extends BlockTagsProvider {
         }
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(terracottaBlocks);
+                .add(terracottaBlocks)
+                .add(MirageBlocks.SANDY_STONE.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(MirageBlocks.SUSPICIOUS_RED_SAND.get());
@@ -49,5 +50,8 @@ public class MirageBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.CAMEL_SAND_STEP_SOUND_BLOCKS)
                 .add(MirageBlocks.SUSPICIOUS_RED_SAND.get());
+
+        tag(BlockTags.STONE_ORE_REPLACEABLES)
+                .add(MirageBlocks.SANDY_STONE.get());
     }
 }

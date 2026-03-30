@@ -57,6 +57,8 @@ public class MirageModelProvider extends ModelProvider {
             );
         }
         blockModels.createBrushableBlock(MirageBlocks.SUSPICIOUS_RED_SAND.get());
+
+        blockModels.createTrivialCube(MirageBlocks.SANDY_STONE.get());
     }
 
     @Override
