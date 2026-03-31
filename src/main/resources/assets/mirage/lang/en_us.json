@@ -49,5 +49,13 @@
   "mirage.configuration.sherdConstructing": "Sherd Constructing",
   "mirage.configuration.sherdConstructing.tooltip": "Whether any sherd should be able to be crafted from basic materials (Reload Required)",
   "mirage.configuration.desertRockSpawning": "Desert Rock Spawning",
-  "mirage.configuration.desertRockSpawning.tooltip": "Whether desert rocks should spawn in deserts (Reload Required)"
+  "mirage.configuration.desertRockSpawning.tooltip": "Whether desert rocks should spawn in deserts (Reload Required)",
+  "mirage.configuration.sandyStoneGeneration": "Sandy Stone Generation",
+  "mirage.configuration.sandyStoneGeneration.tooltip": "Whether patches of sandy stone should spawn under the desert (Reload Required)",
+  "mirage.configuration.sandierStonePatches": "Sandier Stone Patches",
+  "mirage.configuration.sandierStonePatches.tooltip": "Whether patches of sandy stone should sometimes contain sand (Reload Required)",
+  "mirage.configuration.undergroundDryGrass": "Underground Dry Grass",
+  "mirage.configuration.undergroundDryGrass.tooltip": "Whether patches of sandy stone should sometimes have dry grass growing on them (Reload Required)",
+  "mirage.configuration.sandyStoneCrafting": "Sandy Stone Crafting",
+  "mirage.configuration.sandyStoneCrafting.tooltip": "Whether sandy stone can be crafted from stone and sand (Reload Required)"
 }
