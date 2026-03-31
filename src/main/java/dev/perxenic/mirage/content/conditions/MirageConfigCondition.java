@@ -14,8 +14,12 @@ public record MirageConfigCondition(String configKey) implements ICondition {
 
     @Override
     public boolean test(@NotNull IContext iContext) {
-        if (!MirageConfig.booleanDict.containsKey(configKey)) return false;
-        return MirageConfig.booleanDict.get(configKey);
+        if (MirageConfig.serverBoolDict.containsKey(configKey))
+            return MirageConfig.serverBoolDict.get(configKey);
+
+        // It is not recommended to check for common configs as this may cause desync
+        if (!MirageConfig.commonBoolDict.containsKey(configKey)) return false;
+        return MirageConfig.commonBoolDict.get(configKey);
     }
 
     @Override
