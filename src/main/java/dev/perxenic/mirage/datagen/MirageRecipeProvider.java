@@ -240,6 +240,16 @@ public class MirageRecipeProvider extends RecipeProvider {
                     )
             );
         });
+
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MirageItems.SANDY_STONE, 8)
+                .requires(Items.STONE, 8)
+                .requires(Items.SAND)
+                .group("sandy")
+                .unlockedBy("has_stone", has(Items.STONE))
+                .save(
+                        output.withConditions(new MirageConfigCondition("sandyStoneCrafting")),
+                        ResourceKey.create(Registries.RECIPE, mirageLoc("sandy_stone_crafting"))
+                );
     }
 
     public void fadedTerracottaSmelting(ItemLike inputItem, ItemLike outputItem, String name) {

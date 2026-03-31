@@ -63,6 +63,10 @@ public class MirageConfig {
             .comment("Whether patches of sandy stone should sometimes have dry grass growing on them (Reload Required)")
             .define("undergroundDryGrass", true);
 
+    public static final ModConfigSpec.BooleanValue SANDY_STONE_CRAFTING = BUILDER
+            .comment("Whether sandy stone can be crafted from stone and sand (Reload Required)")
+            .define("sandyStoneCrafting", true);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean armadilloUnafraidArmor;
@@ -79,6 +83,7 @@ public class MirageConfig {
     public static boolean sandyStoneGeneration;
     public static boolean sandierStonePatches;
     public static boolean undergroundDryGrass;
+    public static boolean sandyStoneCrafting;
 
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
@@ -122,5 +127,8 @@ public class MirageConfig {
 
         undergroundDryGrass = UNDERGROUND_DRY_GRASS.get();
         configDict.put("undergroundDryGrass", undergroundDryGrass);
+
+        sandyStoneCrafting = SANDY_STONE_CRAFTING.get();
+        configDict.put("sandyStoneCrafting", sandyStoneCrafting);
     }
 }
