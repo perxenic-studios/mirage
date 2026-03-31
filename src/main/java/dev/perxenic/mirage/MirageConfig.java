@@ -69,66 +69,23 @@ public class MirageConfig {
 
     static final ModConfigSpec SPEC = BUILDER.build();
 
-    public static boolean armadilloUnafraidArmor;
-    public static boolean armadilloArmorTrimming;
-    public static boolean fadedTerracottaSmelting;
-    public static boolean fadedTerracottaCreative;
-    public static boolean sherdCracking;
-    public static boolean sherdRepairing;
-    public static boolean sherdCrafting;
-    public static boolean blankSherdConstructing;
-    public static boolean sherdConstructing;
-
-    public static boolean desertRockSpawning;
-    public static boolean sandyStoneGeneration;
-    public static boolean sandierStonePatches;
-    public static boolean undergroundDryGrass;
-    public static boolean sandyStoneCrafting;
-
     public static final HashMap<String, Boolean> configDict = new HashMap<>();
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event) {
-        armadilloUnafraidArmor = ARMADILLO_UNAFRAID_ARMOR.get();
-        configDict.put("armadilloUnafraidArmor", armadilloUnafraidArmor);
-
-        armadilloArmorTrimming = ARMADILLO_ARMOR_TRIMMING.get();
-        configDict.put("armadilloArmorTrimming", armadilloArmorTrimming);
-
-        fadedTerracottaSmelting = FADED_TERRACOTTA_SMELTING.get();
-        configDict.put("fadedTerracottaSmelting", fadedTerracottaSmelting);
-
-        fadedTerracottaCreative = FADED_TERRACOTTA_CREATIVE.get();
-        configDict.put("fadedTerracottaCreative", fadedTerracottaCreative);
-
-        sherdCracking = SHERD_CRACKING.get();
-        configDict.put("sherdCracking", sherdCracking);
-
-        sherdRepairing = SHERD_REPAIRING.get();
-        configDict.put("sherdRepairing", sherdRepairing);
-
-        sherdCrafting = SHERD_CRAFTING.get();
-        configDict.put("sherdCrafting", sherdCrafting);
-
-        blankSherdConstructing = BLANK_SHERD_CONSTRUCTING.get();
-        configDict.put("blankSherdConstructing", blankSherdConstructing);
-
-        sherdConstructing = SHERD_CONSTRUCTING.get();
-        configDict.put("sherdConstructing", sherdConstructing);
-
-        desertRockSpawning = DESERT_ROCK_SPAWNING.get();
-        configDict.put("desertRockSpawning", desertRockSpawning);
-
-        sandyStoneGeneration = SANDY_STONE_GENERATION.get();
-        configDict.put("sandyStoneGeneration", sandyStoneGeneration);
-
-        sandierStonePatches = SANDIER_STONE_PATCHES.get();
-        configDict.put("sandierStonePatches", sandierStonePatches);
-
-        undergroundDryGrass = UNDERGROUND_DRY_GRASS.get();
-        configDict.put("undergroundDryGrass", undergroundDryGrass);
-
-        sandyStoneCrafting = SANDY_STONE_CRAFTING.get();
-        configDict.put("sandyStoneCrafting", sandyStoneCrafting);
+        configDict.put("armadilloUnafraidArmor", ARMADILLO_UNAFRAID_ARMOR.get());
+        configDict.put("armadilloArmorTrimming", ARMADILLO_ARMOR_TRIMMING.get());
+        configDict.put("fadedTerracottaSmelting", FADED_TERRACOTTA_SMELTING.get());
+        configDict.put("fadedTerracottaCreative", FADED_TERRACOTTA_CREATIVE.get());
+        configDict.put("sherdCracking", SHERD_CRACKING.get());
+        configDict.put("sherdRepairing", SHERD_REPAIRING.get());
+        configDict.put("sherdCrafting", SHERD_CRAFTING.get());
+        configDict.put("blankSherdConstructing", BLANK_SHERD_CONSTRUCTING.get());
+        configDict.put("sherdConstructing", SHERD_CONSTRUCTING.get());
+        configDict.put("desertRockSpawning", DESERT_ROCK_SPAWNING.get());
+        configDict.put("sandyStoneGeneration", SANDY_STONE_GENERATION.get());
+        configDict.put("sandierStonePatches", SANDIER_STONE_PATCHES.get());
+        configDict.put("undergroundDryGrass", UNDERGROUND_DRY_GRASS.get());
+        configDict.put("sandyStoneCrafting", SANDY_STONE_CRAFTING.get());
     }
 }
