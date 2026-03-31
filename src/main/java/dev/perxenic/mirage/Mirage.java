@@ -26,7 +26,7 @@ public class Mirage {
         modEventBus.addListener(MirageBlocks::onBlockEntityTypeAddBlocksEvent);
         modEventBus.addListener(MirageItems::addCreative);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, MirageConfig.SPEC);
+        MirageConfig.register(modContainer);
     }
 
     public static Identifier mcLoc(String path) {

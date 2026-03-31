@@ -19,7 +19,7 @@ public class ArmadilloScaredMixin {
             cancellable = true
     )
     private void noScareArmadilloArmor(CallbackInfoReturnable<Boolean> cir, @Local(argsOnly = true) LivingEntity entity) {
-        if (MirageConfig.configDict.get("armadilloUnafraidArmor")) {
+        if (MirageConfig.booleanDict.get("armadilloUnafraidArmor")) {
             if (entity.getItemBySlot(EquipmentSlot.CHEST).is(MirageItems.ARMADILLO_CHESTPLATE)) {
                 cir.setReturnValue(false);
             }

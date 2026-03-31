@@ -59,7 +59,7 @@ public class MirageItems {
             simpleInsertAfter(event, Items.TURTLE_HELMET, ARMADILLO_CHESTPLATE);
         }
         else if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
-            if (MirageConfig.configDict.get("fadedTerracottaCreative")) {
+            if (MirageConfig.booleanDict.get("fadedTerracottaCreative")) {
                 simpleInsertAfter(event, Items.TERRACOTTA, MirageBlocks.FADED_TERRACOTTA.getFirst());
 
                 for (int i = 1; i < MirageBlocks.FADED_TERRACOTTA.size(); i++)
