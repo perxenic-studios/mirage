@@ -44,6 +44,7 @@ public class MirageModelProvider extends ModelProvider {
         itemModels.generateFlatItem(MirageItems.BLANK_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MirageItems.HIDE_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(MirageItems.BARREN_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MirageItems.SANCTUARY_POTTERY_SHERD.get(), ModelTemplates.FLAT_ITEM);
 
         for (DeferredBlock<GlazedTerracottaBlock> block : MirageBlocks.FADED_TERRACOTTA) {
             blockModels.blockStateOutput.accept(

@@ -26,13 +26,15 @@ public class MirageItemTagProvider extends ItemTagsProvider {
                 MirageItems.CRACKED_POTTERY_SHERD.get(),
                 MirageItems.BLANK_POTTERY_SHERD.get(),
                 MirageItems.HIDE_POTTERY_SHERD.get(),
-                MirageItems.BARREN_POTTERY_SHERD.get()
+                MirageItems.BARREN_POTTERY_SHERD.get(),
+                MirageItems.SANCTUARY_POTTERY_SHERD.get()
         );
         tag(ItemTags.DECORATED_POT_SHERDS).add(
                 MirageItems.CRACKED_POTTERY_SHERD.get(),
                 MirageItems.BLANK_POTTERY_SHERD.get(),
                 MirageItems.HIDE_POTTERY_SHERD.get(),
-                MirageItems.BARREN_POTTERY_SHERD.get()
+                MirageItems.BARREN_POTTERY_SHERD.get(),
+                MirageItems.SANCTUARY_POTTERY_SHERD.get()
         );
 
         tag(MirageItemTags.BADLANDS_RUINS_SHERDS).add(
@@ -43,7 +45,8 @@ public class MirageItemTagProvider extends ItemTagsProvider {
         tag(MirageItemTags.DESERT_RUINS_SHERDS).add(
                 Items.SKULL_POTTERY_SHERD,
                 Items.DANGER_POTTERY_SHERD,
-                MirageItems.BARREN_POTTERY_SHERD.get()
+                MirageItems.BARREN_POTTERY_SHERD.get(),
+                MirageItems.SANCTUARY_POTTERY_SHERD.get()
         );
         tag(MirageItemTags.PLATEAU_RUINS_SHERDS).add(
                 Items.PRIZE_POTTERY_SHERD,

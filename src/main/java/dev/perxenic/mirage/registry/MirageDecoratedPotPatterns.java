@@ -24,6 +24,7 @@ public class MirageDecoratedPotPatterns {
     public static final Holder<DecoratedPotPattern> BLANK = addPotPattern(MirageItems.BLANK_POTTERY_SHERD.getId(), "blank");
     public static final Holder<DecoratedPotPattern> HIDE = addPotPattern(MirageItems.HIDE_POTTERY_SHERD.getId(), "hide");
     public static final Holder<DecoratedPotPattern> BARREN = addPotPattern(MirageItems.BARREN_POTTERY_SHERD.getId(), "barren");
+    public static final Holder<DecoratedPotPattern> SANCTUARY = addPotPattern(MirageItems.SANCTUARY_POTTERY_SHERD.getId(), "sanctuary");
 
     public static void register(IEventBus eventBus) {
         PATTERNS.register(eventBus);

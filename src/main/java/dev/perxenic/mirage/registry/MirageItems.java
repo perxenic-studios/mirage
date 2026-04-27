@@ -41,6 +41,7 @@ public class MirageItems {
     public static final DeferredItem<Item> BLANK_POTTERY_SHERD = ITEMS.registerSimpleItem("blank_pottery_sherd");
     public static final DeferredItem<Item> HIDE_POTTERY_SHERD = ITEMS.registerSimpleItem("hide_pottery_sherd");
     public static final DeferredItem<Item> BARREN_POTTERY_SHERD = ITEMS.registerSimpleItem("barren_pottery_sherd");
+    public static final DeferredItem<Item> SANCTUARY_POTTERY_SHERD = ITEMS.registerSimpleItem("sanctuary_pottery_sherd");
 
     public static final DeferredItem<BlockItem> SUSPICIOUS_RED_SAND = ITEMS.registerSimpleBlockItem(MirageBlocks.SUSPICIOUS_RED_SAND);
     public static final DeferredItem<BlockItem> SANDY_STONE = ITEMS.registerSimpleBlockItem(MirageBlocks.SANDY_STONE);
@@ -81,6 +82,7 @@ public class MirageItems {
             simpleInsertBefore(event, BLANK_POTTERY_SHERD, CRACKED_POTTERY_SHERD);
             simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, HIDE_POTTERY_SHERD);
             simpleInsertAfter(event, HIDE_POTTERY_SHERD, BARREN_POTTERY_SHERD);
+            simpleInsertAfter(event, SANCTUARY_POTTERY_SHERD, HIDE_POTTERY_SHERD);
         }
     }
 
