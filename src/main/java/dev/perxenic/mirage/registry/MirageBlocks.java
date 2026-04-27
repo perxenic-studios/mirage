@@ -1,6 +1,8 @@
 package dev.perxenic.mirage.registry;
 
 import com.google.common.collect.ImmutableList;
+import dev.perxenic.mirage.content.blocks.ShortScorchedGrassBlock;
+import dev.perxenic.mirage.content.blocks.TallScorchedGrassBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
@@ -80,6 +82,18 @@ public class MirageBlocks {
     public static final DeferredBlock<Block> GILDED_CALCITE = BLOCKS.register("gilded_calcite", () -> new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE)
                     .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("gilded_calcite")))
+    ));
+
+    public static final DeferredBlock<Block> SHORT_SCORCHED_GRASS = BLOCKS.register("short_scorched_grass", () -> new ShortScorchedGrassBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_DRY_GRASS)
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("short_scorched_grass")))
+    ));
+
+    public static final DeferredBlock<Block> TALL_SCORCHED_GRASS = BLOCKS.register("tall_scorched_grass", () -> new TallScorchedGrassBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_DRY_GRASS)
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("tall_scorched_grass")))
     ));
 
     public static void register(IEventBus eventBus) {

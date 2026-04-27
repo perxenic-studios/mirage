@@ -46,6 +46,8 @@ public class MirageItems {
     public static final DeferredItem<BlockItem> SUSPICIOUS_RED_SAND = ITEMS.registerSimpleBlockItem(MirageBlocks.SUSPICIOUS_RED_SAND);
     public static final DeferredItem<BlockItem> SANDY_STONE = ITEMS.registerSimpleBlockItem(MirageBlocks.SANDY_STONE);
     public static final DeferredItem<BlockItem> GILDED_CALCITE = ITEMS.registerSimpleBlockItem(MirageBlocks.GILDED_CALCITE);
+    public static final DeferredItem<BlockItem> SHORT_SCORCHED_GRASS = ITEMS.registerSimpleBlockItem(MirageBlocks.SHORT_SCORCHED_GRASS);
+    public static final DeferredItem<BlockItem> TALL_SCORCHED_GRASS = ITEMS.registerSimpleBlockItem(MirageBlocks.TALL_SCORCHED_GRASS);
 
     public static void register(IEventBus eventBus) {
         for (DeferredBlock<GlazedTerracottaBlock> block : MirageBlocks.FADED_TERRACOTTA) {
@@ -82,7 +84,7 @@ public class MirageItems {
             simpleInsertBefore(event, BLANK_POTTERY_SHERD, CRACKED_POTTERY_SHERD);
             simpleInsertAfter(event, Items.SNORT_POTTERY_SHERD, HIDE_POTTERY_SHERD);
             simpleInsertAfter(event, HIDE_POTTERY_SHERD, BARREN_POTTERY_SHERD);
-            simpleInsertAfter(event, SANCTUARY_POTTERY_SHERD, HIDE_POTTERY_SHERD);
+            simpleInsertAfter(event, BARREN_POTTERY_SHERD, SANCTUARY_POTTERY_SHERD);
         }
     }
 

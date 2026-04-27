@@ -61,6 +61,15 @@ public class MirageModelProvider extends ModelProvider {
 
         blockModels.createTrivialCube(MirageBlocks.SANDY_STONE.get());
         blockModels.createTrivialCube(MirageBlocks.GILDED_CALCITE.get());
+
+        blockModels.createCrossBlockWithDefaultItem(
+                MirageBlocks.SHORT_SCORCHED_GRASS.get(),
+                BlockModelGenerators.PlantType.NOT_TINTED
+        );
+        blockModels.createCrossBlockWithDefaultItem(
+                MirageBlocks.TALL_SCORCHED_GRASS.get(),
+                BlockModelGenerators.PlantType.NOT_TINTED
+        );
     }
 
     @Override

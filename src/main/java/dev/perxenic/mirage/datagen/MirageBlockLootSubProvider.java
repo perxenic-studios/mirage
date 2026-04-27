@@ -59,5 +59,8 @@ public class MirageBlockLootSubProvider extends BlockLootSubProvider {
                                 )
                 ))
         );
+
+        add(MirageBlocks.SHORT_SCORCHED_GRASS.get(), createShearsOnlyDrop(MirageBlocks.SHORT_SCORCHED_GRASS));
+        add(MirageBlocks.TALL_SCORCHED_GRASS.get(), createShearsOnlyDrop(MirageBlocks.TALL_SCORCHED_GRASS));
     }
 }

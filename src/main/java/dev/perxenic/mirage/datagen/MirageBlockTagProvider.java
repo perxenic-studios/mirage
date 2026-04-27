@@ -68,5 +68,15 @@ public class MirageBlockTagProvider extends BlockTagsProvider {
                 .add(MirageBlocks.SANDY_STONE.get());
         tag(Tags.Blocks.STONES)
                 .add(MirageBlocks.SANDY_STONE.get());
+
+        tag(BlockTags.EDIBLE_FOR_SHEEP)
+                .add(MirageBlocks.SHORT_SCORCHED_GRASS.get())
+                .add(MirageBlocks.TALL_SCORCHED_GRASS.get());
+        tag(BlockTags.REPLACEABLE_BY_TREES)
+                .add(MirageBlocks.SHORT_SCORCHED_GRASS.get())
+                .add(MirageBlocks.TALL_SCORCHED_GRASS.get());
+        tag(BlockTags.REPLACEABLE_BY_MUSHROOMS)
+                .add(MirageBlocks.SHORT_SCORCHED_GRASS.get())
+                .add(MirageBlocks.TALL_SCORCHED_GRASS.get());
     }
 }
