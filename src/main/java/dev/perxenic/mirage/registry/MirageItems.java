@@ -89,6 +89,7 @@ public class MirageItems {
         else if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             simpleInsertAfter(event, Items.DRY_SHORT_GRASS, MirageItems.SHORT_SCORCHED_GRASS);
             simpleInsertAfter(event, Items.DRY_TALL_GRASS, MirageItems.TALL_SCORCHED_GRASS);
+            simpleInsertAfter(event, Items.CALCITE, MirageItems.GILDED_CALCITE);
         }
     }
 
