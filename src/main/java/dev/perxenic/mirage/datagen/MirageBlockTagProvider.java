@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import org.jetbrains.annotations.NotNull;
@@ -38,6 +39,9 @@ public class MirageBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.SUPPORTS_DRY_VEGETATION)
                 .add(MirageBlocks.SUSPICIOUS_RED_SAND.get())
                 .add(MirageBlocks.SANDY_STONE.get());
+
+        tag(BlockTags.SUPPORTS_CACTUS)
+                .add(Blocks.COARSE_DIRT);
 
         //tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
         //        .add(terracottaBlocks)
