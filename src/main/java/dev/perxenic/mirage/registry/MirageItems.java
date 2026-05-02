@@ -86,6 +86,10 @@ public class MirageItems {
             simpleInsertAfter(event, HIDE_POTTERY_SHERD, BARREN_POTTERY_SHERD);
             simpleInsertAfter(event, BARREN_POTTERY_SHERD, SANCTUARY_POTTERY_SHERD);
         }
+        else if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            simpleInsertAfter(event, Items.DRY_SHORT_GRASS, MirageItems.SHORT_SCORCHED_GRASS);
+            simpleInsertAfter(event, Items.DRY_TALL_GRASS, MirageItems.TALL_SCORCHED_GRASS);
+        }
     }
 
     public static void simpleInsertBefore(BuildCreativeModeTabContentsEvent event, ItemLike existing, ItemLike after) {
