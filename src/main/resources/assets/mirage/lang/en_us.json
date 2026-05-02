@@ -26,6 +26,7 @@
   "item.mirage.blank_pottery_sherd": "Blank Pottery Sherd",
   "item.mirage.cracked_pottery_sherd": "Cracked Pottery Sherd",
   "item.mirage.hide_pottery_sherd": "Hide Pottery Sherd",
+  "item.mirage.sanctuary_pottery_sherd": "Sanctuary Pottery Sherd",
 
   "mirage.configuration.title": "Mirage Configs",
   "mirage.configuration.section.mirage.common.toml": "Mirage Common Configs",
