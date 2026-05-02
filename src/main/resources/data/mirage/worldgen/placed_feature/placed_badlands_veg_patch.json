@@ -2,18 +2,8 @@
   "feature": "mirage:configured_badlands_veg_patch",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 3
-    },
-    {
-      "type": "minecraft:in_square"
-    },
-    {
       "type": "minecraft:heightmap",
       "heightmap": "MOTION_BLOCKING"
-    },
-    {
-      "type": "minecraft:biome"
     }
   ]
 }

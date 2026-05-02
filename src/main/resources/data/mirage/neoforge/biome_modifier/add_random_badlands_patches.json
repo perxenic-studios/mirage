@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
   "biomes": "minecraft:badlands",
-  "features": "mirage:placed_badlands_veg_patch",
+  "features": "mirage:placed_random_badlands_patches",
   "step": "vegetal_decoration"
 }

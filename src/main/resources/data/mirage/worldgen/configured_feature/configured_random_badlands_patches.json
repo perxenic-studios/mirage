@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": {
+      "feature": {
+        "type": "no_op",
+        "config": {}
+      },
+      "placement": []
+    },
+    "features": [
+      {
+        "feature": "mirage:placed_dead_bush_badlands",
+        "chance": 0.50
+      },
+      {
+        "feature": "mirage:placed_cactus_patch_badlands",
+        "chance": 0.30
+      },
+      {
+        "feature": "mirage:placed_badlands_veg_patch",
+        "chance": 0.33
+      },
+      {
+        "feature": "mirage:placed_badlands_grass",
+        "chance": 0.8
+      }
+    ]
+  }
+}
