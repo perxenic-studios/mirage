@@ -11,8 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Map;
-
 @Mixin(DecoratedPotPatterns.class)
 public class DecoratedPotPatternsMixin {
     @Inject(
@@ -21,7 +19,7 @@ public class DecoratedPotPatternsMixin {
             cancellable = true
     )
     private static void getPatternFromItem(Item item, CallbackInfoReturnable<ResourceKey<DecoratedPotPattern>> cir) {
-        if (MirageDecoratedPotPatterns.EDITABLE_ITEM_TO_POT_TEXTURE.containsKey(BuiltInRegistries.ITEM.getKey(item)))
-            cir.setReturnValue(MirageDecoratedPotPatterns.EDITABLE_ITEM_TO_POT_TEXTURE.get(BuiltInRegistries.ITEM.getKey(item)));
+        if (MirageDecoratedPotPatterns.MIRAGE_ITEM_TO_POT_TEXTURE_MAP.containsKey(BuiltInRegistries.ITEM.getKey(item)))
+            cir.setReturnValue(MirageDecoratedPotPatterns.MIRAGE_ITEM_TO_POT_TEXTURE_MAP.get(BuiltInRegistries.ITEM.getKey(item)));
     }
 }

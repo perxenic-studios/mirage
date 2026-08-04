@@ -15,7 +15,7 @@ import static dev.perxenic.mirage.Mirage.MIRAGE_ID;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MirageDecoratedPotPatterns {
-    public static final Map<Identifier, ResourceKey<DecoratedPotPattern>> EDITABLE_ITEM_TO_POT_TEXTURE = new HashMap<>();
+    public static final Map<Identifier, ResourceKey<DecoratedPotPattern>> MIRAGE_ITEM_TO_POT_TEXTURE_MAP = new HashMap<>();
 
     private static final DeferredRegister<DecoratedPotPattern> PATTERNS =
             DeferredRegister.create(BuiltInRegistries.DECORATED_POT_PATTERN, MIRAGE_ID);
@@ -34,7 +34,7 @@ public class MirageDecoratedPotPatterns {
         Holder<DecoratedPotPattern> pattern = PATTERNS.register(name,
                 () -> new DecoratedPotPattern(mirageLoc(name+"_pottery_pattern"))
         );
-        EDITABLE_ITEM_TO_POT_TEXTURE.put(item, pattern.getKey());
+        MIRAGE_ITEM_TO_POT_TEXTURE_MAP.put(item, pattern.getKey());
         return pattern;
     }
 }
