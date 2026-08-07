@@ -7,14 +7,21 @@ import dev.perxenic.mirage.registry.MirageItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlazedTerracottaBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -70,6 +77,48 @@ public class MirageModelProvider extends ModelProvider {
                 MirageBlocks.TALL_SCORCHED_GRASS.get(),
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
+
+        createPointedStone(blockModels, MirageBlocks.POINTED_SANDSTONE.get());
+    }
+
+    private void createPointedStone(BlockModelGenerators blockModels, Block block) {
+        PropertyDispatch.C2<MultiVariant, Direction, DripstoneThickness> generator = PropertyDispatch.initial(
+                BlockStateProperties.VERTICAL_DIRECTION,
+                BlockStateProperties.DRIPSTONE_THICKNESS
+        );
+
+        for (DripstoneThickness dripstoneThickness : DripstoneThickness.values()) {
+            generator.select(
+                    Direction.UP,
+                    dripstoneThickness,
+                    createPointedStoneVariant(blockModels, block, Direction.UP, dripstoneThickness)
+            );
+            generator.select(
+                    Direction.DOWN,
+                    dripstoneThickness,
+                    createPointedStoneVariant(blockModels, block, Direction.DOWN, dripstoneThickness)
+            );
+        }
+
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(generator));
+        blockModels.registerSimpleFlatItemModel(block, "_down_tip");
+    }
+
+    private MultiVariant createPointedStoneVariant(
+            BlockModelGenerators blockModels,
+            Block block,
+            Direction direction,
+            DripstoneThickness dripstoneThickness
+    ) {
+        String var10000 = direction.getSerializedName();
+        String suffix = "_" + var10000 + "_" + dripstoneThickness.getSerializedName();
+        TextureMapping texture = TextureMapping.cross(TextureMapping.getBlockTexture(block, suffix));
+        return BlockModelGenerators.plainVariant(ModelTemplates.POINTED_DRIPSTONE.createWithSuffix(
+                block,
+                suffix,
+                texture,
+                blockModels.modelOutput
+        ));
     }
 
     @Override

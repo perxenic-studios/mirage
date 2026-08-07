@@ -1,6 +1,7 @@
 package dev.perxenic.mirage.registry;
 
 import com.google.common.collect.ImmutableList;
+import dev.perxenic.mirage.content.blocks.PointedStoneBlock;
 import dev.perxenic.mirage.content.blocks.ShortScorchedGrassBlock;
 import dev.perxenic.mirage.content.blocks.TallScorchedGrassBlock;
 import net.minecraft.core.registries.Registries;
@@ -94,6 +95,12 @@ public class MirageBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_DRY_GRASS)
                     .mapColor(MapColor.COLOR_ORANGE)
                     .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("tall_scorched_grass")))
+    ));
+
+    public static final DeferredBlock<PointedStoneBlock> POINTED_SANDSTONE = BLOCKS.register("pointed_sandstone", () -> new PointedStoneBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.POINTED_DRIPSTONE)
+                    .mapColor(MapColor.SAND)
+                    .setId(ResourceKey.create(Registries.BLOCK, mirageLoc("pointed_sandstone")))
     ));
 
     public static void register(IEventBus eventBus) {

@@ -48,6 +48,7 @@ public class MirageItems {
     public static final DeferredItem<BlockItem> GILDED_CALCITE = ITEMS.registerSimpleBlockItem(MirageBlocks.GILDED_CALCITE);
     public static final DeferredItem<BlockItem> SHORT_SCORCHED_GRASS = ITEMS.registerSimpleBlockItem(MirageBlocks.SHORT_SCORCHED_GRASS);
     public static final DeferredItem<BlockItem> TALL_SCORCHED_GRASS = ITEMS.registerSimpleBlockItem(MirageBlocks.TALL_SCORCHED_GRASS);
+    public static final DeferredItem<BlockItem> POINTED_SANDSTONE = ITEMS.registerSimpleBlockItem(MirageBlocks.POINTED_SANDSTONE);
 
     public static void register(IEventBus eventBus) {
         for (DeferredBlock<GlazedTerracottaBlock> block : MirageBlocks.FADED_TERRACOTTA) {
@@ -90,6 +91,7 @@ public class MirageItems {
             simpleInsertAfter(event, Items.DRY_SHORT_GRASS, MirageItems.SHORT_SCORCHED_GRASS);
             simpleInsertAfter(event, Items.DRY_TALL_GRASS, MirageItems.TALL_SCORCHED_GRASS);
             simpleInsertAfter(event, Items.CALCITE, MirageItems.GILDED_CALCITE);
+            simpleInsertAfter(event, Items.POINTED_DRIPSTONE, MirageItems.POINTED_SANDSTONE);
         }
     }
 
