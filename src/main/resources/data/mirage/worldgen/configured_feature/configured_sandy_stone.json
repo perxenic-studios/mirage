@@ -1,18 +1,37 @@
 {
-  "type": "minecraft:ore",
+  "type": "mirage:underground_blob",
   "config": {
-    "targets": [
-      {
-        "target": {
-          "predicate_type": "minecraft:tag_match",
-          "tag": "mirage:sandy_stone_replaceable"
+    "size": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 7,
+      "min_inclusive": 4
+    },
+    "target": {
+      "type": "minecraft:matching_block_tag",
+      "tag": "mirage:sandy_stone_replaceable"
+    },
+    "state_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "mirage:sandy_stone"
+          },
+          "weight": 5
         },
-        "state": {
-          "Name": "mirage:sandy_stone"
+        {
+          "data": {
+            "Name": "minecraft:sand"
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "minecraft:stone"
+          },
+          "weight": 2
         }
-      }
-    ],
-    "size": 48,
-    "discard_chance_on_air_exposure": 0
+      ]
+    }
   }
 }

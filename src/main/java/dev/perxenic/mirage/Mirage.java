@@ -19,6 +19,7 @@ public class Mirage {
     public Mirage(IEventBus modEventBus, ModContainer modContainer) {
         MirageBlocks.register(modEventBus);
         MirageConditionCodecs.register(modEventBus);
+        MirageFeatures.register(modEventBus);
         MirageItems.register(modEventBus);
         MirageStructureTypes.register(modEventBus);
         MirageDecoratedPotPatterns.register(modEventBus);
