@@ -1,0 +1,58 @@
+{
+  "type": "mirage:pointed_stone",
+  "config": {
+    "height": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 6,
+      "min_inclusive": 2
+    },
+    "base_block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "mirage:pointed_sandstone",
+        "Properties": {
+          "thickness": "base",
+          "vertical_direction": "down",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "middle_block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "mirage:pointed_sandstone",
+        "Properties": {
+          "thickness": "middle",
+          "vertical_direction": "down",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "frustum_block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "mirage:pointed_sandstone",
+        "Properties": {
+          "thickness": "frustum",
+          "vertical_direction": "down",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "tip_block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "mirage:pointed_sandstone",
+        "Properties": {
+          "thickness": "tip",
+          "vertical_direction": "down",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "target": {
+      "type": "minecraft:matching_block_tag",
+      "tag": "minecraft:air"
+    }
+  }
+}

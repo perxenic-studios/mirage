@@ -1,6 +1,8 @@
 package dev.perxenic.mirage.registry;
 
 import dev.perxenic.mirage.Mirage;
+import dev.perxenic.mirage.content.features.PointedStoneConfiguration;
+import dev.perxenic.mirage.content.features.PointedStoneFeature;
 import dev.perxenic.mirage.content.features.UndergroundBlobConfiguration;
 import dev.perxenic.mirage.content.features.UndergroundBlobFeature;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -13,6 +15,11 @@ import java.util.function.Supplier;
 public class MirageFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES =
             DeferredRegister.create(BuiltInRegistries.FEATURE, Mirage.MIRAGE_ID);
+
+    public static Supplier<Feature<PointedStoneConfiguration>> POINTED_STONE = FEATURES.register(
+            "pointed_stone",
+            () -> new PointedStoneFeature(PointedStoneConfiguration.CODEC)
+    );
 
     public static Supplier<Feature<UndergroundBlobConfiguration>> UNDERGROUND_BLOB = FEATURES.register(
             "underground_blob",
