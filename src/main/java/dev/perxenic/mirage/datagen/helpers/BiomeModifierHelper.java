@@ -1,5 +1,6 @@
 package dev.perxenic.mirage.datagen.helpers;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -15,6 +16,7 @@ import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 import static dev.perxenic.mirage.Mirage.mirageLoc;
@@ -38,6 +40,24 @@ public class BiomeModifierHelper {
                 new BiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(TagKey.create(Registries.BIOME, mirageLoc(biomeTag))),
                         HolderSet.direct(features),
+                        generationStep
+                )
+        );
+    }
+
+    public static void addFeatureBiomeModifer(
+            BootstrapContext<BiomeModifier> context,
+            HolderGetter<Biome> biomes,
+            GenerationStep.Decoration generationStep,
+            String name,
+            String biomeTag,
+            List<Holder<PlacedFeature>> placedFeatures
+    ) {
+        context.register(
+                ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, mirageLoc(name)),
+                new BiomeModifiers.AddFeaturesBiomeModifier(
+                        biomes.getOrThrow(TagKey.create(Registries.BIOME, mirageLoc(biomeTag))),
+                        HolderSet.direct(placedFeatures),
                         generationStep
                 )
         );
