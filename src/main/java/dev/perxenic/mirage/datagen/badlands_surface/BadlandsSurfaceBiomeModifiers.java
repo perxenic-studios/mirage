@@ -11,6 +11,7 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import static dev.perxenic.mirage.Mirage.mcLoc;
 import static dev.perxenic.mirage.datagen.helpers.BiomeModifierHelper.*;
 
+//TODO: Move all badlands surface features to datagen
 public class BadlandsSurfaceBiomeModifiers {
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);

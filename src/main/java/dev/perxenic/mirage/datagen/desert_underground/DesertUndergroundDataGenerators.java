@@ -9,6 +9,7 @@ import java.util.concurrent.CompletableFuture;
 
 import static dev.perxenic.mirage.datagen.helpers.FactoryHelper.factoryWithLookup;
 
+//TODO: Add gold geode to datagen, maybe migrate to feature?
 public class DesertUndergroundDataGenerators {
     public static void serverSideData(
             DataGenerator.PackGenerator packGenerator,

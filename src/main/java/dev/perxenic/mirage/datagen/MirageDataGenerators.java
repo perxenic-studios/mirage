@@ -62,6 +62,7 @@ public class MirageDataGenerators {
 
         generator.addProvider(true, factoryWithLookup(MirageRecipeProvider.Runner::new, lookupProvider));
 
+        //TODO: Add built-in pack for ruins
         addBuiltInPack("badlands_surface", generator, lookupProvider, BadlandsSurfaceDataGenerators::serverSideData);
         addBuiltInPack("desert_surface", generator, lookupProvider, DesertSurfaceDataGenerators::serverSideData);
         addBuiltInPack("desert_underground", generator, lookupProvider, DesertUndergroundDataGenerators::serverSideData);
