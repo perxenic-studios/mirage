@@ -71,8 +71,8 @@ public class DesertUndergroundPlacedFeatures {
                         CountPlacement.of(1024),
                         InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(
-                                VerticalAnchor.BOTTOM,
-                                VerticalAnchor.absolute(256)
+                                VerticalAnchor.absolute(0),
+                                VerticalAnchor.absolute(288)
                         ),
                         EnvironmentScanPlacement.scanningFor(
                                 scanDirection,
