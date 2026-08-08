@@ -1,6 +1,9 @@
 {
   "type": "neoforge:add_features",
   "biomes": "#mirage:has_sandy_stone",
-  "features": "mirage:placed_pointed_sandstone",
+  "features": [
+    "mirage:placed_pointed_sandstone",
+    "mirage:placed_floor_pointed_sandstone"
+  ],
   "step": "underground_decoration"
 }
