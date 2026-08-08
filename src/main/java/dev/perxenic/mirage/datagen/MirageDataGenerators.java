@@ -1,5 +1,7 @@
 package dev.perxenic.mirage.datagen;
 
+import dev.perxenic.mirage.Mirage;
+import dev.perxenic.mirage.datagen.desert_underground.DesertUndergroundDataGenerators;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -12,6 +14,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.BiConsumer;
 
 @EventBusSubscriber
 public class MirageDataGenerators {
@@ -58,6 +61,8 @@ public class MirageDataGenerators {
                 .getRegistryProvider();
 
         generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
+
+        addBuiltInPack("desert_underground", generator, lookupProvider, DesertUndergroundDataGenerators::serverSideData);
     }
 
     private static void clientSideData(
@@ -67,5 +72,17 @@ public class MirageDataGenerators {
         generator.addProvider(true, new MirageAtlasProvider(packOutput));
         generator.addProvider(true, new MirageEquipmentAssetProvider(packOutput));
         generator.addProvider(true, new MirageModelProvider(packOutput));
+    }
+
+    private static void addBuiltInPack(
+            String packId,
+            DataGenerator generator,
+            CompletableFuture<HolderLookup.Provider> lookupProvider,
+            BiConsumer<DataGenerator.PackGenerator, CompletableFuture<HolderLookup.Provider>> packData
+    ) {
+
+        var packGenerator = generator.getBuiltinDatapack(true, Mirage.MIRAGE_ID, packId);
+
+        packData.accept(packGenerator, lookupProvider);
     }
 }

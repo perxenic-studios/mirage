@@ -1,0 +1,13 @@
+{
+  "features": {
+    "enabled": []
+  },
+  "pack": {
+    "description": "Adds underground desert generation",
+    "max_format": 101,
+    "min_format": [
+      101,
+      1
+    ]
+  }
+}

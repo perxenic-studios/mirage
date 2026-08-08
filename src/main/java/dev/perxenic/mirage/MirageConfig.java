@@ -83,7 +83,7 @@ public class MirageConfig {
     }
 
     // Force server reload to make sure server config is applied to data load conditions
-    // Ugly hack, but is required to make sure crafting configs can be applied per-world
+    // Ugly hack, but is required to make sure crafting and worldgen configs can be applied per-world
     @SubscribeEvent
     static void onServerStart(final ServerStartedEvent event) {
         MinecraftServer server = event.getServer();
@@ -145,21 +145,6 @@ public class MirageConfig {
         addServerBooleanConfig(
                 "desertRockSpawning",
                 "Whether desert rocks should spawn in deserts (Reload Required)",
-                true
-        );
-        addServerBooleanConfig(
-                "sandyStoneGeneration",
-                "Whether patches of sandy stone should spawn under the desert (Reload Required)",
-                true
-        );
-        addServerBooleanConfig(
-                "sandierStonePatches",
-                "Whether patches of sandy stone should sometimes contain sand (Reload Required)",
-                true
-        );
-        addServerBooleanConfig(
-                "undergroundDryGrass",
-                "Whether patches of sandy stone should sometimes have dry grass growing on them (Reload Required)",
                 true
         );
         addServerBooleanConfig(
