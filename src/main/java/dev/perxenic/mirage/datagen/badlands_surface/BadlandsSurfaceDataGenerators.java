@@ -9,13 +9,14 @@ import java.util.concurrent.CompletableFuture;
 
 public class BadlandsSurfaceDataGenerators {
     public static void serverSideData(
-            DataGenerator.PackGenerator generator,
+            DataGenerator generator,
+            DataGenerator.PackGenerator packGenerator,
             CompletableFuture<HolderLookup.Provider> lookupProvider
     ) {
-        generator.addProvider(output -> PackMetadataGenerator.forFeaturePack(
+        packGenerator.addProvider(output -> PackMetadataGenerator.forFeaturePack(
                 output,
                 Component.literal("Adds overground badlands generation")
         ));
-        generator.addProvider(output -> new BadlandsSurfaceDatapackProvider(output, lookupProvider));
+        packGenerator.addProvider(output -> new BadlandsSurfaceDatapackProvider(output, lookupProvider));
     }
 }
