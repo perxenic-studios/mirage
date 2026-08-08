@@ -17,26 +17,31 @@ public class PointedStoneFeature extends Feature<PointedStoneConfiguration> {
         var origin = context.origin();
         var level = context.level();
 
-        var height = config.height().sample(random);
-        int availableHeight = 0;
+        var length = config.length().sample(random);
+        var direction = config.direction();
+        int availableLength = 0;
 
-        while (availableHeight < height && config.target().test(level, origin.below(availableHeight))) {
-            availableHeight++;
+        var currentPos = origin.mutable();
+
+        while (availableLength < length && config.target().test(level, currentPos)) {
+            availableLength++;
+            currentPos.move(direction);
         }
 
-        for (var i = 0; i < availableHeight; i++)
+        currentPos.set(origin);
+
+        for (var i = 0; i < availableLength; i++)
         {
-            var pos = origin.below(i);
-
             BlockState stateToPlace;
-            if (i == availableHeight - 1) stateToPlace = config.tipBlock().getState(level, random, pos);
-            else if (i == availableHeight - 2) stateToPlace = config.frustumBlock().getState(level, random, pos);
-            else if (i == 0) stateToPlace = config.baseBlock().getState(level, random, pos);
-            else stateToPlace = config.middleBlock().getState(level, random, pos);
+            if (i == availableLength - 1) stateToPlace = config.tipBlock().getState(level, random, currentPos);
+            else if (i == availableLength - 2) stateToPlace = config.frustumBlock().getState(level, random, currentPos);
+            else if (i == 0) stateToPlace = config.baseBlock().getState(level, random, currentPos);
+            else stateToPlace = config.middleBlock().getState(level, random, currentPos);
 
-            level.setBlock(pos, stateToPlace, 2);
+            level.setBlock(currentPos, stateToPlace, 2);
+            currentPos.move(direction);
         }
 
-        return availableHeight > 0;
+        return availableLength > 0;
     }
 }
