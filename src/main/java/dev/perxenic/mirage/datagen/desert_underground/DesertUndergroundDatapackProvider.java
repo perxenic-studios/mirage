@@ -15,7 +15,7 @@ public class DesertUndergroundDatapackProvider extends DatapackBuiltinEntriesPro
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, DesertUndergroundConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, DesertUndergroundPlacedFeatures::bootstrap)
-            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, DesertUndergroundBiomeModifers::bootstrap);
+            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, DesertUndergroundBiomeModifiers::bootstrap);
 
     public DesertUndergroundDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(Mirage.MIRAGE_ID));
