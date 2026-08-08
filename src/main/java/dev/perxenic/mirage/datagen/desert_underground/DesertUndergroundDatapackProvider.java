@@ -14,6 +14,7 @@ import java.util.concurrent.CompletableFuture;
 public class DesertUndergroundDatapackProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, DesertUndergroundConfiguredFeatures::bootstrap)
+            .add(Registries.PLACED_FEATURE, DesertUndergroundPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, DesertUndergroundBiomeModifers::bootstrap);
 
     public DesertUndergroundDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

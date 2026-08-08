@@ -30,8 +30,12 @@
       "max_steps": 18,
       "target_condition": {
         "type": "minecraft:matching_blocks",
-        "offset": [0, 1, 0],
-        "blocks": "mirage:sandy_stone"
+        "blocks": "mirage:sandy_stone",
+        "offset": [
+          0,
+          1,
+          0
+        ]
       }
     },
     {
