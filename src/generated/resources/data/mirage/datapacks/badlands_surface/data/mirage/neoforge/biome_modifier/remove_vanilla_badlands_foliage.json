@@ -1,10 +1,10 @@
 {
   "type": "neoforge:remove_features",
-  "biomes": "minecraft:badlands",
+  "biomes": "#mirage:has_badlands_patches",
   "features": [
     "minecraft:patch_cactus_decorated",
     "minecraft:patch_dead_bush_badlands",
     "minecraft:patch_dry_grass_badlands"
   ],
-  "step": "vegetal_decoration"
+  "steps": "vegetal_decoration"
 }

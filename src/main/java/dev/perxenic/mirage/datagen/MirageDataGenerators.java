@@ -1,6 +1,7 @@
 package dev.perxenic.mirage.datagen;
 
 import dev.perxenic.mirage.Mirage;
+import dev.perxenic.mirage.datagen.badlands_surface.BadlandsSurfaceDataGenerators;
 import dev.perxenic.mirage.datagen.desert_surface.DesertSurfaceDataGenerators;
 import dev.perxenic.mirage.datagen.desert_underground.DesertUndergroundDataGenerators;
 import net.minecraft.core.HolderLookup;
@@ -63,6 +64,7 @@ public class MirageDataGenerators {
 
         generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
 
+        addBuiltInPack("badlands_surface", generator, lookupProvider, BadlandsSurfaceDataGenerators::serverSideData);
         addBuiltInPack("desert_surface", generator, lookupProvider, DesertSurfaceDataGenerators::serverSideData);
         addBuiltInPack("desert_underground", generator, lookupProvider, DesertUndergroundDataGenerators::serverSideData);
     }
