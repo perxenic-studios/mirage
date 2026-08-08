@@ -6,8 +6,6 @@ import dev.perxenic.mirage.datagen.desert_surface.DesertSurfaceDataGenerators;
 import dev.perxenic.mirage.datagen.desert_underground.DesertUndergroundDataGenerators;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -18,8 +16,8 @@ import org.apache.commons.lang3.function.TriConsumer;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.BiFunction;
-import java.util.function.Function;
+
+import static dev.perxenic.mirage.datagen.helpers.FactoryHelper.*;
 
 @EventBusSubscriber
 public class MirageDataGenerators {
@@ -87,18 +85,5 @@ public class MirageDataGenerators {
         var packGenerator = generator.getBuiltinDatapack(true, Mirage.MIRAGE_ID, packId);
 
         packData.accept(generator, packGenerator, lookupProvider);
-    }
-
-    private static <T extends DataProvider> DataProvider.Factory<T> factory(
-            Function<PackOutput, T> dataProvider
-    ) {
-        return dataProvider::apply;
-    }
-
-    private static <T extends DataProvider> DataProvider.Factory<T> factoryWithLookup(
-            BiFunction<PackOutput, CompletableFuture<HolderLookup.Provider>, T> dataProvider,
-            CompletableFuture<HolderLookup.Provider> lookupProvider
-    ) {
-        return output -> dataProvider.apply(output, lookupProvider);
     }
 }
