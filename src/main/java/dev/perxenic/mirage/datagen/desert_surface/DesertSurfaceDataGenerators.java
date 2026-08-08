@@ -9,7 +9,6 @@ import java.util.concurrent.CompletableFuture;
 
 public class DesertSurfaceDataGenerators {
     public static void serverSideData(
-            DataGenerator generator,
             DataGenerator.PackGenerator packGenerator,
             CompletableFuture<HolderLookup.Provider> lookupProvider
     ) {

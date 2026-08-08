@@ -7,9 +7,10 @@ import net.minecraft.network.chat.Component;
 
 import java.util.concurrent.CompletableFuture;
 
+import static dev.perxenic.mirage.datagen.helpers.FactoryHelper.factoryWithLookup;
+
 public class DesertUndergroundDataGenerators {
     public static void serverSideData(
-            DataGenerator generator,
             DataGenerator.PackGenerator packGenerator,
             CompletableFuture<HolderLookup.Provider> lookupProvider
     ) {
@@ -17,6 +18,6 @@ public class DesertUndergroundDataGenerators {
                 output,
                 Component.literal("Adds underground desert generation")
         ));
-        packGenerator.addProvider(output -> new DesertUndergroundDatapackProvider(output, lookupProvider));
+        packGenerator.addProvider(factoryWithLookup(DesertUndergroundDatapackProvider::new, lookupProvider));
     }
 }

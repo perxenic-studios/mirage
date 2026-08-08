@@ -11,11 +11,11 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import org.apache.commons.lang3.function.TriConsumer;
 
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.BiConsumer;
 
 import static dev.perxenic.mirage.datagen.helpers.FactoryHelper.*;
 
@@ -79,11 +79,11 @@ public class MirageDataGenerators {
             String packId,
             DataGenerator generator,
             CompletableFuture<HolderLookup.Provider> lookupProvider,
-            TriConsumer<DataGenerator, DataGenerator.PackGenerator, CompletableFuture<HolderLookup.Provider>> packData
+            BiConsumer<DataGenerator.PackGenerator, CompletableFuture<HolderLookup.Provider>> packData
     ) {
 
         var packGenerator = generator.getBuiltinDatapack(true, Mirage.MIRAGE_ID, packId);
 
-        packData.accept(generator, packGenerator, lookupProvider);
+        packData.accept(packGenerator, lookupProvider);
     }
 }
