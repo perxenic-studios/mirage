@@ -4,7 +4,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.metadata.PackMetadataGenerator;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.flag.FeatureFlagSet;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -15,9 +14,8 @@ public class DesertUndergroundDataGenerators {
     ) {
         generator.addProvider(output -> PackMetadataGenerator.forFeaturePack(
                 output,
-                Component.literal("Adds underground desert generation"),
-                FeatureFlagSet.of())
-        );
+                Component.literal("Adds underground desert generation")
+        ));
         generator.addProvider(output -> new DesertUndergroundDatapackProvider(output, lookupProvider));
     }
 }
