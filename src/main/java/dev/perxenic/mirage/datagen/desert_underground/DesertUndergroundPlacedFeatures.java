@@ -7,9 +7,12 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.heightproviders.TrapezoidHeight;
 import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
@@ -17,10 +20,30 @@ import java.util.List;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class DesertUndergroundPlacedFeatures {
+    static Holder<PlacedFeature> SANDY_STONE;
+
     static Holder<PlacedFeature> POINTED_SANDSTONE;
     static Holder<PlacedFeature> FLOOR_POINTED_SANDSTONE;
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        SANDY_STONE = context.register(
+                ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_sandy_stone")),
+                new PlacedFeature(
+                        DesertUndergroundConfiguredFeatures.SANDY_STONE,
+                        List.of(
+                                CountPlacement.of(UniformInt.of(48, 64)),
+                                InSquarePlacement.spread(),
+                                HeightRangePlacement.of(
+                                        TrapezoidHeight.of(
+                                                VerticalAnchor.absolute(16),
+                                                VerticalAnchor.absolute(192)
+                                        )
+                                ),
+                                BiomeFilter.biome()
+                        )
+                )
+        );
+
         POINTED_SANDSTONE = context.register(
                 ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_pointed_sandstone")),
                 pointedSandstoneFeature(

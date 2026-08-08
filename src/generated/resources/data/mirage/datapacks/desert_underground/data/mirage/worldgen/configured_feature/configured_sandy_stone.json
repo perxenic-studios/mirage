@@ -6,10 +6,6 @@
       "max_inclusive": 7,
       "min_inclusive": 4
     },
-    "target": {
-      "type": "minecraft:matching_block_tag",
-      "tag": "mirage:sandy_stone_replaceable"
-    },
     "state_provider": {
       "type": "minecraft:weighted_state_provider",
       "entries": [
@@ -32,6 +28,10 @@
           "weight": 2
         }
       ]
+    },
+    "target": {
+      "type": "minecraft:matching_block_tag",
+      "tag": "mirage:sandy_stone_replaceable"
     }
   }
 }
