@@ -3,6 +3,7 @@ package dev.perxenic.mirage.datagen.desert_underground;
 import dev.perxenic.mirage.Mirage;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -12,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class DesertUndergroundDatapackProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.CONFIGURED_FEATURE, DesertUndergroundConfiguredFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, DesertUndergroundBiomeModifers::bootstrap);
 
     public DesertUndergroundDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
