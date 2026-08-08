@@ -143,11 +143,6 @@ public class MirageConfig {
                 false
         );
         addServerBooleanConfig(
-                "desertRockSpawning",
-                "Whether desert rocks should spawn in deserts (Reload Required)",
-                true
-        );
-        addServerBooleanConfig(
                 "sandyStoneCrafting",
                 "Whether sandy stone can be crafted from stone and sand (Reload Required)",
                 true

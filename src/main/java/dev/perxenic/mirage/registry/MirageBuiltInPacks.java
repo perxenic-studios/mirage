@@ -16,6 +16,14 @@ public class MirageBuiltInPacks {
     @SubscribeEvent
     public static void addFeaturePacks(final AddPackFindersEvent event) {
         event.addPackFinders(
+                mirageLoc("data/"+MIRAGE_ID+"/datapacks/desert_surface"),
+                PackType.SERVER_DATA,
+                Component.literal("Mirage: Desert Surface"),
+                PackSource.BUILT_IN,
+                false,
+                Pack.Position.TOP
+        );
+        event.addPackFinders(
                 mirageLoc("data/"+MIRAGE_ID+"/datapacks/desert_underground"),
                 PackType.SERVER_DATA,
                 Component.literal("Mirage: Desert Underground"),

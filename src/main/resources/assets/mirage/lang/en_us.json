@@ -56,8 +56,6 @@
   "mirage.configuration.blankSherdConstructing.tooltip": "Whether blank sherds should be able to be crafted from basic materials (Reload Required)",
   "mirage.configuration.sherdConstructing": "Sherd Constructing",
   "mirage.configuration.sherdConstructing.tooltip": "Whether any sherd should be able to be crafted from basic materials (Reload Required)",
-  "mirage.configuration.desertRockSpawning": "Desert Rock Spawning",
-  "mirage.configuration.desertRockSpawning.tooltip": "Whether desert rocks should spawn in deserts (Reload Required)",
   "mirage.configuration.sandyStoneCrafting": "Sandy Stone Crafting",
   "mirage.configuration.sandyStoneCrafting.tooltip": "Whether sandy stone can be crafted from stone and sand (Reload Required)"
 }
