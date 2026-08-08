@@ -6,6 +6,7 @@ import dev.perxenic.mirage.datagen.desert_surface.DesertSurfaceDataGenerators;
 import dev.perxenic.mirage.datagen.desert_underground.DesertUndergroundDataGenerators;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -17,37 +18,36 @@ import org.apache.commons.lang3.function.TriConsumer;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 @EventBusSubscriber
 public class MirageDataGenerators {
     @SubscribeEvent
     public static void gatherClientData(GatherDataEvent.Client event) {
         DataGenerator generator = event.getGenerator();
-        PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        serverSideData(generator, packOutput, lookupProvider);
-        clientSideData(generator, packOutput);
+        serverSideData(generator, lookupProvider);
+        clientSideData(generator);
     }
 
     @SubscribeEvent
     public static void gatherServerData(GatherDataEvent.Server event) {
         DataGenerator generator = event.getGenerator();
-        PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        serverSideData(generator, packOutput, lookupProvider);
+        serverSideData(generator, lookupProvider);
     }
 
     private static void serverSideData(
             DataGenerator generator,
-            PackOutput packOutput,
             CompletableFuture<HolderLookup.Provider> lookupProvider
     ) {
-        generator.addProvider(true, new MirageBlockTagProvider(packOutput, lookupProvider));
-        generator.addProvider(true, new MirageItemTagProvider(packOutput, lookupProvider));
-        generator.addProvider(true, new LootTableProvider(
-                packOutput,
+        generator.addProvider(true, factoryWithLookup(MirageBlockTagProvider::new, lookupProvider));
+        generator.addProvider(true, factoryWithLookup(MirageItemTagProvider::new, lookupProvider));
+        generator.addProvider(true, factoryWithLookup((output, lookup) -> new LootTableProvider(
+                output,
                 Set.of(),
                 List.of(
                         new LootTableProvider.SubProviderEntry(
@@ -55,14 +55,14 @@ public class MirageDataGenerators {
                                 LootContextParamSets.BLOCK
                         )
                 ),
-                lookupProvider
-        ));
+                lookup
+        ), lookupProvider));
 
         // Update lookup provider after registering the armor trim patterns
-        lookupProvider = generator.addProvider(true, new MirageDatapackProvider(packOutput, lookupProvider))
+        lookupProvider = generator.addProvider(true, factoryWithLookup(MirageDatapackProvider::new, lookupProvider))
                 .getRegistryProvider();
 
-        generator.addProvider(true, new MirageRecipeProvider.Runner(packOutput, lookupProvider));
+        generator.addProvider(true, factoryWithLookup(MirageRecipeProvider.Runner::new, lookupProvider));
 
         addBuiltInPack("badlands_surface", generator, lookupProvider, BadlandsSurfaceDataGenerators::serverSideData);
         addBuiltInPack("desert_surface", generator, lookupProvider, DesertSurfaceDataGenerators::serverSideData);
@@ -70,12 +70,11 @@ public class MirageDataGenerators {
     }
 
     private static void clientSideData(
-            DataGenerator generator,
-            PackOutput packOutput
+            DataGenerator generator
     ) {
-        generator.addProvider(true, new MirageAtlasProvider(packOutput));
-        generator.addProvider(true, new MirageEquipmentAssetProvider(packOutput));
-        generator.addProvider(true, new MirageModelProvider(packOutput));
+        generator.addProvider(true, factory(MirageAtlasProvider::new));
+        generator.addProvider(true, factory(MirageEquipmentAssetProvider::new));
+        generator.addProvider(true, factory(MirageModelProvider::new));
     }
 
     private static void addBuiltInPack(
@@ -88,5 +87,18 @@ public class MirageDataGenerators {
         var packGenerator = generator.getBuiltinDatapack(true, Mirage.MIRAGE_ID, packId);
 
         packData.accept(generator, packGenerator, lookupProvider);
+    }
+
+    private static <T extends DataProvider> DataProvider.Factory<T> factory(
+            Function<PackOutput, T> dataProvider
+    ) {
+        return dataProvider::apply;
+    }
+
+    private static <T extends DataProvider> DataProvider.Factory<T> factoryWithLookup(
+            BiFunction<PackOutput, CompletableFuture<HolderLookup.Provider>, T> dataProvider,
+            CompletableFuture<HolderLookup.Provider> lookupProvider
+    ) {
+        return output -> dataProvider.apply(output, lookupProvider);
     }
 }
