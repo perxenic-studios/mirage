@@ -31,12 +31,13 @@ public class DesertUndergroundPlacedFeatures {
                 new PlacedFeature(
                         DesertUndergroundConfiguredFeatures.SANDY_STONE,
                         List.of(
-                                CountPlacement.of(UniformInt.of(48, 64)),
+                                CountPlacement.of(UniformInt.of(96, 128)),
                                 InSquarePlacement.spread(),
                                 HeightRangePlacement.of(
                                         TrapezoidHeight.of(
                                                 VerticalAnchor.absolute(16),
-                                                VerticalAnchor.absolute(192)
+                                                VerticalAnchor.absolute(256),
+                                                96
                                         )
                                 ),
                                 BiomeFilter.biome()
