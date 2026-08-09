@@ -25,7 +25,7 @@ public class BadlandsSurfaceBiomeModifiers {
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 "add_random_badlands_patches",
                 "has_badlands_patches",
-                List.of(mirPlacedFeature("placed_random_badlands_patches"))
+                List.of(BadlandsSurfacePlacedFeatures.RANDOM_PATCH)
         );
         removeFeatureBiomeModifer(
                 context, biomes, placedFeatures,
