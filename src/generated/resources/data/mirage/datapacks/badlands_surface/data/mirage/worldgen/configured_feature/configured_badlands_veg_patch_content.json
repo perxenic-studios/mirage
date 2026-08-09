@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "mirage:placed_badlands_vegetation",
+    "features": [
+      {
+        "chance": 0.1,
+        "feature": "mirage:placed_single_cactus"
+      },
+      {
+        "chance": 0.033333335,
+        "feature": "mirage:placed_badlands_pine"
+      }
+    ]
+  }
+}

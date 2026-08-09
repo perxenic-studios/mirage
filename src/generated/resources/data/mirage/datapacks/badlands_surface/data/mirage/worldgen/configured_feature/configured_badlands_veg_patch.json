@@ -24,33 +24,12 @@
     "replaceable": "#c:sands/red",
     "surface": "floor",
     "vegetation_chance": 0.3,
-    "vegetation_feature": {
-      "feature": {
-        "type": "minecraft:random_selector",
-        "config": {
-          "default": {
-            "feature": "mirage:configured_badlands_vegetation",
-            "placement": []
-          },
-          "features": [
-            {
-              "feature": "mirage:placed_single_cactus",
-              "chance": 0.1
-            },
-            {
-              "feature": "mirage:placed_badlands_pine",
-              "chance": 0.033
-            }
-          ]
-        }
-      },
-      "placement": []
-    },
+    "vegetation_feature": "mirage:placed_badlands_veg_patch_content",
     "vertical_range": 5,
     "xz_radius": {
       "type": "minecraft:uniform",
-      "min_inclusive": 2,
-      "max_inclusive": 3
+      "max_inclusive": 3,
+      "min_inclusive": 2
     }
   }
 }

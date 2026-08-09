@@ -1,6 +1,5 @@
 package dev.perxenic.mirage.datagen.badlands_surface;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -18,16 +17,18 @@ import java.util.List;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class BadlandsSurfacePlacedFeatures {
-    static Holder<PlacedFeature> BADLANDS_GRASS;
-    static Holder<PlacedFeature> BADLANDS_PINE;
-    static Holder<PlacedFeature> BADLANDS_VEG_PATCH;
-    static Holder<PlacedFeature> RANDOM_BADLANDS_PATCHES;
+    static ResourceKey<PlacedFeature> BADLANDS_GRASS = placedFeatureKey("placed_badlands_grass");
+    static ResourceKey<PlacedFeature> BADLANDS_PINE = placedFeatureKey("placed_badlands_pine");
+    static ResourceKey<PlacedFeature> BADLANDS_VEGETATION = placedFeatureKey("placed_badlands_vegetation");
+
+    static ResourceKey<PlacedFeature> VEG_PATCH_CONTENT = placedFeatureKey("placed_badlands_veg_patch_content");
+    static ResourceKey<PlacedFeature> BADLANDS_VEG_PATCH = placedFeatureKey("placed_badlands_veg_patch");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        BADLANDS_GRASS = context.register(
-                ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_badlands_grass")),
+        context.register(
+                BADLANDS_GRASS,
                 new PlacedFeature(
                         BadlandsSurfaceConfiguredFeatures.BADLANDS_GRASS,
                         List.of(
@@ -40,8 +41,8 @@ public class BadlandsSurfacePlacedFeatures {
                 )
         );
 
-        BADLANDS_PINE = context.register(
-                ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_badlands_pine")),
+        context.register(
+                BADLANDS_PINE,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(TreeFeatures.PINE),
                         List.of(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(
@@ -50,5 +51,26 @@ public class BadlandsSurfacePlacedFeatures {
                         )))
                 )
         );
+
+        context.register(
+                BADLANDS_VEGETATION,
+                new PlacedFeature(BadlandsSurfaceConfiguredFeatures.BADLANDS_VEGETATION, List.of())
+        );
+        context.register(
+                VEG_PATCH_CONTENT,
+                new PlacedFeature(BadlandsSurfaceConfiguredFeatures.VEG_PATCH_CONTENT, List.of())
+        );
+
+        context.register(
+                BADLANDS_VEG_PATCH,
+                new PlacedFeature(
+                        BadlandsSurfaceConfiguredFeatures.BADLANDS_VEG_PATCH,
+                        List.of(HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING))
+                )
+        );
+    }
+
+    private static ResourceKey<PlacedFeature> placedFeatureKey(String id) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc(id));
     }
 }
