@@ -88,6 +88,16 @@ public class BadlandsSurfaceConfiguredFeatures {
                         )
                 )
         );
+
+        context.register(
+                RANDOM_BADLANDS_PATCHES,
+                new RandomFeatureBuilder(placedFeatures, MiragePlacedFeatures.NO_OP)
+                        .add(BadlandsSurfacePlacedFeatures.DEAD_BUSH_PATCH, 1/2f)
+                        .add(BadlandsSurfacePlacedFeatures.CACTUS_PATCH, 3/10f)
+                        .add(BadlandsSurfacePlacedFeatures.BADLANDS_VEG_PATCH, 1/4f)
+                        .add(BadlandsSurfacePlacedFeatures.BADLANDS_GRASS, 8/10f)
+                        .build()
+        );
     }
 
     public static ConfiguredFeature<SimpleBlockConfiguration, Feature<SimpleBlockConfiguration>> weightedBlockState(
