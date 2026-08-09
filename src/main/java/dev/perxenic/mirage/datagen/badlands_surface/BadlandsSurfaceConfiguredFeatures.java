@@ -35,7 +35,7 @@ public class BadlandsSurfaceConfiguredFeatures {
         );
 
         BADLANDS_VEGETATION = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_badlands_pine")),
+                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_badlands_vegetation")),
                 weightedBlockState(WeightedList.<BlockState>builder()
                         .add(Blocks.SHORT_DRY_GRASS.defaultBlockState(), 4)
                         .add(Blocks.TALL_DRY_GRASS.defaultBlockState(), 2)
