@@ -10,7 +10,7 @@ import static dev.perxenic.mirage.Mirage.mirageLoc;
 import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirConfiguredFeature;
 
 public class MirageConfiguredFeatures {
-    static ResourceKey<ConfiguredFeature<?, ?>> NO_OP = mirConfiguredFeature("configured_no_op");
+    public static ResourceKey<ConfiguredFeature<?, ?>> NO_OP = mirConfiguredFeature("configured_no_op");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context) {
         context.register(
