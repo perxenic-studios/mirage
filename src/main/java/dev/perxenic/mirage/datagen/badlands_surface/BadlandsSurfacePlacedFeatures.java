@@ -4,6 +4,7 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.TrapezoidInt;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -23,6 +24,8 @@ public class BadlandsSurfacePlacedFeatures {
 
     static ResourceKey<PlacedFeature> VEG_PATCH_CONTENT = mirPlacedFeature("placed_badlands_veg_patch_content");
     static ResourceKey<PlacedFeature> BADLANDS_VEG_PATCH = mirPlacedFeature("placed_badlands_veg_patch");
+
+    static ResourceKey<PlacedFeature> DEAD_BUSH_PATCH = mirPlacedFeature("placed_dead_bush_badlands");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -72,6 +75,19 @@ public class BadlandsSurfacePlacedFeatures {
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.BADLANDS_VEG_PATCH),
                         List.of(HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING))
+                )
+        );
+
+        context.register(
+                DEAD_BUSH_PATCH,
+                new PlacedFeature(
+                        configuredFeatures.getOrThrow(VegetationFeatures.DEAD_BUSH),
+                        List.of(
+                                CountPlacement.of(UniformInt.of(3, 8)),
+                                RandomOffsetPlacement.ofTriangle(5, 3),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                                BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                        )
                 )
         );
     }
