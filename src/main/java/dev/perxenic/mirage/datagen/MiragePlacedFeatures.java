@@ -16,15 +16,14 @@ import java.util.List;
 import static dev.perxenic.mirage.Mirage.mirageLoc;
 
 public class MiragePlacedFeatures {
-    public static ResourceKey<PlacedFeature> SINGLE_CACTUS_KEY =
+    public static ResourceKey<PlacedFeature> SINGLE_CACTUS =
             ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_single_cactus"));
-    public static Holder<PlacedFeature> SINGLE_CACTUS;
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        SINGLE_CACTUS = context.register(
-                SINGLE_CACTUS_KEY,
+        context.register(
+                SINGLE_CACTUS,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(VegetationFeatures.CACTUS),
                         List.of(

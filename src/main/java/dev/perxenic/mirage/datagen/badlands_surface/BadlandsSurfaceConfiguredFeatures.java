@@ -65,7 +65,7 @@ public class BadlandsSurfaceConfiguredFeatures {
                         new RandomFeatureConfiguration(
                                 List.of(
                                         new WeightedPlacedFeature(
-                                                placedFeatures.getOrThrow(MiragePlacedFeatures.SINGLE_CACTUS_KEY),
+                                                placedFeatures.getOrThrow(MiragePlacedFeatures.SINGLE_CACTUS),
                                                 1/10f
                                         ),
                                         new WeightedPlacedFeature(
