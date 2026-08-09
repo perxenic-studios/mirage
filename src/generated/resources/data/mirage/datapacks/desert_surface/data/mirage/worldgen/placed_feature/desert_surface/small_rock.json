@@ -1,11 +1,11 @@
 {
-  "feature": "mirage:configured_desert_rock",
+  "feature": "mirage:desert_surface/small_rock",
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 4,
-      "noise_factor": 8,
-      "noise_offset": -0.15
+      "noise_factor": 8.0,
+      "noise_offset": -0.15,
+      "noise_to_count_ratio": 4
     },
     {
       "type": "minecraft:in_square"
@@ -21,12 +21,12 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "weight": 1,
-            "data": -1
+            "data": -1,
+            "weight": 1
           },
           {
-            "weight": 3,
-            "data": 0
+            "data": 0,
+            "weight": 3
           }
         ]
       }

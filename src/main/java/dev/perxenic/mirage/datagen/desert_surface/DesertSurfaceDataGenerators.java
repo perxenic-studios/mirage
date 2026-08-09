@@ -7,7 +7,6 @@ import net.minecraft.network.chat.Component;
 
 import java.util.concurrent.CompletableFuture;
 
-//TODO: Move all desert surface features to datagen
 public class DesertSurfaceDataGenerators {
     public static void serverSideData(
             DataGenerator.PackGenerator packGenerator,

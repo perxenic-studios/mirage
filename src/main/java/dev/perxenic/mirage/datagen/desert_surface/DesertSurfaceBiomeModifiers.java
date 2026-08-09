@@ -23,7 +23,7 @@ public class DesertSurfaceBiomeModifiers {
                 GenerationStep.Decoration.LOCAL_MODIFICATIONS,
                 "add_desert_rock",
                 "has_desert_rock",
-                List.of(mirPlacedFeature("placed_desert_rock"))
+                List.of(DesertSurfacePlacedFeatures.SMALL_ROCK)
         );
     }
 }
