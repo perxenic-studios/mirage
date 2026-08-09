@@ -14,6 +14,7 @@ import java.util.concurrent.CompletableFuture;
 public class BadlandsSurfaceDatapackProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, BadlandsSurfaceConfiguredFeatures::bootstrap)
+            .add(Registries.PLACED_FEATURE, BadlandsSurfacePlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, BadlandsSurfaceBiomeModifiers::bootstrap);
 
     public BadlandsSurfaceDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
