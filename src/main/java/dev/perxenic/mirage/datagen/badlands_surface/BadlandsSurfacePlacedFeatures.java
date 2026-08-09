@@ -30,7 +30,7 @@ public class BadlandsSurfacePlacedFeatures {
         context.register(
                 BADLANDS_GRASS,
                 new PlacedFeature(
-                        BadlandsSurfaceConfiguredFeatures.BADLANDS_GRASS,
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.BADLANDS_GRASS),
                         List.of(
                                 RarityFilter.onAverageOnceEvery(6),
                                 InSquarePlacement.spread(),
@@ -54,17 +54,23 @@ public class BadlandsSurfacePlacedFeatures {
 
         context.register(
                 BADLANDS_VEGETATION,
-                new PlacedFeature(BadlandsSurfaceConfiguredFeatures.BADLANDS_VEGETATION, List.of())
+                new PlacedFeature(
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.BADLANDS_VEGETATION),
+                        List.of()
+                )
         );
         context.register(
                 VEG_PATCH_CONTENT,
-                new PlacedFeature(BadlandsSurfaceConfiguredFeatures.VEG_PATCH_CONTENT, List.of())
+                new PlacedFeature(
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.VEG_PATCH_CONTENT),
+                        List.of()
+                )
         );
 
         context.register(
                 BADLANDS_VEG_PATCH,
                 new PlacedFeature(
-                        BadlandsSurfaceConfiguredFeatures.BADLANDS_VEG_PATCH,
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.BADLANDS_VEG_PATCH),
                         List.of(HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING))
                 )
         );

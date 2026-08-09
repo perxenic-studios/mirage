@@ -5,7 +5,6 @@ import dev.perxenic.mirage.content.features.UndergroundBlobConfiguration;
 import dev.perxenic.mirage.registry.MirageBlocks;
 import dev.perxenic.mirage.registry.MirageFeatures;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -20,15 +19,16 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 
 import static dev.perxenic.mirage.Mirage.mirageLoc;
+import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirConfiguredFeature;
 
 public class DesertUndergroundConfiguredFeatures {
-    static Holder<ConfiguredFeature<?, ?>> SANDY_STONE;
-    static Holder<ConfiguredFeature<?, ?>> POINTED_SANDSTONE;
-    static Holder<ConfiguredFeature<?, ?>> FLOOR_POINTED_SANDSTONE;
+    static ResourceKey<ConfiguredFeature<?, ?>> SANDY_STONE = mirConfiguredFeature("configured_sandy_stone");
+    static ResourceKey<ConfiguredFeature<?, ?>> POINTED_SANDSTONE = mirConfiguredFeature("configured_pointed_sandstone");
+    static ResourceKey<ConfiguredFeature<?, ?>> FLOOR_POINTED_SANDSTONE = mirConfiguredFeature("configured_floor_pointed_sandstone");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context) {
-        SANDY_STONE = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_sandy_stone")),
+        context.register(
+                SANDY_STONE,
                 new ConfiguredFeature<>(
                         MirageFeatures.UNDERGROUND_BLOB.get(),
                         new UndergroundBlobConfiguration(
@@ -46,8 +46,8 @@ public class DesertUndergroundConfiguredFeatures {
                 )
         );
 
-        POINTED_SANDSTONE = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_pointed_sandstone")),
+        context.register(
+                POINTED_SANDSTONE,
                 new ConfiguredFeature<>(
                         MirageFeatures.POINTED_STONE.get(),
                         PointedStoneConfiguration.simple(
@@ -57,8 +57,8 @@ public class DesertUndergroundConfiguredFeatures {
                         )
                 )
         );
-        FLOOR_POINTED_SANDSTONE = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_floor_pointed_sandstone")),
+        context.register(
+                FLOOR_POINTED_SANDSTONE,
                 new ConfiguredFeature<>(
                         MirageFeatures.POINTED_STONE.get(),
                         PointedStoneConfiguration.simple(

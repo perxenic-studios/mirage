@@ -33,7 +33,7 @@ public class DesertUndergroundPlacedFeatures {
         context.register(
                 SANDY_STONE,
                 new PlacedFeature(
-                        DesertUndergroundConfiguredFeatures.SANDY_STONE,
+                        configuredFeatures.getOrThrow(DesertUndergroundConfiguredFeatures.SANDY_STONE),
                         List.of(
                                 CountPlacement.of(UniformInt.of(96, 128)),
                                 InSquarePlacement.spread(),
@@ -52,14 +52,14 @@ public class DesertUndergroundPlacedFeatures {
         context.register(
                 POINTED_SANDSTONE,
                 pointedSandstoneFeature(
-                        DesertUndergroundConfiguredFeatures.POINTED_SANDSTONE,
+                        configuredFeatures.getOrThrow(DesertUndergroundConfiguredFeatures.POINTED_SANDSTONE),
                         Direction.UP
                 )
         );
         context.register(
                 FLOOR_POINTED_SANDSTONE,
                 pointedSandstoneFeature(
-                        DesertUndergroundConfiguredFeatures.FLOOR_POINTED_SANDSTONE,
+                        configuredFeatures.getOrThrow(DesertUndergroundConfiguredFeatures.FLOOR_POINTED_SANDSTONE),
                         Direction.DOWN
                 )
         );

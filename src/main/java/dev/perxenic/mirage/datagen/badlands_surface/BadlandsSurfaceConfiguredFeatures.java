@@ -2,7 +2,6 @@ package dev.perxenic.mirage.datagen.badlands_surface;
 
 import dev.perxenic.mirage.datagen.MiragePlacedFeatures;
 import dev.perxenic.mirage.registry.MirageBlocks;
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -23,22 +22,22 @@ import net.neoforged.neoforge.common.Tags;
 
 import java.util.List;
 
-import static dev.perxenic.mirage.Mirage.mirageLoc;
+import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirConfiguredFeature;
 
 public class BadlandsSurfaceConfiguredFeatures {
-    static Holder<ConfiguredFeature<?, ?>> BADLANDS_GRASS;
-    static Holder<ConfiguredFeature<?, ?>> BADLANDS_VEGETATION;
+    static ResourceKey<ConfiguredFeature<?, ?>> BADLANDS_GRASS = mirConfiguredFeature("configured_badlands_grass");
+    static ResourceKey<ConfiguredFeature<?, ?>> BADLANDS_VEGETATION = mirConfiguredFeature("configured_badlands_vegetation");
 
-    static Holder<ConfiguredFeature<?, ?>> VEG_PATCH_CONTENT;
-    static Holder<ConfiguredFeature<?, ?>> BADLANDS_VEG_PATCH;
+    static ResourceKey<ConfiguredFeature<?, ?>> VEG_PATCH_CONTENT = mirConfiguredFeature("configured_badlands_veg_patch_content");
+    static ResourceKey<ConfiguredFeature<?, ?>> BADLANDS_VEG_PATCH = mirConfiguredFeature("configured_badlands_veg_patch");
 
-    static Holder<ConfiguredFeature<?, ?>> RANDOM_BADLANDS_PATCHES;
+    static ResourceKey<ConfiguredFeature<?, ?>> RANDOM_BADLANDS_PATCHES = mirConfiguredFeature("configured_random_badlands_patches");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
-        BADLANDS_GRASS = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_badlands_grass")),
+        context.register(
+                BADLANDS_GRASS,
                 weightedBlockState(WeightedList.<BlockState>builder()
                         .add(Blocks.SHORT_DRY_GRASS.defaultBlockState(), 1)
                         .add(Blocks.TALL_DRY_GRASS.defaultBlockState(), 1)
@@ -47,8 +46,8 @@ public class BadlandsSurfaceConfiguredFeatures {
                 )
         );
 
-        BADLANDS_VEGETATION = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_badlands_vegetation")),
+        context.register(
+                BADLANDS_VEGETATION,
                 weightedBlockState(WeightedList.<BlockState>builder()
                         .add(Blocks.SHORT_DRY_GRASS.defaultBlockState(), 4)
                         .add(Blocks.TALL_DRY_GRASS.defaultBlockState(), 2)
@@ -59,8 +58,8 @@ public class BadlandsSurfaceConfiguredFeatures {
                 )
         );
 
-        VEG_PATCH_CONTENT = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_badlands_veg_patch_content")),
+        context.register(
+                VEG_PATCH_CONTENT,
                 new ConfiguredFeature<>(
                         Feature.RANDOM_SELECTOR,
                         new RandomFeatureConfiguration(
@@ -79,8 +78,8 @@ public class BadlandsSurfaceConfiguredFeatures {
                 )
         );
 
-        BADLANDS_VEG_PATCH = context.register(
-                ResourceKey.create(Registries.CONFIGURED_FEATURE, mirageLoc("configured_badlands_veg_patch")),
+        context.register(
+                BADLANDS_VEG_PATCH,
                 new ConfiguredFeature<>(
                         Feature.VEGETATION_PATCH,
                         new VegetationPatchConfiguration(
