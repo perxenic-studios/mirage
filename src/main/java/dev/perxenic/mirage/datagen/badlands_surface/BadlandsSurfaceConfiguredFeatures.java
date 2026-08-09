@@ -1,6 +1,7 @@
 package dev.perxenic.mirage.datagen.badlands_surface;
 
 import dev.perxenic.mirage.datagen.MiragePlacedFeatures;
+import dev.perxenic.mirage.datagen.helpers.RandomFeatureBuilder;
 import dev.perxenic.mirage.registry.MirageBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -60,22 +61,10 @@ public class BadlandsSurfaceConfiguredFeatures {
 
         context.register(
                 VEG_PATCH_CONTENT,
-                new ConfiguredFeature<>(
-                        Feature.RANDOM_SELECTOR,
-                        new RandomFeatureConfiguration(
-                                List.of(
-                                        new WeightedPlacedFeature(
-                                                placedFeatures.getOrThrow(MiragePlacedFeatures.SINGLE_CACTUS),
-                                                1/10f
-                                        ),
-                                        new WeightedPlacedFeature(
-                                                placedFeatures.getOrThrow(BadlandsSurfacePlacedFeatures.BADLANDS_PINE),
-                                                1/30f
-                                        )
-                                ),
-                                placedFeatures.getOrThrow(BadlandsSurfacePlacedFeatures.BADLANDS_VEGETATION)
-                        )
-                )
+                new RandomFeatureBuilder(placedFeatures, BadlandsSurfacePlacedFeatures.BADLANDS_VEGETATION)
+                        .add(MiragePlacedFeatures.SINGLE_CACTUS, 1/10f)
+                        .add(BadlandsSurfacePlacedFeatures.BADLANDS_PINE, 1/30f)
+                        .build()
         );
 
         context.register(
