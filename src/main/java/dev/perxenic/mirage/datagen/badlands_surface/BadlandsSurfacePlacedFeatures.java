@@ -14,15 +14,15 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
-import static dev.perxenic.mirage.Mirage.mirageLoc;
+import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirPlacedFeature;
 
 public class BadlandsSurfacePlacedFeatures {
-    static ResourceKey<PlacedFeature> BADLANDS_GRASS = placedFeatureKey("placed_badlands_grass");
-    static ResourceKey<PlacedFeature> BADLANDS_PINE = placedFeatureKey("placed_badlands_pine");
-    static ResourceKey<PlacedFeature> BADLANDS_VEGETATION = placedFeatureKey("placed_badlands_vegetation");
+    static ResourceKey<PlacedFeature> BADLANDS_GRASS = mirPlacedFeature("placed_badlands_grass");
+    static ResourceKey<PlacedFeature> BADLANDS_PINE = mirPlacedFeature("placed_badlands_pine");
+    static ResourceKey<PlacedFeature> BADLANDS_VEGETATION = mirPlacedFeature("placed_badlands_vegetation");
 
-    static ResourceKey<PlacedFeature> VEG_PATCH_CONTENT = placedFeatureKey("placed_badlands_veg_patch_content");
-    static ResourceKey<PlacedFeature> BADLANDS_VEG_PATCH = placedFeatureKey("placed_badlands_veg_patch");
+    static ResourceKey<PlacedFeature> VEG_PATCH_CONTENT = mirPlacedFeature("placed_badlands_veg_patch_content");
+    static ResourceKey<PlacedFeature> BADLANDS_VEG_PATCH = mirPlacedFeature("placed_badlands_veg_patch");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -68,9 +68,5 @@ public class BadlandsSurfacePlacedFeatures {
                         List.of(HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING))
                 )
         );
-    }
-
-    private static ResourceKey<PlacedFeature> placedFeatureKey(String id) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc(id));
     }
 }
