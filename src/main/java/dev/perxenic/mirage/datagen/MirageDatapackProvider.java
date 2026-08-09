@@ -17,6 +17,7 @@ import java.util.concurrent.CompletableFuture;
 @MethodsReturnNonnullByDefault
 public class MirageDatapackProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.CONFIGURED_FEATURE, MirageConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, MiragePlacedFeatures::bootstrap)
             .add(Registries.TRIM_PATTERN, MirageArmorTrimPatterns::bootstrap);
 
