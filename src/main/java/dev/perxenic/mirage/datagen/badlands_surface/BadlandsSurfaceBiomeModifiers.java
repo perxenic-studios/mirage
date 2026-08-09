@@ -8,8 +8,11 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 
+import java.util.List;
+
 import static dev.perxenic.mirage.Mirage.mcLoc;
 import static dev.perxenic.mirage.datagen.helpers.BiomeModifierHelper.*;
+import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirPlacedFeature;
 
 //TODO: Move all badlands surface features to datagen
 public class BadlandsSurfaceBiomeModifiers {
@@ -22,7 +25,7 @@ public class BadlandsSurfaceBiomeModifiers {
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 "add_random_badlands_patches",
                 "has_badlands_patches",
-                "placed_random_badlands_patches"
+                List.of(mirPlacedFeature("placed_random_badlands_patches"))
         );
         removeFeatureBiomeModifer(
                 context, biomes, placedFeatures,

@@ -29,35 +29,15 @@ public class BiomeModifierHelper {
             GenerationStep.Decoration generationStep,
             String name,
             String biomeTag,
-            String... placedFeatures
+            List<ResourceKey<PlacedFeature>> placedFeatures
     ) {
-        var features = Arrays.stream(placedFeatures).map(feature ->
-                placedFeatureLookup.getOrThrow(ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc(feature)))
-        ).toList();
+        var features = placedFeatures.stream().map(placedFeatureLookup::getOrThrow).toList();
 
         context.register(
                 ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, mirageLoc(name)),
                 new BiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(TagKey.create(Registries.BIOME, mirageLoc(biomeTag))),
                         HolderSet.direct(features),
-                        generationStep
-                )
-        );
-    }
-
-    public static void addFeatureBiomeModifer(
-            BootstrapContext<BiomeModifier> context,
-            HolderGetter<Biome> biomes,
-            GenerationStep.Decoration generationStep,
-            String name,
-            String biomeTag,
-            List<Holder<PlacedFeature>> placedFeatures
-    ) {
-        context.register(
-                ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, mirageLoc(name)),
-                new BiomeModifiers.AddFeaturesBiomeModifier(
-                        biomes.getOrThrow(TagKey.create(Registries.BIOME, mirageLoc(biomeTag))),
-                        HolderSet.direct(placedFeatures),
                         generationStep
                 )
         );

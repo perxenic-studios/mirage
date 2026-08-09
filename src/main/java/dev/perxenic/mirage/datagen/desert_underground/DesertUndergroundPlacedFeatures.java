@@ -17,21 +17,21 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
-import static dev.perxenic.mirage.Mirage.mirageLoc;
+import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirPlacedFeature;
 
 public class DesertUndergroundPlacedFeatures {
-    static Holder<PlacedFeature> SANDY_STONE;
+    static ResourceKey<PlacedFeature> SANDY_STONE = mirPlacedFeature("placed_sandy_stone");
 
-    static Holder<PlacedFeature> POINTED_SANDSTONE;
-    static Holder<PlacedFeature> FLOOR_POINTED_SANDSTONE;
+    static ResourceKey<PlacedFeature> POINTED_SANDSTONE = mirPlacedFeature("placed_pointed_sandstone");
+    static ResourceKey<PlacedFeature> FLOOR_POINTED_SANDSTONE = mirPlacedFeature("placed_floor_pointed_sandstone");
 
-    static Holder<PlacedFeature> UNDERGROUND_DRY_GRASS;
+    static ResourceKey<PlacedFeature> UNDERGROUND_DRY_GRASS = mirPlacedFeature("placed_underground_dry_grass");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        SANDY_STONE = context.register(
-                ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_sandy_stone")),
+        context.register(
+                SANDY_STONE,
                 new PlacedFeature(
                         DesertUndergroundConfiguredFeatures.SANDY_STONE,
                         List.of(
@@ -49,23 +49,23 @@ public class DesertUndergroundPlacedFeatures {
                 )
         );
 
-        POINTED_SANDSTONE = context.register(
-                ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_pointed_sandstone")),
+        context.register(
+                POINTED_SANDSTONE,
                 pointedSandstoneFeature(
                         DesertUndergroundConfiguredFeatures.POINTED_SANDSTONE,
                         Direction.UP
                 )
         );
-        FLOOR_POINTED_SANDSTONE = context.register(
-                ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_floor_pointed_sandstone")),
+        context.register(
+                FLOOR_POINTED_SANDSTONE,
                 pointedSandstoneFeature(
                         DesertUndergroundConfiguredFeatures.FLOOR_POINTED_SANDSTONE,
                         Direction.DOWN
                 )
         );
 
-        UNDERGROUND_DRY_GRASS = context.register(
-                ResourceKey.create(Registries.PLACED_FEATURE, mirageLoc("placed_underground_dry_grass")),
+        context.register(
+                UNDERGROUND_DRY_GRASS,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(VegetationFeatures.DRY_GRASS),
                         List.of(

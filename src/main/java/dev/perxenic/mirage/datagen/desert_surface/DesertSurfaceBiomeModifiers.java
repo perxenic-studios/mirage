@@ -8,7 +8,10 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 
+import java.util.List;
+
 import static dev.perxenic.mirage.datagen.helpers.BiomeModifierHelper.addFeatureBiomeModifer;
+import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirPlacedFeature;
 
 public class DesertSurfaceBiomeModifiers {
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
@@ -20,7 +23,7 @@ public class DesertSurfaceBiomeModifiers {
                 GenerationStep.Decoration.LOCAL_MODIFICATIONS,
                 "add_desert_rock",
                 "has_desert_rock",
-                "placed_desert_rock"
+                List.of(mirPlacedFeature("placed_desert_rock"))
         );
     }
 }
