@@ -28,6 +28,8 @@ public class BadlandsSurfacePlacedFeatures {
     static ResourceKey<PlacedFeature> DEAD_BUSH_PATCH = mirPlacedFeature("placed_dead_bush_badlands");
     static ResourceKey<PlacedFeature> CACTUS_PATCH = mirPlacedFeature("placed_cactus_patch_badlands");
 
+    static ResourceKey<PlacedFeature> RANDOM_BADLANDS_PATCHES = mirPlacedFeature("placed_random_badlands_patches");
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -105,6 +107,18 @@ public class BadlandsSurfacePlacedFeatures {
                                                 BlockPredicate.wouldSurvive(Blocks.CACTUS.defaultBlockState(), Vec3i.ZERO)
                                         )
                                 )
+                        )
+                )
+        );
+
+        context.register(
+                RANDOM_BADLANDS_PATCHES,
+                new PlacedFeature(
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.RANDOM_BADLANDS_PATCHES),
+                        List.of(
+                                CountPlacement.of(UniformInt.of(1, 5)),
+                                InSquarePlacement.spread(),
+                                BiomeFilter.biome()
                         )
                 )
         );
