@@ -26,6 +26,7 @@ public class BadlandsSurfacePlacedFeatures {
     static ResourceKey<PlacedFeature> BADLANDS_VEG_PATCH = mirPlacedFeature("placed_badlands_veg_patch");
 
     static ResourceKey<PlacedFeature> DEAD_BUSH_PATCH = mirPlacedFeature("placed_dead_bush_badlands");
+    static ResourceKey<PlacedFeature> CACTUS_PATCH = mirPlacedFeature("placed_cactus_patch_badlands");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -87,6 +88,23 @@ public class BadlandsSurfacePlacedFeatures {
                                 RandomOffsetPlacement.ofTriangle(5, 3),
                                 HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
                                 BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                        )
+                )
+        );
+        context.register(
+                CACTUS_PATCH,
+                new PlacedFeature(
+                        configuredFeatures.getOrThrow(VegetationFeatures.CACTUS),
+                        List.of(
+                                CountPlacement.of(UniformInt.of(1, 6)),
+                                RandomOffsetPlacement.horizontal(TrapezoidInt.triangle(6)),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING),
+                                BlockPredicateFilter.forPredicate(
+                                        BlockPredicate.allOf(
+                                                BlockPredicate.ONLY_IN_AIR_PREDICATE,
+                                                BlockPredicate.wouldSurvive(Blocks.CACTUS.defaultBlockState(), Vec3i.ZERO)
+                                        )
+                                )
                         )
                 )
         );
