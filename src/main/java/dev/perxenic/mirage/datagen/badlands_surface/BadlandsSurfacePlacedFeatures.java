@@ -18,25 +18,25 @@ import java.util.List;
 import static dev.perxenic.mirage.datagen.helpers.ResourceKeyHelper.mirPlacedFeature;
 
 public class BadlandsSurfacePlacedFeatures {
-    static ResourceKey<PlacedFeature> BADLANDS_GRASS = mirPlacedFeature("placed_badlands_grass");
-    static ResourceKey<PlacedFeature> BADLANDS_PINE = mirPlacedFeature("placed_badlands_pine");
-    static ResourceKey<PlacedFeature> BADLANDS_VEGETATION = mirPlacedFeature("placed_badlands_vegetation");
+    static ResourceKey<PlacedFeature> RANDOM_GRASS = bsPlacedFeature("random_grass");
+    static ResourceKey<PlacedFeature> PATCH_TREE = bsPlacedFeature("patch_tree");
+    static ResourceKey<PlacedFeature> RANDOM_VEGETATION = bsPlacedFeature("random_vegetation");
 
-    static ResourceKey<PlacedFeature> VEG_PATCH_CONTENT = mirPlacedFeature("placed_badlands_veg_patch_content");
-    static ResourceKey<PlacedFeature> BADLANDS_VEG_PATCH = mirPlacedFeature("placed_badlands_veg_patch");
+    static ResourceKey<PlacedFeature> VEG_PATCH_ITEM = bsPlacedFeature("veg_patch_item");
 
-    static ResourceKey<PlacedFeature> DEAD_BUSH_PATCH = mirPlacedFeature("placed_dead_bush_badlands");
-    static ResourceKey<PlacedFeature> CACTUS_PATCH = mirPlacedFeature("placed_cactus_patch_badlands");
+    static ResourceKey<PlacedFeature> VEGETATION_PATCH = bsPlacedFeature("vegetation_patch");
+    static ResourceKey<PlacedFeature> DEAD_BUSH_PATCH = bsPlacedFeature("dead_bush_patch");
+    static ResourceKey<PlacedFeature> CACTUS_PATCH = bsPlacedFeature("cactus_patch");
 
-    static ResourceKey<PlacedFeature> RANDOM_BADLANDS_PATCHES = mirPlacedFeature("placed_random_badlands_patches");
+    static ResourceKey<PlacedFeature> RANDOM_PATCH = bsPlacedFeature("random_patch");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         context.register(
-                BADLANDS_GRASS,
+                RANDOM_GRASS,
                 new PlacedFeature(
-                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.BADLANDS_GRASS),
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.RANDOM_GRASS),
                         List.of(
                                 RarityFilter.onAverageOnceEvery(6),
                                 InSquarePlacement.spread(),
@@ -48,7 +48,7 @@ public class BadlandsSurfacePlacedFeatures {
         );
 
         context.register(
-                BADLANDS_PINE,
+                PATCH_TREE,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(TreeFeatures.PINE),
                         List.of(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(
@@ -59,24 +59,24 @@ public class BadlandsSurfacePlacedFeatures {
         );
 
         context.register(
-                BADLANDS_VEGETATION,
+                RANDOM_VEGETATION,
                 new PlacedFeature(
-                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.BADLANDS_VEGETATION),
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.RANDOM_VEGETATION),
                         List.of()
                 )
         );
         context.register(
-                VEG_PATCH_CONTENT,
+                VEG_PATCH_ITEM,
                 new PlacedFeature(
-                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.VEG_PATCH_CONTENT),
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.VEG_PATCH_ITEM),
                         List.of()
                 )
         );
 
         context.register(
-                BADLANDS_VEG_PATCH,
+                VEGETATION_PATCH,
                 new PlacedFeature(
-                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.BADLANDS_VEG_PATCH),
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.VEGETATION_PATCH),
                         List.of(HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING))
                 )
         );
@@ -112,9 +112,9 @@ public class BadlandsSurfacePlacedFeatures {
         );
 
         context.register(
-                RANDOM_BADLANDS_PATCHES,
+                RANDOM_PATCH,
                 new PlacedFeature(
-                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.RANDOM_BADLANDS_PATCHES),
+                        configuredFeatures.getOrThrow(BadlandsSurfaceConfiguredFeatures.RANDOM_PATCH),
                         List.of(
                                 CountPlacement.of(UniformInt.of(1, 5)),
                                 InSquarePlacement.spread(),
@@ -122,5 +122,9 @@ public class BadlandsSurfacePlacedFeatures {
                         )
                 )
         );
+    }
+
+    private static ResourceKey<PlacedFeature> bsPlacedFeature(String id) {
+        return mirPlacedFeature(BadlandsSurface.BS_ID + "/" + id);
     }
 }

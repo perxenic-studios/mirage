@@ -24,7 +24,7 @@
     "replaceable": "#c:sands/red",
     "surface": "floor",
     "vegetation_chance": 0.3,
-    "vegetation_feature": "mirage:placed_badlands_veg_patch_content",
+    "vegetation_feature": "mirage:badlands_surface/veg_patch_item",
     "vertical_range": 5,
     "xz_radius": {
       "type": "minecraft:uniform",

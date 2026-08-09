@@ -1,5 +1,5 @@
 {
-  "feature": "mirage:configured_random_badlands_patches",
+  "feature": "mirage:badlands_surface/random_patch",
   "placement": [
     {
       "type": "minecraft:count",

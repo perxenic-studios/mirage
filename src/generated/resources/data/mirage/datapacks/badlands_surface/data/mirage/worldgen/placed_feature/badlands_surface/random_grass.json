@@ -1,5 +1,5 @@
 {
-  "feature": "mirage:configured_badlands_grass",
+  "feature": "mirage:badlands_surface/random_grass",
   "placement": [
     {
       "type": "minecraft:rarity_filter",

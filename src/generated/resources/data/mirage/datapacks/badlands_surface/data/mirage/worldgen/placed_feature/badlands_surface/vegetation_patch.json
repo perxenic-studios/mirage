@@ -1,5 +1,5 @@
 {
-  "feature": "mirage:configured_badlands_veg_patch",
+  "feature": "mirage:badlands_surface/vegetation_patch",
   "placement": [
     {
       "type": "minecraft:heightmap",
