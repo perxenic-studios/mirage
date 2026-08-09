@@ -1,5 +1,8 @@
 package dev.perxenic.mirage.registry;
 
+import dev.perxenic.mirage.datagen.badlands_surface.BadlandsSurface;
+import dev.perxenic.mirage.datagen.desert_surface.DesertSurface;
+import dev.perxenic.mirage.datagen.desert_underground.DesertUnderground;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
@@ -16,7 +19,7 @@ public class MirageBuiltInPacks {
     @SubscribeEvent
     public static void addFeaturePacks(final AddPackFindersEvent event) {
         event.addPackFinders(
-                mirageLoc("data/"+MIRAGE_ID+"/datapacks/badlands_surface"),
+                mirageLoc("data/" + MIRAGE_ID + "/datapacks/" + BadlandsSurface.BS_ID),
                 PackType.SERVER_DATA,
                 Component.literal("Mirage: Badlands Surface"),
                 PackSource.BUILT_IN,
@@ -24,7 +27,7 @@ public class MirageBuiltInPacks {
                 Pack.Position.TOP
         );
         event.addPackFinders(
-                mirageLoc("data/"+MIRAGE_ID+"/datapacks/desert_surface"),
+                mirageLoc("data/" + MIRAGE_ID + "/datapacks/" + DesertSurface.DS_ID),
                 PackType.SERVER_DATA,
                 Component.literal("Mirage: Desert Surface"),
                 PackSource.BUILT_IN,
@@ -32,7 +35,7 @@ public class MirageBuiltInPacks {
                 Pack.Position.TOP
         );
         event.addPackFinders(
-                mirageLoc("data/"+MIRAGE_ID+"/datapacks/desert_underground"),
+                mirageLoc("data/" + MIRAGE_ID + "/datapacks/" + DesertUnderground.DU_ID),
                 PackType.SERVER_DATA,
                 Component.literal("Mirage: Desert Underground"),
                 PackSource.BUILT_IN,
